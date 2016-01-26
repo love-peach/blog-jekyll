@@ -1,3 +1,14 @@
+有意思的博客：  
+- [hongkiat](http://www.hongkiat.com/blog/)
+- [guolingfa](http://www.guolingfa.cn/)
+- [make tech easier](https://www.maketecheasier.com/)
+- [blog oh blog](http://www.blogohblog.com/)
+- [deafpigeon](http://deafpigeon.co.uk/)
+- [旅行博客](http://www.zcool.com.cn/work/ZMTQ0MDUyMDg=.html)
+- [个人博客](http://www.zcool.com.cn/work/ZMTQxMTM1OTY=.html)
+- [情侣博客网页手机版 ](http://www.zcool.com.cn/work/ZNjE3NzcxNg==.html)
+- [Erique Chong's Personal Website](http://www.zcool.com.cn/work/ZMTQ2MzYyMDg=.html)
+
 # gh-pages 页面
 
 ###How Creat Project Page
@@ -30,7 +41,7 @@ git push origin gh-pages
 
 ## TODO 
 
-- [ ] 怎么通过jekyll创建静态网站页面。
+- [ ] 结合gulp自动压缩等任务，或者看jekyll有自带的插件没
 
 ## DONE 
 - [x] 本地搭建jekyll环境
