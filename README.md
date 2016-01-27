@@ -8,6 +8,7 @@
 - [个人博客](http://www.zcool.com.cn/work/ZMTQxMTM1OTY=.html)
 - [情侣博客网页手机版 ](http://www.zcool.com.cn/work/ZNjE3NzcxNg==.html)
 - [Erique Chong's Personal Website](http://www.zcool.com.cn/work/ZMTQ2MzYyMDg=.html)
+- [anew](http://demo.alxmedia.se/anew/)
 
 # gh-pages 页面
 
