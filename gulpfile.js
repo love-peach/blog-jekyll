@@ -87,7 +87,7 @@
 
     //默认任务
     gulp.task('default', ['clean'], function () {
-        gulp.run('watch');
+        gulp.run('build');
     });
 
     //清除任务
@@ -106,41 +106,9 @@
     });
 
 
-    //第一次编译jekyll任务，需要等静态文件构建好，然后放在的_site文件夹下。
-    gulp.task('jekyll-first', ['build'], function (cb) {
-        // 编译 Jekyll
-
-        exec('jekyll build', function (err) {
-
-            if (err) return cb(err); // 返回 error
-            cb(); // 完成 task
-        });
-    });
-
-    //
-    gulp.task('jekyll', function (cb) {
-        // 编译 Jekyll
-        exec('jekyll build', function (err) {
-            if (err) return cb(err); // 返回 error
-            cb(); // 完成 task
-        });
-    });
     //构建任务
     gulp.task('build', function () {
-        gulp.run('style', 'script', 'fonts', 'image');
-    });
-
-
-    //less转css,自动补齐前缀并压缩
-    gulp.task('style', function () {
-        return gulp.src(srcRoot + '/style/main.less')
-            .pipe(less())
-            .pipe(autoprefix(config.styles.autoprefixer))
-            .pipe(gulp.dest(paths.dist.style))
-            .pipe(rename({ suffix: '.min' }))
-            .pipe(minifyCSS(config.styles.minifyCSS))
-            .pipe(gulp.dest(paths.dist.style))
-            .pipe(notify({ message: '<%= file.relative %>' + ' finished less to css' }));
+        gulp.run('script', 'fonts', 'imgMin');
     });
 
     // 检查、合并、压缩js文件
@@ -155,7 +123,6 @@
             .pipe(rename({ suffix: '.min' }))
             .pipe(uglify())
             .pipe(gulp.dest(paths.dist.script))
-//            .pipe(reload({stream: true}))
             .pipe(notify({ message: '<%= file.relative %>' + ' finished js task' }));
     });
 
@@ -164,7 +131,6 @@
         return gulp.src(paths.src.fonts)
             .pipe(changed(paths.dist.fonts))
             .pipe(gulp.dest(paths.dist.fonts))
-//            .pipe(reload({stream: true}))
             .pipe(notify({ message: 'fonts task ok' }));
     });
 
@@ -173,7 +139,6 @@
         return gulp.src(paths.src.image)
             .pipe(changed(paths.dist.image))
             .pipe(gulp.dest(paths.dist.image))
-//            .pipe(reload({stream: true}))
             .pipe(notify({ message: '<%= file.relative %>' + ' copied finished' }));
     });
 
