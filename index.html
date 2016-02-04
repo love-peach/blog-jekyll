@@ -1,29 +1,55 @@
 ---
-layout: default
+layout: default-index
 ---
 
 <div class="home">
 
 
-  <h1 class="page-heading">Post1</h1>
+    <h1 class="page-heading">Post1</h1>
 
 
     <div class="my-box1"></div>
     <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+            <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
 
-        </h2>
-      </li>
+            </h2>
+        </li>
 
-    {% endfor %}
-  </ul>
+        {% endfor %}
+    </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
+</div>
+
+<div class="section section1">
+    <div class="container">
+        1
+    </div>
+</div>
+<div class="section section2">
+    <div class="container">
+        2
+    </div>
+</div>
+<div class="section section3">
+    <div class="container">
+        3
+    </div>
+</div>
+<div class="section section4">
+    <div class="container">
+        4
+    </div>
+</div>
+<div class="section section5">
+    <div class="container">
+        5
+    </div>
 </div>

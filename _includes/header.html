@@ -25,3 +25,18 @@
   </div>
 
 </header>
+
+<header class="nav-bar">
+  <div class="container clearfix">
+    <a class="nav-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <ul class="nav-menu">
+      {% for page in site.pages %}
+      {% if page.title %}
+      <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
+  </div>
+</header>
