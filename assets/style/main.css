@@ -1,4 +1,6 @@
-body {
+
+.box1 {
+
   width: 100px;
   height: 100px;
   padding-top: 100px;
@@ -7,5 +9,4 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-size: 12px;
-  background-color: #ccc;
 }

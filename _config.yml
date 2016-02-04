@@ -27,8 +27,10 @@ url:          /blog-jekyll
 
 #################################### global configure #######################################
 
-#baseurl: /blog-jekyll
-markdown: redcarpet
+
+baseurl: /blog-jekyll
+markdown: kramdown
+
 safe: false
 highlighter: pygments
 title: 莫忘初衷

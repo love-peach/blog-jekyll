@@ -18,10 +18,9 @@
         changed = require('gulp-changed'),         // 过滤改动的文件
         clean = require('gulp-clean'),             // 清空文件夹
         notify = require('gulp-notify'),           // 提示信息
-        exec = require('child_process').exec,
-        runSequence = require('run-sequence'),     //按顺序执行任务
-        browserSync = require('browser-sync').create(), //自动刷新
-        reload = browserSync.reload;                    //重载
+
+        exec = require('child_process').exec;
+
 
 //定义资源目录与输出目录的根目录
     var srcRoot = '_assets';
@@ -53,13 +52,7 @@
 
 //配置信息
     var config = {
-        browsersync: {
-            server: "_site",
-//            proxy: "127.0.0.1"
 
-            port: 9999
-
-        },
         styles: {
             autoprefixer: {
                 browsers: [
@@ -105,20 +98,20 @@
 
     //监听任务
     gulp.task('watch', ['jekyll-first'], function () {
-        browserSync.init(config.browsersync);
-        gulp.watch(paths.watch.jekyll, ['jekyll-rebuild']);
+        gulp.watch(paths.watch.jekyll, ['jekyll']);
         gulp.watch(paths.watch.style, ['style']);
         gulp.watch(paths.watch.script, ['script']);
         gulp.watch(paths.watch.image, ['image']);
         gulp.watch(paths.watch.fonts, ['fonts']);
-        gulp.watch("*.html").on('change', reload);
     });
 
 
     //第一次编译jekyll任务，需要等静态文件构建好，然后放在的_site文件夹下。
     gulp.task('jekyll-first', ['build'], function (cb) {
         // 编译 Jekyll
+
         exec('jekyll build', function (err) {
+
             if (err) return cb(err); // 返回 error
             cb(); // 完成 task
         });
@@ -137,9 +130,6 @@
         gulp.run('style', 'script', 'fonts', 'image');
     });
 
-    gulp.task('jekyll-rebuild', ['jekyll'], function () {
-        browserSync.reload();
-    });
 
     //less转css,自动补齐前缀并压缩
     gulp.task('style', function () {
@@ -147,11 +137,9 @@
             .pipe(less())
             .pipe(autoprefix(config.styles.autoprefixer))
             .pipe(gulp.dest(paths.dist.style))
-            .pipe(browserSync.stream({match: "**/*.css"}))       //此处需要注意
             .pipe(rename({ suffix: '.min' }))
             .pipe(minifyCSS(config.styles.minifyCSS))
             .pipe(gulp.dest(paths.dist.style))
-            .pipe(browserSync.stream({match: "**/*.css"}))      //为什么要重复，根据页面具体引入的是哪个文件来定
             .pipe(notify({ message: '<%= file.relative %>' + ' finished less to css' }));
     });
 
