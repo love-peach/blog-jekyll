@@ -2,14 +2,10 @@
 layout: default-index
 ---
 
-<div class="home">
 
-
-    <h1 class="page-heading">Post1</h1>
-
-
-    <div class="my-box1"></div>
-    <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
+<div class="section section1">
+    <div class="container">
+        <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
     <ul class="post-list">
         {% for post in site.posts %}
         <li>
@@ -25,12 +21,6 @@ layout: default-index
     </ul>
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
-
-<div class="section section1">
-    <div class="container">
-        1
     </div>
 </div>
 <div class="section section2">
