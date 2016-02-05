@@ -7,10 +7,11 @@ body, html {
 
 //以下几个标签使用的比较多，故统一给个下边距，页面中页也尽量使用下边距来控制距离
 h1, h2, h3, h4, p {
-  line-height: 1.5;
   margin: 0 0 10px;
 }
-
+p {
+  line-height: 1.5;
+}
 h5, h6, form {
   margin: 0;
 }

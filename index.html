@@ -5,43 +5,67 @@ layout: default-index
 
 <div class="section section1">
     <div class="container">
-        2
+        <h3>导航栏</h3>
     </div>
 </div>
 <div class="section section2">
     <div class="container">
-        3
+        <h3><span>&nbsp;</span>我的经历</h3>
+
+        <div class="my-experience">
+            d
+        </div>
     </div>
 </div>
 <div class="section section3">
     <div class="container">
-        4
+        <h3><span>&nbsp;</span>我的爱好</h3>
+
     </div>
 </div>
 <div class="section section4">
     <div class="container">
-        5
+        <h3><span>&nbsp;</span>我的技能</h3>
+
+    </div>
+</div>
+<div class="section section5">
+    <div class="container">
+        <h3><span>&nbsp;</span>我的案例</h3>
+
+    </div>
+</div>
+<div class="section section6">
+    <div class="container">
+        <h3><span>&nbsp;</span>联系方式</h3>
+        <h4>18203610462</h4>
+        <div class="contact-way">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+        <p class="my-wishes">愿你我成为这样的人：外表平静如水，内心坚定如山。外表平静如水，内心坚定如山。外表平静如水，内心坚定如山。外表平静如水，内心坚定如山。</p>
     </div>
 </div>
 
-
-<div class="section section5">
+<div class="section section7">
     <div class="container">
         <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
-    <ul class="post-list">
-        {% for post in site.posts %}
-        <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <ul class="post-list">
+            {% for post in site.posts %}
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-            <h2>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+                <h2>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
 
-            </h2>
-        </li>
+                </h2>
+            </li>
 
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
     </div>
 </div>

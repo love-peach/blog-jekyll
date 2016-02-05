@@ -57,6 +57,28 @@ body {
   text-align: right;
 }
 
+//ziti
+@font-face {font-family: "iconfont";
+  src: url('../assets/fonts/iconfont.eot'); /* IE9*/
+  src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-qq:before { content: "\e600"; }
+.icon-weixin:before { content: "\e601"; }
+.icon-xinlang:before { content: "\e602"; }
+.icon-github:before { content: "\e603"; }
+
 //导航栏样式
 .nav-bar {
   position: relative;
@@ -86,5 +108,22 @@ body {
         border-bottom: 3px solid red;
       }
     }
+  }
+}
+
+//footer
+.footer {
+  background-color: #031d2a;
+  vertical-align: middle;
+  color: #fff;
+  .footer-contact {
+    a {
+      padding: 0 .4rem;
+    }
+  }
+  .footer-tel,.footer-contact,.footer-copyright {
+    float: left;
+    width: 33%;
+    line-height: 4rem;
   }
 }
