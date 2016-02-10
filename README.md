@@ -116,5 +116,12 @@ https://ruby.taobao.org
 > git commit -m "first post"
 >  git push origin gh-pages
 
+### 博客搭架子
+
+- [x] 设计自己博客的样式
+- [x] 生成导航栏　链接，顺序
+- [x] 子页面（每个子页面一个首页）
+- [x] 生成分类
+
 
 npm install --save-dev gulp gulp-less gulp-minify-css gulp-autoprefixer gulp-jshint gulp-uglify imagemin-pngquant gulp-changed gulp-clean gulp-notify browser-sync gulp-concat gulp-rename gulp-imagemin run-sequence

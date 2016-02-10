@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "this is a article demo for css"
+date:   2016-02-07 00:58:24
+categories: article css
+---
+
+
+# css
+
+{% highlight css %}
+body {
+    border: 1px solid red;    
+}
+{% endhighlight %}

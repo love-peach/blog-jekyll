@@ -1,6 +1,6 @@
-<header class="nav-bar">
+<header class="nav-bar" id="navbar">
   <div class="container clearfix">
-    <a class="nav-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="nav-brand" href="{{ site.baseurl }}/" title="莫忘初衷，不负此生">{{ site.title }}</a>
 
     <ul class="nav-menu">
       <!--{% for page in site.pages %}-->
@@ -8,12 +8,12 @@
       <!--<li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>-->
       <!--{% endif %}-->
       <!--{% endfor %}-->
-      <li class="active"><a href="javascript:;">Home</a></li>
-      <li><a href="javascript:;">HTML</a></li>
-      <li><a href="javascript:;">CSS</a></li>
-      <li><a href="javascript:;">JS</a></li>
-      <li><a href="javascript:;">Photo</a></li>
-      <li><a href="javascript:;">Teletext</a></li>
+      <li id="homePage"><a href="/blog-jekyll/">Home</a></li>
+      <li id="htmlPage"><a href="/blog-jekyll/HTML/">HTML</a></li>
+      <li id="cssPage"><a href="/blog-jekyll/CSS/">CSS</a></li>
+      <li id="jsPage"><a href="/blog-jekyll/JS/">JS</a></li>
+      <li id="photoPage"><a href="/blog-jekyll/Photo/">Photo</a></li>
+      <li id="teletextPage"><a href="/blog-jekyll/Teletext/">Teletext</a></li>
     </ul>
 
   </div>

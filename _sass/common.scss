@@ -1,14 +1,11 @@
 html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
 
 body {
-  font:{
-    family: arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",Tahoma,Arial,Helvetica,STHeiti;
-  }
-
+    font-family: arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",Tahoma,Arial,Helvetica,STHeiti;
 }
 .container {
   position: relative;
-  max-width: 1080px;
+  max-width: 800px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -16,6 +13,7 @@ body {
 }
 
 .row {
+  position: relative;
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -82,10 +80,13 @@ body {
 //导航栏样式
 .nav-bar {
   position: relative;
+  background-color: $base-silver;
   .nav-brand {
     float: left;
     height:3.5rem;
     line-height: 3.5rem;
+    font-size: 1.8rem;
+    color: $base-blue;
   }
   .nav-menu {
     float: right;
@@ -95,17 +96,17 @@ body {
         line-height: 2.5rem;
         height: 3.5rem;
         padding: .5rem 1rem;
+        color: $base-blue;
       }
       a:hover {
-
-        color: red;
+        color: $base-red;
         //border-bottom: 3px solid red;
       }
     }
     .active {
       a {
-        color: red;
-        border-bottom: 3px solid red;
+        color: $base-red;
+        border-bottom: 3px solid $base-red;
       }
     }
   }
@@ -113,7 +114,7 @@ body {
 
 //footer
 .footer {
-  background-color: #031d2a;
+  background-color: $base-blue-dark;
   vertical-align: middle;
   color: #fff;
   .footer-contact {
