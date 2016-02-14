@@ -125,5 +125,23 @@ https://ruby.taobao.org
 - [x] 子页面（每个子页面一个首页）
 - [x] 生成分类
 
+```html
+<ul>
+    {% for category in site.categories.html %}
+    <li>
+       <a href="{{category.url | prepend: site.baseurl }}">{{category.title }} {{ category.date | date: "%b %-d, %Y" }}</a>
+    </li>
+    {% endfor %}
+</ul>
+```
+
+### jekyll 使用注意事项
+
+- 启动了多个jekyll,如何关闭
+
+    一般来说，在终端使用命令`jekyll serve`默认在4000端口启动，可以为不同的jekyll设置不同的端口启动，如果未设置
+    这时启动多个jekyll项目会报错：`Address already in use - bind(2) for 127.0.0.1:4000`,可以通过命令来关闭
+    如果你想关闭服务器，可以使用`kill -9 1234`命令，"1234" 是进程号（PID）。
+    如果你找不到进程号，那么就用`ps aux | grep jekyll`命令来查看，然后关闭服务器。
 
 npm install --save-dev gulp gulp-less gulp-minify-css gulp-autoprefixer gulp-jshint gulp-uglify imagemin-pngquant gulp-changed gulp-clean gulp-notify browser-sync gulp-concat gulp-rename gulp-imagemin run-sequence
