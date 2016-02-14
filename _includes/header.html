@@ -8,12 +8,12 @@
       <!--<li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>-->
       <!--{% endif %}-->
       <!--{% endfor %}-->
-      <li id="homePage"><a href="/blog-jekyll/">Home</a></li>
-      <li id="htmlPage"><a href="/blog-jekyll/HTML/">HTML</a></li>
-      <li id="cssPage"><a href="/blog-jekyll/CSS/">CSS</a></li>
-      <li id="jsPage"><a href="/blog-jekyll/JS/">JS</a></li>
-      <li id="photoPage"><a href="/blog-jekyll/Photo/">Photo</a></li>
-      <li id="teletextPage"><a href="/blog-jekyll/Teletext/">Teletext</a></li>
+      <li class="{% if page.whichPage == 'home'%} active {% endif %}" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+      <li class="{% if page.whichPage == 'html' %} active {% endif %}" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+      <li class="{% if page.whichPage == 'css' %} active {% endif %}" id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+      <li class="{% if page.whichPage == 'js' %} active {% endif %}" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+      <li class="{% if page.whichPage == 'photo' %} active {% endif %}" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+      <li class="{% if page.whichPage == 'teletext' %} active {% endif %}" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
     </ul>
 
   </div>
