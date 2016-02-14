@@ -5,8 +5,8 @@
     <description>莫忘初衷，不负此生。</description>
     <link>/blog-jekyll/blog-jekyll/</link>
     <atom:link href="/blog-jekyll/blog-jekyll/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 14 Feb 2016 13:00:46 +0800</pubDate>
-    <lastBuildDate>Sun, 14 Feb 2016 13:00:46 +0800</lastBuildDate>
+    <pubDate>Sun, 14 Feb 2016 13:51:34 +0800</pubDate>
+    <lastBuildDate>Sun, 14 Feb 2016 13:51:34 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -72,6 +72,21 @@
         <category>article</category>
         
         <category>js</category>
+        
+      </item>
+    
+      <item>
+        <title>this is a article demo for html</title>
+        <description>&lt;h1 id=&quot;html2&quot;&gt;html2;&lt;/h1&gt;
+</description>
+        <pubDate>Sun, 07 Feb 2016 08:58:24 +0800</pubDate>
+        <link>/blog-jekyll/blog-jekyll/article/html/2016/02/07/html-demo2.html</link>
+        <guid isPermaLink="true">/blog-jekyll/blog-jekyll/article/html/2016/02/07/html-demo2.html</guid>
+        
+        
+        <category>article</category>
+        
+        <category>html</category>
         
       </item>
     

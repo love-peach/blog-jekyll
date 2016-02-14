@@ -1,5 +1,5 @@
 ---
-layout: category_archive
+layout: post
 title:  "陪伴是最好承诺"
 date:   2016-02-07 00:58:24
 categories: article teletext

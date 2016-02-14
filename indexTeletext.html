@@ -1,0 +1,15 @@
+---
+layout: page
+title: Teletext
+permalink: /teletext/
+whichPage: teletext
+---
+<ul>
+    {% for category in site.categories.teletext %}
+    <li>
+       <a href="{{category.url | prepend: site.baseurl }}">{{category.title }} {{ category.date | date: "%b %-d, %Y" }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<hr/>
