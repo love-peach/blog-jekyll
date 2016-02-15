@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        {% include header.html %}
+
+        <div class="page-banner text-center" style="background: #37ACCB url('{{ site.baseurl}}{{page.bannerImg}}') center center no-repeat;background-size: cover">{{page.title}}</div>
+        <div class="page-content container">
+            <ul class="content-list">
+                {% for category in site.categories.[page.whichPage] %}
+                <li>
+                    <a href="{{category.url | prepend: site.baseurl }}">
+                        <h1 class="main-title">{{category.title }}</h1>
+                        <span class="page-date">{{ category.date | date: "%Y年%-m月%-d日" }}</span>
+                    </a>
+                    <div class="clearfix excerpt">
+                    {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+                </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {{content}}
+        </div>
+
+        {% include footer.html %}
+    </div>
+</div>
+
+
+</body>
+
+</html>

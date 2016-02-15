@@ -1,8 +1,15 @@
-html {font-size: 62.5%;/*10 ÷ 16 × 100% = 62.5%*/}
+html {
+  font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/
+}
 
 body {
-    font-family: arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",Tahoma,Arial,Helvetica,STHeiti;
+  font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", "宋体", Tahoma, Arial, Helvetica, STHeiti;
 }
+
+p {
+
+}
+
 .container {
   position: relative;
   max-width: 800px;
@@ -56,26 +63,36 @@ body {
 }
 
 //ziti
-@font-face {font-family: "iconfont";
+@font-face {
+  font-family: "iconfont";
   src: url('../assets/fonts/iconfont.eot'); /* IE9*/
-  src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../assets/fonts/iconfont.woff') format('woff'), /* chrome, firefox */
-  url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../assets/fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-qq:before { content: "\e600"; }
-.icon-weixin:before { content: "\e601"; }
-.icon-xinlang:before { content: "\e602"; }
-.icon-github:before { content: "\e603"; }
+
+.icon-qq:before {
+  content: "\e600";
+}
+
+.icon-weixin:before {
+  content: "\e601";
+}
+
+.icon-xinlang:before {
+  content: "\e602";
+}
+
+.icon-github:before {
+  content: "\e603";
+}
 
 //导航栏样式
 .nav-bar {
@@ -83,8 +100,8 @@ body {
   background-color: $base-silver;
   .nav-brand {
     float: left;
-    height:3.5rem;
-    line-height: 3.5rem;
+    height: 4rem;
+    line-height: 4rem;
     font-size: 1.8rem;
     color: $base-blue;
   }
@@ -93,8 +110,8 @@ body {
     li {
       float: left;
       a {
-        line-height: 2.5rem;
-        height: 3.5rem;
+        line-height: 3rem;
+        height: 4rem;
         padding: .5rem 1rem;
         color: $base-blue;
       }
@@ -122,9 +139,88 @@ body {
       padding: 0 .4rem;
     }
   }
-  .footer-tel,.footer-contact,.footer-copyright {
+  .footer-tel, .footer-contact, .footer-copyright {
     float: left;
     width: 33%;
     line-height: 4rem;
   }
 }
+
+//子页面容器样式
+.page-body {
+  padding-top: 3rem;
+  background-color: $base-blue;
+}
+
+.page-wrapper {
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
+
+.page-banner {
+  height: 24rem;
+  line-height: 24rem;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 .4rem $base-blue-dark;
+  background-color: #37ACCB;
+}
+
+//文章内容样式
+.page-content {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: $base-silver;
+  p {
+    text-indent: 3rem;
+  }
+  .main-title {
+    color: $base-black-dark;
+  }
+  p.page-date {
+    text-indent: 0;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  img {
+    display: block;
+    margin: 1rem auto;
+    min-height: 10rem;
+    max-width: 100%;
+    border-radius: .5rem;
+    border: 1px solid $base-border;
+  }
+
+  //文章内容列表样式
+  .content-list {
+    li {
+      padding-left: 1rem;
+      border-left: 3px solid red;
+      margin-bottom: 1rem;
+      a {
+        display: block;
+      }
+      h1 {
+        display: inline-block;
+        font-size: 2rem;
+      }
+      span.page-date {
+        font-size: 1.4rem;
+
+      }
+    }
+    .excerpt {
+      color: $base-black-dark;
+      font-size: 1.4rem;
+      img {
+        float: left;
+        height: 50px;
+        border: 1px solid red;
+      }
+    }
+  }
+}
+
+
+
+

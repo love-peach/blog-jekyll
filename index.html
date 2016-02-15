@@ -1,5 +1,5 @@
 ---
-layout: default-index
+layout: default
 whichPage: home
 ---
 
@@ -111,22 +111,22 @@ whichPage: home
 </div>
 
 <div class="section section7">
-<div class="container">
-<img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
-<ul class="post-list">
-{% for post in site.Html %}
-<li>
-<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <div class="container">
+        <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
+        <ul class="post-list">
+            {% for post in site.Html %}
+            <li>
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<h2>
-<a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+                <h2>
+                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
 
-</h2>
-</li>
+                </h2>
+            </li>
 
-{% endfor %}
-</ul>
+            {% endfor %}
+        </ul>
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </div>
 </div>

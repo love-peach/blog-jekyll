@@ -4,12 +4,13 @@ title:  "this is a article demo for css"
 date:   2016-02-07 00:58:24
 categories: article css
 whichPage: css
+bannerImg: /assets/image/2016.jpg
 ---
 
 
 # css
 
-{% highlight css %}
+{% highlight css linenos%}
 body {
     border: 1px solid red;    
 }

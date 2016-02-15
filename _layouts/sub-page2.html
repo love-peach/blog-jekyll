@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="">
+{% include header.html %}
+<div class="page-banner text-center">{{page.title}}</div>
+<div class="page-content">
+    <div class="container">
+        <ul class="content-list">
+            {% for category in site.categories.[page.whichPage] %}
+            <li>
+                <a href="{{category.url | prepend: site.baseurl }}">{{category.title }} {{ category.date | date: "%b %-d, %Y" }}</a>
+                <div class="clearfix excerpt">
+                    {{ category.excerpt | remove: '<p>' }}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {{content}}
+    </div>
+</div>
+
+
+{% include footer.html %}
+</body>
+
+</html>
