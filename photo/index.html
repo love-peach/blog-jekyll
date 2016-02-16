@@ -6,3 +6,30 @@ whichPage: photo
 ---
 
 
+<ul style="margin-right: -1rem;" class="photo-content-list clearfix ">
+    {% for category in site.categories.[page.whichPage] %}
+    <li>
+        <a href="{{category.url | prepend: site.baseurl }}">
+            {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+            <h3 class="text-center">{{category.title }}</h3>
+
+            <div class="tip-info clearfix">
+                <span class="list-place">{{category.place}}</span>
+                <span class="list-date">{{ category.date | date: "%Y-%m-%d" }}</span>
+            </div>
+
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<!--<ul>-->
+<!--{% for member in site.data.members %}-->
+<!--<li>-->
+<!--<a href="https://github.com/{{ member.github }}">-->
+<!--{{ member.nick}} ( {{member.name}} )-->
+<!--</a>-->
+<!--</li>-->
+<!--{% endfor %}-->
+<!--</ul>-->

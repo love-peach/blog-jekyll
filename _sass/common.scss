@@ -129,8 +129,6 @@ p {
   }
 }
 
-
-
 //footer
 .footer {
   background-color: $base-blue-dark;
@@ -184,14 +182,14 @@ p {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  img {
-    display: block;
-    margin: 1rem auto;
-    min-height: 10rem;
-    max-width: 35rem;
-    border-radius: .5rem;
-    border: 1px solid $base-border;
-  }
+  //  img {
+  //    display: block;
+  //    margin: 1rem auto;
+  //    min-height: 10rem;
+  //    max-width: 35rem;
+  //    border-radius: .5rem;
+  //    border: 1px solid $base-border;
+  //  }
 
   //文章内容列表样式
   .content-list {
@@ -218,6 +216,49 @@ p {
         float: left;
         height: 50px;
         border: 1px solid red;
+      }
+    }
+  }
+
+  .photo-content-list {
+    li {
+//      padding: 0 1rem;
+      border: 0;
+      width: 33.33%;
+      float: left;
+      a {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        background-color: #fff;
+        padding-bottom: 2rem;
+        box-shadow: 0 3px 3px $base-silver-dark;
+        transition: all .3s ease;
+      }
+      a:hover {
+        transform: scale(1.05);
+      }
+      img {
+        margin-bottom: .5rem;
+        width: 100%;
+      }
+      h3 {
+        height: 1.5rem;
+        font-size: 1.4rem;
+        color: $base-black-dark;
+      }
+      .tip-info {
+        padding: 0 .5rem;
+      }
+      .list-place {
+        font-size: 1rem;
+        color: $base-black-dark;
+      }
+      .list-date {
+        position: relative;
+        top: 4px;
+        float: right;
+        font-size: 1rem;
+        color: $base-black-dark;
       }
     }
   }

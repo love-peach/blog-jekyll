@@ -5,6 +5,17 @@ permalink: /js/
 whichPage: js
 bannerImg: /assets/image/2016.jpg
 ---
+<ul class="content-list">
+    {% for category in site.categories.[page.whichPage] %}
+    <li>
+        <a href="{{category.url | prepend: site.baseurl }}">
+            <h1 class="main-title">{{category.title }}</h1>
+            <span class="page-date">{{ category.date | date: "%Y年%-m月%-d日" }}</span>
+        </a>
 
-
-rdfg
+        <div class="clearfix excerpt">
+            {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
