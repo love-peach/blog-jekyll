@@ -19,7 +19,21 @@
     </div>
 </div>
 
+<script src="{{ site.baseurl}}/assets/script/jquery.min.js"></script>
+<script>
+    window.onload = function () {
+        var hArr = [];//存放每一列高度的数组
+        var liArr = $('.photo-content-list li');//获取所有的li
+        var liWidth = liArr.eq(0).innerWidth();//取到每个li的宽度
+        var cols = Math.floor($('.photo-content-list').parent().innerWidth()/liWidth);//计算可以派几列
+        console.log(cols);
+        for (var i = 0; i < liArr.length; i++) {
 
+            hArr.push(liArr.eq(i).height());
+        }
+
+    }
+</script>
 </body>
 
 </html>
