@@ -4,11 +4,9 @@ source:       .
 destination:  ./_site
 plugins:      ./_plugins
 layouts:      ./_layouts
-paginate: 5
-paginate_path: "blog/page:num"
+
 
 # Handling Reading
-safe:         false
 include:      [".htaccess"]
 exclude:      ["node_modules", "package.json", "gulpfile.js"]
 keep_files:   [".git", ".svn"]

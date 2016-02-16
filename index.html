@@ -2,11 +2,43 @@
 layout: default
 whichPage: home
 ---
-
 <div class="section section1 blue-bg">
-    <div class="container">
-        <h3>导航栏</h3>
-    </div>
+    <div id="banner_tabs" class="flexslider">
+	<ul class="slides">
+        <li>
+			<a title="" target="_blank" href="#">
+				<div class="container">
+                    d
+				</div>
+			</a>
+		</li>
+		<li>
+			<a title="" target="_blank" href="#">
+				<img  alt="" style="background: url('{{ site.baseurl}}/assets/image/banner1.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+			</a>
+		</li>
+		<li>
+			<a title="" href="#">
+				<img  alt="" style="background: url('{{ site.baseurl}}/assets/image/banner2.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+			</a>
+		</li>
+		<li>
+			<a title="" href="#">
+				<img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner3.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+			</a>
+		</li>
+	</ul>
+	<ul class="flex-direction-nav">
+		<li><a style="background: url('{{ site.baseurl}}/assets/image/ad_ctr.png') no-repeat;" class="flex-prev" href="javascript:;">Previous</a></li>
+		<li><a style="background-image: url('{{ site.baseurl}}/assets/image/ad_ctr.png');" class="flex-next" href="javascript:;">Next</a></li>
+	</ul>
+	<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+		<li><a>1</a></li>
+		<li><a>2</a></li>
+		<li><a>3</a></li>
+		<li><a>4</a></li>
+	</ol>
+</div>
 </div>
 <div class="section section2 silver-bg">
     <h3><span>&nbsp;</span>我的经历</h3>
