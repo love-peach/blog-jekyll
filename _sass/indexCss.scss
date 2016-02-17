@@ -1,0 +1,46 @@
+//css首页列表样式
+.css-content-list,
+.html-content-list,
+.js-content-list{
+  li {
+    border-bottom: 1px solid $base-border;
+    margin-bottom: 1rem;
+  }
+  li:last-child {
+    border: 0;
+    margin-bottom: 0;
+  }
+  .list-link {
+    display: block;
+    padding-left: .5rem;
+    border-left: .4rem solid $base-black-dark;
+    h1 {
+      color: $base-black-dark;
+      font-size: 2.4rem;
+    }
+  }
+  .list-link:hover {
+    text-decoration: underline;
+  }
+  .date-and-tags {
+    margin-bottom: 1rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px dashed $base-border;
+    .list-date {
+      color: $base-black;
+      font-size: 1.6rem;
+    }
+    .list-tags {
+      float: right;
+      color: $base-black;
+    }
+    a {
+      display: inline-block;
+      border:0;
+
+    }
+    i {
+
+    }
+  }
+}

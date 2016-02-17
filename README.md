@@ -1,3 +1,4 @@
+http://www.w3cplus.com/solution/index/index.html
 有意思的博客：  
 - [hongkiat](http://www.hongkiat.com/blog/)
 - [guolingfa](http://www.guolingfa.cn/)
@@ -11,8 +12,6 @@
 - [anew](http://demo.alxmedia.se/anew/)
 - [单列](http://www.zcool.com.cn/work/ZMzM4NDYzNg==.html)
 - [猫猫](http://www.2zzt.com/bokezhuti/5987.html) 
-#    如果你想关闭服务器，可以使用`kill -9 1234`命令，"1234" 是进程号（PID）。
-#    如果你找不到进程号，那么就用`ps aux | grep jekyll`命令来查看，然后关闭服务器。
 
 # gh-pages 页面
 

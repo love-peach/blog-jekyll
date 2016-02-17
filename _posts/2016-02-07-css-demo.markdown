@@ -1,17 +1,101 @@
 ---
 layout: post
-title:  "this is a article demo for css"
-date:   2016-02-07 00:58:24
+title:  "CSS设计网页小技巧:100%的高度"
+date:   2016-02-17
 categories: article css
+tags: [css布局, html,转载]
 whichPage: css
 bannerImg: /assets/image/2016.jpg
 ---
 
+在前端人员之间有一个普遍存在的问题，如何让一个div的高度自动延伸到浏览窗口100%的高度。
+有一些不同的方法可以实现，但是，我想出了一个我个人比较喜欢的方法。今天，我将于你分享一下。   
+转载地址为：[CSS设计网页小技巧:100%的高度](http://www.zhangjiaojiao.cn/divcss/598.html "转载地址").
+转载地址为：<a href="http://www.zhangjiaojiao.cn/divcss/598.html" target="_blank" title="转载地址">CSS设计网页小技巧:100%的高度</a>
 
-# css
 
-{% highlight css linenos%}
+我对你是不了解的，但我试图弄明白如何让我的布局垂直拉伸到页面的100％高度，这样一个令我沮丧的问题。
+我想让div结构自动延伸，但是它就是不能自动延伸，现在，为什么他不能这样那？今天我将与你一起分享这个解决方法。  
+
+**比方说你有如下html代码文档**
+
+{% highlight html %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>CSS 100% Height</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="content">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </div>
+</body>
+</html>
+{% endhighlight %}
+
+**同时你有如下css样式文件**
+
+{% highlight css %}
 body {
-    border: 1px solid red;    
+	margin: 0;
+	padding: 0;
+}
+#content {
+	background: #EEE;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	padding: 0 20px 0 20px;
+	margin: auto;
+	font: 1.5em arial, verdana, sans-serif;
+	width: 960px;
+	height: 100%;
 }
 {% endhighlight %}
+
+这就给了你这个示例文件。正如你所看到的，页面的content容器不能自动延伸到页面的整个高度。
+尽管我们给css样式文件添加了”height:100%”。为什么那？
+
+让我给你另外一种方式来思考HTML，几乎每一个HTML文件都有一组容器彼此包含的。因此，在我们的页面里面，
+首先我们有一个<html>容器，其次<body>容器包含在<html>里，最后才是<div id=”content”></div>容器包含在里面。
+当我们往任何一个容器里面放置内容的时候，这个容器和包含此容器的父容器盒子都会自动延伸的，从而能容下这些新添加的内容。
+也就是说，当我们往<div id=”content”></div>容器盒子添加文字内容的时候，这个div容器盒子是自动延伸的，
+包含这个div容器的父容器盒子（body与html）依次是自动延伸的。
+
+当我们给<div id=”content”></div>容器定义“height:100%”样式时，我们现在做的就是告诉它让其高度延伸到包含它的父容器的整个高度。
+在这个例子里，这个div容器被包含在<body>容器里面，所以<div id=”content”></div>就是body的整个高度。
+好了，body容器是如何延伸增长的那？它就像<div id=”content”></div>的高度一样，因为我们从来没有告诉它如何增高的。
+所以当我们给<div id=”content”></div>定义“height：100%”样式的时候，我们仅仅告诉了它自己。
+
+解决此问题，我需要告诉<body>容器变的大一些儿，同时<html>容器也会出现同样的问题，它应该与<body>一样大。
+所以为了解决这个问题（让<div id=”content”></div>容器自动延伸到整个页面的高度）我们需要告诉<html>和<body>;容器高度应为整个页面的高度。
+
+**如果我们修改我们的css文件，如下所示**
+
+{% highlight css %}
+html {
+	min-height: 100%;
+	_height:100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	_height:100%;
+}
+#content {
+	background: #EEE;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	padding: 0 20px 0 20px;
+	margin: auto;
+	font: 1.5em arial, verdana, sans-serif;
+	width: 960px;
+	min-height: 100%;
+	_height:100%;
+}
+{% endhighlight %}
+
+就是这样，这里是我们现在的最终效果。这个content容器现在已经能自动延伸到整个页面的高度了。
+

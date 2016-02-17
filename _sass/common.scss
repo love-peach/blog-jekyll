@@ -12,7 +12,7 @@ p {
 
 .container {
   position: relative;
-  max-width: 800px;
+  max-width: 980px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -84,6 +84,10 @@ p {
 
 .icon-weixin:before {
   content: "\e601";
+}
+
+.icon-tag:before {
+  content: "\e604";
 }
 
 .icon-xinlang:before {
@@ -172,94 +176,79 @@ p {
   padding-bottom: 1rem;
   background-color: $base-silver;
   p {
-    text-indent: 3rem;
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: justify;
+    //    text-indent: 3rem;
+    a {
+      color: $base-blue;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      display: block;
+      margin: 1rem auto;
+
+      min-height: 10rem;
+      width: 35rem;
+      border-radius: .5rem;
+      border: 1px solid $base-border;
+      transition: all .5s ease;
+    }
+    img:hover {
+      width: 100%;
+    }
   }
   .main-title {
     color: $base-black-dark;
   }
-  p.page-date {
+  .date {
+    display: block;
     text-indent: 0;
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  //  img {
-  //    display: block;
-  //    margin: 1rem auto;
-  //    min-height: 10rem;
-  //    max-width: 35rem;
-  //    border-radius: .5rem;
-  //    border: 1px solid $base-border;
+  //  //文章内容列表样式
+  //  .content-list {
+  //    li {
+  //      padding-left: 1rem;
+  //      border-left: 3px solid red;
+  //      margin-bottom: 1rem;
+  //      a {
+  //        display: block;
+  //      }
+  //      h1 {
+  //        display: inline-block;
+  //        font-size: 2rem;
+  //      }
+  //      span.page-date {
+  //        font-size: 1.4rem;
+  //
+  //      }
+  //    }
+  //
   //  }
+}
 
-  //文章内容列表样式
-  .content-list {
-    li {
-      padding-left: 1rem;
-      border-left: 3px solid red;
-      margin-bottom: 1rem;
-      a {
-        display: block;
-      }
-      h1 {
-        display: inline-block;
-        font-size: 2rem;
-      }
-      span.page-date {
-        font-size: 1.4rem;
+//列表简介样式
+.excerpt {
+  color: $base-black-dark;
+  font-size: 1.4rem;
+  p {
+    text-indent: 0;
+    margin-bottom: 1rem;
 
-      }
-    }
-    .excerpt {
-      color: $base-black-dark;
-      font-size: 1.4rem;
-      img {
-        float: left;
-        height: 50px;
-        border: 1px solid red;
-      }
-    }
-  }
-
-  .photo-content-list {
-    li {
-//      padding: 0 1rem;
-      border: 0;
-      width: 33.33%;
+    img {
+      width: 14rem;
+      height:inherit;
+      min-height: 8rem;
+      max-height: 14rem;
       float: left;
-      a {
-        margin-bottom: 1rem;
-        margin-right: 1rem;
-        background-color: #fff;
-        padding-bottom: 2rem;
-        box-shadow: 0 3px 3px $base-silver-dark;
-        transition: all .3s ease;
-      }
-      a:hover {
-        transform: scale(1.05);
-      }
-      img {
-        margin-bottom: .5rem;
-        width: 100%;
-      }
-      h3 {
-        height: 1.5rem;
-        font-size: 1.4rem;
-        color: $base-black-dark;
-      }
-      .tip-info {
-        padding: 0 .5rem;
-      }
-      .list-place {
-        font-size: 1rem;
-        color: $base-black-dark;
-      }
-      .list-date {
-        position: relative;
-        top: 4px;
-        float: right;
-        font-size: 1rem;
-        color: $base-black-dark;
-      }
+      margin: 0 1rem 1rem 0;
+    }
+    img:hover {
+      width: 20rem;
     }
   }
 }

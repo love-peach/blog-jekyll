@@ -5,16 +5,25 @@ permalink: /html/
 whichPage: html
 bannerImg: /assets/image/banner_html.jpg
 ---
-<ul class="content-list">
+<ul class="html-content-list">
     {% for category in site.categories.[page.whichPage] %}
-    <li>
-        <a href="{{category.url | prepend: site.baseurl }}">
-            <h1 class="main-title">{{category.title }}</h1>
-            <span class="page-date">{{ category.date | date: "%Y年%-m月%-d日" }}</span>
+    <li  >
+        <a class="row" href="{{category.url | prepend: site.baseurl }}" target="_blank">
+            <h1>{{category.title }}</h1>
         </a>
+        <div class="date-and-tags">
+            <span class="list-date">{{ category.date | date: "%Y年%-m月%-d日" }}</span>
+            <span class="list-tags">
+                <i class="icon iconfont icon-tag"></i>
+                {% for tag in category.tags%}
 
-        <div class="clearfix excerpt">
-            {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+                <a href="javascript:;">{{tag}}</a>
+                {% endfor %}
+            </span>
+        </div>
+
+        <div class="excerpt clearfix">
+            {{ category.excerpt }}
         </div>
     </li>
     {% endfor %}

@@ -2,10 +2,17 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #fff;
-    pre {
-      background-color: #ccc;
-    }
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px dashed $base-blue-dark;
+  background: #fff;
+  overflow-x: auto;
+
+
+  pre {
+    margin: 0;
+
+  }
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error

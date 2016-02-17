@@ -17,5 +17,6 @@
 }
 .icon-qq:before { content: "\e600"; }
 .icon-weixin:before { content: "\e601"; }
+.icon-tag:before { content: "\e604"; }
 .icon-xinlang:before { content: "\e602"; }
 .icon-github:before { content: "\e603"; }
