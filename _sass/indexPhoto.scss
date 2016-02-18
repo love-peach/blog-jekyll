@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     border: 0;
-    width: 33.33%;
+    width: 33.333%;
     float: left;
     transition: all .5s ease;
     a {
@@ -15,14 +15,20 @@
       background-color: #fff;
       padding-bottom: 2rem;
       box-shadow: 0 3px 3px $base-silver-dark;
-      transition: all .3s ease;
+
     }
-    a:hover {
-      transform: scale(1.05);
+    a:hover img{
+      transform: scale(1.1);
+    }
+    .photo-list-wrap {
+      font-size: 0;
+      overflow: hidden;
+      margin-bottom: .5rem;
     }
     img {
-      margin-bottom: .5rem;
+
       width: 100%;
+      transition: all .3s ease;
     }
     h3 {
       height: 1.5rem;
@@ -42,6 +48,12 @@
       float: right;
       font-size: 1rem;
       color: $base-black-dark;
+    }
+  }
+
+  @include media-query($base-phone-width) {
+    li {
+      width: 50%;
     }
   }
 }

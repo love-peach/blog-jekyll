@@ -5,6 +5,9 @@ date:   2016-02-07 00:58:24
 categories: article teletext
 whichPage: teletext
 ---
+![图片]({{ site.baseurl}}/assets/image/2016.jpg)
+
+
 爱情里的承诺没有白纸黑字，没有法律保护，仅靠真心担保。比起那些天花乱坠的承诺，不离不弃的陪伴就是最好的承诺。
 
 

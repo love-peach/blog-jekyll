@@ -12,7 +12,7 @@ p {
 
 .container {
   position: relative;
-  max-width: 980px;
+  max-width: $base-container-width;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -131,6 +131,48 @@ p {
       }
     }
   }
+
+  @include media-query(600px) {
+    .menu-icon {
+      float: right;
+      padding: 1.1rem 0 1.1rem .6rem;
+      svg {
+        width: 2rem;
+        height: 1.5rem;
+      }
+    }
+    .menu-icon:hover + .nav-menu {
+      height: 21rem;
+    }
+
+    .nav-brand {
+      float: none;
+    }
+    .nav-menu {
+      overflow: hidden;
+      height: 0;
+      margin-right: -15px;
+      margin-left: -15px;
+
+      clear: both; //清除menu-icon浮动的影响
+
+      float: none;
+
+      transition: height .3s ease;
+      li {
+        float: none;
+        text-align: center;
+        a {
+          line-height: 2.5rem;
+          height: 3.5rem;
+        }
+      }
+    }
+    .nav-menu:hover {
+      height: 21rem; //此处设置也需设置高度，不然鼠标无法悬停在菜单上
+    }
+  }
+
 }
 
 //footer
@@ -144,9 +186,37 @@ p {
     }
   }
   .footer-tel, .footer-contact, .footer-copyright {
-    float: left;
+
     width: 33%;
     line-height: 4rem;
+  }
+
+  .footer-tel {
+    float: left;
+    text-align: left;
+  }
+  .footer-contact {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-copyright {
+    float: right;
+    text-align: right;
+  }
+
+  @include media-query($base-phone-width) {
+    .footer-tel {
+      width: 50%;
+      text-align: left;
+    }
+    .footer-contact {
+      float: right;
+      width: 50%;
+      text-align: right;
+    }
+    .footer-copyright {
+      display: none;
+    }
   }
 }
 
@@ -154,20 +224,33 @@ p {
 .page-body {
   padding-top: 3rem;
   background-color: $base-blue;
+
+  @include media-query($base-container-width) {
+    padding-top: 0;
+  }
 }
 
 .page-wrapper {
   border-radius: 1.3rem;
   overflow: hidden;
+
+  @include media-query($base-container-width) {
+    border-radius: 0;
+  }
 }
 
 .page-banner {
+  display: table;
+  width: 100%;
   height: 24rem;
-  line-height: 24rem;
   font-size: 3rem;
   color: #fff;
   text-shadow: 0 0 .4rem $base-blue-dark;
   background-color: #37ACCB;
+  .banner-title {
+    vertical-align: middle;
+    display: table-cell;
+  }
 }
 
 //文章内容样式
@@ -195,40 +278,23 @@ p {
       border-radius: .5rem;
       border: 1px solid $base-border;
       transition: all .5s ease;
+      @include media-query($base-phone-width) {
+        width:22rem;
+      }
     }
     img:hover {
       width: 100%;
     }
   }
-  .main-title {
-    color: $base-black-dark;
-  }
+  //  .main-title {
+  //    color: $base-cyan;
+  //  }
   .date {
     display: block;
     text-indent: 0;
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  //  //文章内容列表样式
-  //  .content-list {
-  //    li {
-  //      padding-left: 1rem;
-  //      border-left: 3px solid red;
-  //      margin-bottom: 1rem;
-  //      a {
-  //        display: block;
-  //      }
-  //      h1 {
-  //        display: inline-block;
-  //        font-size: 2rem;
-  //      }
-  //      span.page-date {
-  //        font-size: 1.4rem;
-  //
-  //      }
-  //    }
-  //
-  //  }
 }
 
 //列表简介样式
@@ -241,14 +307,14 @@ p {
 
     img {
       width: 14rem;
-      height:inherit;
+      height: inherit;
       min-height: 8rem;
       max-height: 14rem;
       float: left;
       margin: 0 1rem 1rem 0;
     }
     img:hover {
-      width: 20rem;
+      width: 14rem;
     }
   }
 }

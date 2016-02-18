@@ -9,7 +9,11 @@
     <div class="row page-wrapper">
         {% include header.html %}
 
-        <div class="page-banner text-center" style="background: #37ACCB url('{{ site.baseurl}}{{page.bannerImg}}') center center no-repeat;background-size: cover">{{page.title}}</div>
+        <div class="page-banner text-center" style="background: #37ACCB url('{{ site.baseurl}}{{page.bannerImg}}') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                {{page.title}}
+            </div>
+        </div>
 
         <div class="page-content container">
             <h1 class='text-center main-title'>{{ page.title}}</h1>

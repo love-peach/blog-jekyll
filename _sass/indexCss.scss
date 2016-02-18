@@ -1,7 +1,8 @@
 //css首页列表样式
 .css-content-list,
 .html-content-list,
-.js-content-list{
+.js-content-list,
+.teletext-content-list{
   li {
     border-bottom: 1px solid $base-border;
     margin-bottom: 1rem;
@@ -13,9 +14,9 @@
   .list-link {
     display: block;
     padding-left: .5rem;
-    border-left: .4rem solid $base-black-dark;
+    border-left: .4rem solid $base-cyan;
+    color: $base-cyan;
     h1 {
-      color: $base-black-dark;
       font-size: 2.4rem;
     }
   }
@@ -27,12 +28,15 @@
     padding-bottom: .6rem;
     border-bottom: 1px dashed $base-border;
     .list-date {
-      color: $base-black;
+      color: $base-black-light;
       font-size: 1.6rem;
     }
     .list-tags {
       float: right;
-      color: $base-black;
+      color: $base-black-light;
+      a:hover {
+        color: $base-black;
+      }
     }
     a {
       display: inline-block;
@@ -42,9 +46,6 @@
     }
     a:hover {
       text-decoration:underline;
-    }
-    i {
-
     }
   }
 }

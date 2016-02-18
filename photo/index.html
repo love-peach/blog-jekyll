@@ -11,7 +11,10 @@ whichPage: photo
         {% for category in site.categories.[page.whichPage] %}
         <li>
             <a href="{{category.url | prepend: site.baseurl }}">
-                {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+                <div class="photo-list-wrap">
+                    {{ category.excerpt | remove: '<p>' | remove: '</p>'}}
+                </div>
+
                 <h3 class="text-center">{{category.title }}</h3>
 
                 <div class="tip-info clearfix">
