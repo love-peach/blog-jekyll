@@ -134,6 +134,10 @@ https://ruby.taobao.org
 </ul>
 ```
 
+- [x] 分页功能。
+
+    中文网上有相关文档一看就懂，但是需要注意的是，好笑得在_config.yml文件中增加这一行代码：`gems: [jekyll-paginate]`
+
 ### jekyll 使用注意事项
 
 - 启动了多个jekyll,如何关闭

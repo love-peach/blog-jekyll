@@ -4,8 +4,9 @@ source:       .
 destination:  ./_site
 plugins:      ./_plugins
 layouts:      ./_layouts
-
-
+paginate: 10
+paginate_path: "page:num"
+gems: [jekyll-paginate]
 # Handling Reading
 include:      [".htaccess"]
 exclude:      ["node_modules", "package.json", "gulpfile.js"]

@@ -56,9 +56,6 @@ window.onload = function () {
     autoWaterFall($parent, $liBox);
 
 
-
-
-
     function autoWaterFall(parent, liBox) {
         var hArr = [];//存放每一列高度的数组
         var liArr = $(liBox);//获取所有的li

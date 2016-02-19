@@ -4,41 +4,41 @@ whichPage: home
 ---
 <div class="section section1 blue-bg">
     <div id="banner_tabs" class="flexslider">
-	<ul class="slides">
-        <li>
-			<a title="" target="_blank" href="#">
-				<div class="container">
-                    d
-				</div>
-			</a>
-		</li>
-		<li>
-			<a title="" target="_blank" href="#">
-				<img  alt="" style="background: url('{{ site.baseurl}}/assets/image/banner1.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
-			</a>
-		</li>
-		<li>
-			<a title="" href="#">
-				<img  alt="" style="background: url('{{ site.baseurl}}/assets/image/banner2.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
-			</a>
-		</li>
-		<li>
-			<a title="" href="#">
-				<img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner3.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
-			</a>
-		</li>
-	</ul>
-	<ul class="flex-direction-nav">
-		<li><a style="background: url('{{ site.baseurl}}/assets/image/ad_ctr.png') no-repeat;" class="flex-prev" href="javascript:;">Previous</a></li>
-		<li><a style="background-image: url('{{ site.baseurl}}/assets/image/ad_ctr.png');" class="flex-next" href="javascript:;">Next</a></li>
-	</ul>
-	<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
-		<li><a>1</a></li>
-		<li><a>2</a></li>
-		<li><a>3</a></li>
-		<li><a>4</a></li>
-	</ol>
-</div>
+        <ul class="slides">
+            <li>
+                <a title="" target="_blank" href="#">
+                    <div class="container">
+                        d
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a title="" target="_blank" href="#">
+                    <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner1.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner2.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner3.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
+                </a>
+            </li>
+        </ul>
+        <ul class="flex-direction-nav">
+            <li><a style="background: url('{{ site.baseurl}}/assets/image/ad_ctr.png') no-repeat;" class="flex-prev" href="javascript:;">Previous</a></li>
+            <li><a style="background-image: url('{{ site.baseurl}}/assets/image/ad_ctr.png');" class="flex-next" href="javascript:;">Next</a></li>
+        </ul>
+        <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+            <li><a>4</a></li>
+        </ol>
+    </div>
 </div>
 <div class="section section2 silver-bg">
     <h3><span>&nbsp;</span>我的经历</h3>
@@ -90,10 +90,68 @@ whichPage: home
 <div class="section section4 silver-bg">
     <div class="container">
         <h3><span>&nbsp;</span>我的技能</h3>
-        <ul>
+        <ul class=" clearfix">
             <li>
+                <div class="skill-card">
+                    <div class="circle-wrap">
+                        <div class="wrapper left">
+                            <div class="half-circle left-circle"></div>
+                        </div>
+                        <div class="wrapper right">
+                            <div class="half-circle right-circle"></div>
+                        </div>
+                    </div>
+                    <span>80%</span>
 
+                    <p class="text-center skill-name">ps</p>
+                </div>
             </li>
+            <li>
+                <div class="skill-card">
+                    <div class="circle-wrap">
+                        <div class="wrapper left">
+                            <div class="half-circle left-circle"></div>
+                        </div>
+                        <div class="wrapper right">
+                            <div class="half-circle right-circle"></div>
+                        </div>
+                    </div>
+                    <span>70%</span>
+
+                    <p class="text-center skill-name">html</p>
+                </div>
+            </li>
+            <li>
+                <div class="skill-card">
+                    <div class="circle-wrap">
+                        <div class="wrapper left">
+                            <div class="half-circle left-circle"></div>
+                        </div>
+                        <div class="wrapper right">
+                            <div class="half-circle right-circle"></div>
+                        </div>
+                    </div>
+                    <span>65%</span>
+
+                    <p class="text-center skill-name">css</p>
+                </div>
+            </li>
+            <li>
+                <div class="skill-card">
+                    <div class="circle-wrap">
+                        <div class="wrapper left">
+                            <div class="half-circle left-circle"></div>
+                        </div>
+                        <div class="wrapper right">
+                            <div class="half-circle right-circle"></div>
+                        </div>
+                    </div>
+                    <span>45%</span>
+
+                    <p class="text-center skill-name">js</p>
+                </div>
+            </li>
+
         </ul>
     </div>
 </div>
@@ -102,23 +160,23 @@ whichPage: home
         <h3><span>&nbsp;</span>我的案例</h3>
         <ul class="row my-case clearfix">
             <li>
-                <a href="javascript:;">
-                    <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp">
+                <a href="http://www.juluobo.com" target="_blank">
+                    <img src="{{ site.baseurl}}/assets/image/index/case-juluobo.png" alt="gulp">
                 </a>
             </li>
             <li>
-                <a href="javascript:;">
-                    <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp">
+                <a href="http://bingoip.com" target="_blank">
+                    <img src="{{ site.baseurl}}/assets/image/index/case-bingo.png" alt="gulp">
                 </a>
             </li>
             <li>
-                <a href="javascript:;">
-                    <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp">
+                <a href="http://eking99.com" target="_blank">
+                    <img src="{{ site.baseurl}}/assets/image/index/case-eking.png" alt="gulp">
                 </a>
             </li>
             <li>
-                <a href="javascript:;">
-                    <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp">
+                <a href="http://love-peach.github.io/xiaoyage-dishes/" target="_blank">
+                    <img src="{{ site.baseurl}}/assets/image/index/case-xiaoyage.png" alt="gulp">
                 </a>
             </li>
 
@@ -142,23 +200,50 @@ whichPage: home
     </div>
 </div>
 
-<div class="section section7">
-    <div class="container">
-        <img src="{{ site.baseurl}}/assets/image/gulp.png" alt="gulp"/>
-        <ul class="post-list">
-            {% for post in site.Html %}
-            <li>
-                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+{% for post in paginator.posts %}
+<p>
+    <a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</a>
+</p>
 
-                <h2>
-                    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }}</a>
+{% endfor %}
 
-                </h2>
-            </li>
+<hr/>
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    {% else %}
+    <span>&laquo; Prev</span>
+    {% endif %}
 
-            {% endfor %}
-        </ul>
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
 
-        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-    </div>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    {% else %}
+    <span>Next &raquo;</span>
+    {% endif %}
 </div>
+{% endif %}
+
+<hr/>
+{% for page in (1..paginator.total_pages) %}
+{% if page == paginator.page %}
+<span class="active">{{ page }}</span>
+{% elsif page == 1 %}
+<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+{% else %}
+<a href="{{site.baseurl}}/page{{page}}/">{{ page }}</a>
+{% endif %}
+{% endfor %}
+
+
+
