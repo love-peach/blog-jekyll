@@ -130,15 +130,16 @@
 }
 
 .section2 {
+  position: relative;
   .experience {
     margin-top: 3rem;
     margin-bottom: 3rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background-color: $base-silver-dark;
     .line {
       position: absolute;
-      top: 3.2rem;
+      top: 4.2rem;
       margin-left: 10%;
       width: 76%;
       height: 3px;
@@ -158,12 +159,22 @@
     }
     .experience-dotted {
       margin-bottom: 1rem;
+      margin-top: 1rem;
       height: 1rem;
       width: 1rem;
       background-color: $base-blue-md;
       border-radius: .5rem;
     }
   }
+}
+
+.experience-bg {
+  position: absolute;
+  top: 0;
+  height:32rem;
+  width: 100%;
+  background: url('/blog-jekyll/assets/image/index/plane2.png') no-repeat 24%;
+  background-size: auto 120%;
 }
 
 .section4 {
@@ -176,40 +187,37 @@
       width: 25%;
       padding: 1rem;
       box-sizing: border-box;
+
       @include media-query($base-phone-width) {
         width: 100%
       }
     }
   }
-  .skill-card {
-    position: relative;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    background-color: $base-silver-dark;
-    box-shadow: 0 0 5px $base-black;
-    border-radius: 1rem;
-    span {
-      position: absolute;
-      top: 7.5rem;
-      left: 50%;
-      margin-left: -23px;
-      font-size: 2.5rem;
-      color: green;
-    }
-    .skill-name {
-      font-size: 2.5rem;
-      color: green;
-    }
+
+  //卡片样式
+
+  .skill-percent {
+    position: absolute;
+    top: 5.5rem;
+    left: 50%;
+    margin-left: -23px;
+    font-size: 2.5rem;
+    color: green;
+  }
+  .skill-name {
+    font-size: 2.5rem;
+    color: green;
   }
 
+  //圆环样式
   .circle-wrap {
     width: 120px;
-    height: 150px;
-    margin: 0 auto;
+    height: 120px;
+    margin: 0 auto 1rem;
     position: relative;
     .wrapper {
-      width: 100px;
-      height: 200px;
+      width: 60px;
+      height: 120px;
       position: absolute;
       top: 0;
       overflow: hidden;
@@ -233,7 +241,7 @@
       border-top: 7px solid green;
       border-right: 7px solid green;
       right: 0;
-
+      //      -webkit-transform: rotate(-135deg);
     }
     .left-circle {
       border-bottom: 7px solid green;

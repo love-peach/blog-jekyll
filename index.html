@@ -40,7 +40,10 @@ whichPage: home
         </ol>
     </div>
 </div>
-<div class="section section2 silver-bg">
+<div class="section section2 silver-bg ">
+
+    <div class="experience-bg"></div>
+
     <h3><span>&nbsp;</span>我的经历</h3>
 
     <div class=" experience clearfix">
@@ -90,66 +93,62 @@ whichPage: home
 <div class="section section4 silver-bg">
     <div class="container">
         <h3><span>&nbsp;</span>我的技能</h3>
-        <ul class=" clearfix">
+        <ul class="skill-wrap clearfix">
             <li>
-                <div class="skill-card">
-                    <div class="circle-wrap">
-                        <div class="wrapper left">
-                            <div class="half-circle left-circle"></div>
-                        </div>
-                        <div class="wrapper right">
-                            <div class="half-circle right-circle"></div>
-                        </div>
+                <div class="circle-wrap">
+                    <div class="wrapper left">
+                        <div class="half-circle left-circle"></div>
                     </div>
-                    <span>80%</span>
-
-                    <p class="text-center skill-name">ps</p>
+                    <div class="wrapper right">
+                        <div class="half-circle right-circle"></div>
+                    </div>
                 </div>
+                <span class="skill-percent">80</span>
+
+                <p class="text-center skill-name">ps</p>
             </li>
             <li>
-                <div class="skill-card">
-                    <div class="circle-wrap">
-                        <div class="wrapper left">
-                            <div class="half-circle left-circle"></div>
-                        </div>
-                        <div class="wrapper right">
-                            <div class="half-circle right-circle"></div>
-                        </div>
-                    </div>
-                    <span>70%</span>
 
-                    <p class="text-center skill-name">html</p>
+                <div class="circle-wrap">
+                    <div class="wrapper left">
+                        <div class="half-circle left-circle"></div>
+                    </div>
+                    <div class="wrapper right">
+                        <div class="half-circle right-circle"></div>
+                    </div>
                 </div>
+                <span class="skill-percent">70</span>
+
+                <p class="text-center skill-name">html</p>
+
             </li>
             <li>
-                <div class="skill-card">
-                    <div class="circle-wrap">
-                        <div class="wrapper left">
-                            <div class="half-circle left-circle"></div>
-                        </div>
-                        <div class="wrapper right">
-                            <div class="half-circle right-circle"></div>
-                        </div>
-                    </div>
-                    <span>65%</span>
 
-                    <p class="text-center skill-name">css</p>
+                <div class="circle-wrap">
+                    <div class="wrapper left">
+                        <div class="half-circle left-circle"></div>
+                    </div>
+                    <div class="wrapper right">
+                        <div class="half-circle right-circle"></div>
+                    </div>
                 </div>
+                <span class="skill-percent">65</span>
+
+                <p class="text-center skill-name">css</p>
+
             </li>
             <li>
-                <div class="skill-card">
-                    <div class="circle-wrap">
-                        <div class="wrapper left">
-                            <div class="half-circle left-circle"></div>
-                        </div>
-                        <div class="wrapper right">
-                            <div class="half-circle right-circle"></div>
-                        </div>
+                <div class="circle-wrap">
+                    <div class="wrapper left">
+                        <div class="half-circle left-circle"></div>
                     </div>
-                    <span>45%</span>
-
-                    <p class="text-center skill-name">js</p>
+                    <div class="wrapper right">
+                        <div class="half-circle right-circle"></div>
+                    </div>
                 </div>
+                <span class="skill-percent">45</span>
+
+                <p class="text-center skill-name">js</p>
             </li>
 
         </ul>
@@ -200,50 +199,50 @@ whichPage: home
     </div>
 </div>
 
-{% for post in paginator.posts %}
-<p>
-    <a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</a>
-</p>
+<!--{% for post in paginator.posts %}-->
+<!--<p>-->
+<!--<a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</a>-->
+<!--</p>-->
 
-{% endfor %}
+<!--{% endfor %}-->
 
-<hr/>
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-    {% else %}
-    <span>&laquo; Prev</span>
-    {% endif %}
+<!--<hr/>-->
+<!--{% if paginator.total_pages > 1 %}-->
+<!--<div class="pagination">-->
+<!--{% if paginator.previous_page %}-->
+<!--<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>-->
+<!--{% else %}-->
+<!--<span>&laquo; Prev</span>-->
+<!--{% endif %}-->
 
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <em>{{ page }}</em>
-    {% elsif page == 1 %}
-    <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-    {% else %}
-    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-    {% endfor %}
+<!--{% for page in (1..paginator.total_pages) %}-->
+<!--{% if page == paginator.page %}-->
+<!--<em>{{ page }}</em>-->
+<!--{% elsif page == 1 %}-->
+<!--<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>-->
+<!--{% else %}-->
+<!--<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>-->
+<!--{% endif %}-->
+<!--{% endfor %}-->
 
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-    <span>Next &raquo;</span>
-    {% endif %}
-</div>
-{% endif %}
+<!--{% if paginator.next_page %}-->
+<!--<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>-->
+<!--{% else %}-->
+<!--<span>Next &raquo;</span>-->
+<!--{% endif %}-->
+<!--</div>-->
+<!--{% endif %}-->
 
-<hr/>
-{% for page in (1..paginator.total_pages) %}
-{% if page == paginator.page %}
-<span class="active">{{ page }}</span>
-{% elsif page == 1 %}
-<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-{% else %}
-<a href="{{site.baseurl}}/page{{page}}/">{{ page }}</a>
-{% endif %}
-{% endfor %}
+<!--<hr/>-->
+<!--{% for page in (1..paginator.total_pages) %}-->
+<!--{% if page == paginator.page %}-->
+<!--<span class="active">{{ page }}</span>-->
+<!--{% elsif page == 1 %}-->
+<!--<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>-->
+<!--{% else %}-->
+<!--<a href="{{site.baseurl}}/page{{page}}/">{{ page }}</a>-->
+<!--{% endif %}-->
+<!--{% endfor %}-->
 
 
 

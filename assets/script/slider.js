@@ -161,7 +161,7 @@ $(function() {
 		time: 5000,
 		delay: 400,
 		event: 'hover',
-		auto: false,
+		auto: true,
 		mode: 'fade',
 		controller: $('#bannerCtrl'),
 		activeControllerCls: 'active'

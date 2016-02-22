@@ -39,9 +39,45 @@
 //window.onmousewheel = document.onmousewheel;
 //document.onmousewheel = scrollFunc;
 
+$(document).ready(function () {
+
+});
+
+$(function () {
+
+});
 
 window.onload = function () {
 
+    //首页圆环动画事件
+
+
+    var $skillCard = $('.skill-wrap li');
+    var skillPercent = $skillCard.find('.skill-percent');
+    var data = [];
+
+
+
+
+    for (var i = 0;i<skillPercent.length;i++) {
+        var number = parseInt(skillPercent.eq(i).html());
+        data.push(number);
+    }
+
+    console.log(data);
+
+
+//    $skillCard.each(function (k, v) {
+//        var data = skillPercent[k];
+//        console.log(data);
+//    });
+
+
+
+
+    var $circleWrap = $('.circle-wrap');
+    var leftCircle = $circleWrap.find('.left-circle');
+    var rightCircle = $circleWrap.find('.right-circle');
 
 
     //为超链接加上target='_blank'属性
