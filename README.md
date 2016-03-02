@@ -147,4 +147,6 @@ https://ruby.taobao.org
     如果你想关闭服务器，可以使用`kill -9 1234`命令，"1234" 是进程号（PID）。
     如果你找不到进程号，那么就用`ps aux | grep jekyll`命令来查看，然后关闭服务器。
 
+- 第一次搭建jekyll环境时，分页插件并不会自动安装，编译时报错，需要手动安装`gem install jekyll-paginate`
+
 npm install --save-dev gulp gulp-less gulp-minify-css gulp-autoprefixer gulp-jshint gulp-uglify imagemin-pngquant gulp-changed gulp-clean gulp-notify browser-sync gulp-concat gulp-rename gulp-imagemin run-sequence

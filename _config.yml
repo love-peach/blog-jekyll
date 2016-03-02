@@ -32,7 +32,7 @@ baseurl: /blog-jekyll
 markdown: kramdown
 
 safe: false
-highlighter: pygments
+highlighter: rouge
 title: 莫忘初衷
 description: 莫忘初衷，不负此生。
 theme: slate
