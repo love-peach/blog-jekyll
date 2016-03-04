@@ -9,9 +9,18 @@ comments: true
 
 ![tupian](http://d.pcs.baidu.com/thumbnail/35a2f31a4067e95c44d35c561b308c75?fid=3861365432-250528-272466513634861&time=1455764400&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-c%2BtXd42ui2JGE7MttB%2FjsPzLyQo%3D&rt=sh&expires=2h&r=256287659&sharesign=unknown&size=c710_u500&quality=100)
 ![poco](http://img17.poco.cn/mypoco/myphoto/20160218/11/17877611920160218114616071.jpg?1024x727_120 "poco")
+![七牛图片][tupian3]
 ![github][tupian2]
 这时简介
 
 {% assign imgSrc = "https://raw.githubusercontent.com/love-peach/images/master" %}
+{% assign imgQiSrc = "http://7xrioc.com1.z0.glb.clouddn.com" %}
 
+
+
+[tupian3]: {{imgQiSrc}}/captain2.jpg
 [tupian2]: {{imgSrc}}/blog-jekyll/bg4.jpg
+
+
+http://www.jianshu.com/p/6dce6094bf61
+http://docs.qiniu.com/tools/v6/qrsync.html
