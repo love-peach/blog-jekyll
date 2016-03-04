@@ -86,7 +86,7 @@ $ gem sources -l
 *** CURRENT SOURCES ***
 
 https://ruby.taobao.org
-```
+
 
 ### 2. 初始化jekyll并上传到github
 
@@ -115,9 +115,9 @@ https://ruby.taobao.org
 
 > git add -all
 > git commit -m "first post"
->  git push origin gh-pages
+> git push origin gh-pages
 
-### 博客搭架子
+### 3. 博客搭架子
 
 - [x] 设计自己博客的样式
 - [x] 生成导航栏　链接，顺序
@@ -133,6 +133,50 @@ https://ruby.taobao.org
     {% endfor %}
 </ul>
 ```
+
+### 4. 图床选择
+
+在网站中，不可避免的需要使用图片，如果图片比较少，当然可以放在当前项目的对应目录中，但是当图片变得多了起来，
+我们就需要找个地方，将图片什么的静态资源放在一起，一方面方便管理，另一方面也能一定程度上做到CDN的效果。那么，
+问题来了，我们将图片放在哪呢。我这里试了几种办法，记录一下
+
+- 第一种：　使用百度云。
+
+百度云的使用就不多说，自行百度。当我们吧文件上传到百度云后，创建文件外链，就可以拿来用，`问题`是百度云的外链有时效。好像是两个小时。
+
+- 第二种：使用github仓库。
+
+在github上创建一个仓库，专门存放静态资源文件。然后在github中打开这个文件，点击右上角的`Raw`,这时会在浏览器中看到这个文件，
+地址栏中的地址就是你要用的文件外链，例如:  
+https://raw.githubusercontent.com/love-peach/images/master/blog-jekyll/bg1.jpg  
+注意，这个外链前面的一长串都是一样的，不变的，需要用应用不同的文件，只需要改变后面的文件名就行，例如:  
+https://raw.githubusercontent.com/love-peach/images/master/blog-jekyll/bg2.jpg
+
+`问题`是github毕竟是个代码托管网站，适合存放代码的，不太适合存放图片等文件，而且有仓库大小限制，好像是1G.
+
+- 第三种：使用七牛云存储。
+
+七牛云存储，空间10G,足够我用了，而且免费。点击文件，在右侧就有文件的外链，图片外链跟github一样好用，前面一大串也是一样的。例如：　
+http://7xrioc.com1.z0.glb.clouddn.com/img%2Ficon%2Ffavicon.jpg
+（自动将外链转码）
+
+如果升级为标准用户后，这个一大长串的字符，可以解析为你的域名。下面说下，怎么在本地（ubuntu系统）利用qrsync工具批量上传文件到七牛云存储。
+
+首先，创建七牛账号，创建空间，获取AK值，和SK值（七牛提供，在账号－秘钥下）。
+然后，下载qrsync工具。然后在qrsync的目录下，打开终端，`cp qrsync /usr/local/bin/`（不然，无法在终端中使用qrsync命令）
+接着，配置qrsync。随便在哪个目录下创建conf.json文件，内容如下：　
+```javascript
+{
+    "access_key": "Please apply your access key here",
+    "secret_key": "Dont send your secret key to anyone",
+    "bucket": "Bucket name on qiniu resource storage",
+    "sync_dir": "Local directory to upload",
+    "async_ops": "fop1;fop2;fopN",
+    "debug_level": 1
+}
+```
+具体参数啥意思，自行百度。提供参考链接[如何使用七牛云做为图床？](http://www.jianshu.com/p/6dce6094bf61)
+ [qrsync 命令行同步工具](http://docs.qiniu.com/tools/v6/qrsync.html)
 
 - [x] 分页功能。
 

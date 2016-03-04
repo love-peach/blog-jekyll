@@ -20,7 +20,3 @@ comments: true
 
 [tupian3]: {{imgQiSrc}}/captain2.jpg
 [tupian2]: {{imgSrc}}/blog-jekyll/bg4.jpg
-
-
-http://www.jianshu.com/p/6dce6094bf61
-http://docs.qiniu.com/tools/v6/qrsync.html
