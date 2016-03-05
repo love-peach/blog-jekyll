@@ -24,6 +24,7 @@ detach:       false
 port:         3000
 host:         127.0.0.1
 url:          /blog-jekyll
+cloudSrc:     "http://7xrioc.com1.z0.glb.clouddn.com"
 
 #################################### global configure #######################################
 

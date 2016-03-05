@@ -79,14 +79,13 @@ git push origin gh-pages
 - 安装github-pages或者Bundler 。这里有两套方案选择，参考 [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/#troubleshooting)。我用的是直接安装github-pages，会将所以来的包统一安装上，包括jkeyll。
 
     这里需要注意下，可能由于你的网络环境这一步执行不了报错，`参考链接：`[解决国内gem不能用的问题](http://www.haorooms.com/post/gem_not_use)`ERROR:  While executing gem ...(Gem::RemoteFetcher::FetchError)    Errno::ECONNRESET: Connection reset by peer - SSL_connect (https://api.rubygems.org/quick/Marshal.4.8/github-pages-43.gemspec.rz)`原因是ruby 的gem被和谐了，现在淘宝的ruby工程师架设了rubygems的国内镜像。使用方法如下：
-    ```command
-    $ gem sources --remove https://rubygems.org/
+```command
+$ gem sources --remove https://rubygems.org/
 $ gem sources -a https://ruby.taobao.org/
 $ gem sources -l
 *** CURRENT SOURCES ***
-
 https://ruby.taobao.org
-
+```
 
 ### 2. 初始化jekyll并上传到github
 
@@ -148,16 +147,16 @@ https://ruby.taobao.org
 
 在github上创建一个仓库，专门存放静态资源文件。然后在github中打开这个文件，点击右上角的`Raw`,这时会在浏览器中看到这个文件，
 地址栏中的地址就是你要用的文件外链，例如:  
-https://raw.githubusercontent.com/love-peach/images/master/blog-jekyll/bg1.jpg  
+https://raw.githubusercontent.com/love-peach/images/master/cloudIMG/img/picture/indexBanner1.jpg  
 注意，这个外链前面的一长串都是一样的，不变的，需要用应用不同的文件，只需要改变后面的文件名就行，例如:  
-https://raw.githubusercontent.com/love-peach/images/master/blog-jekyll/bg2.jpg
+https://raw.githubusercontent.com/love-peach/images/master/cloudIMG/img/picture/indexBanner2.jpg
 
 `问题`是github毕竟是个代码托管网站，适合存放代码的，不太适合存放图片等文件，而且有仓库大小限制，好像是1G.
 
 - 第三种：使用七牛云存储。
 
 七牛云存储，空间10G,足够我用了，而且免费。点击文件，在右侧就有文件的外链，图片外链跟github一样好用，前面一大串也是一样的。例如：　
-http://7xrioc.com1.z0.glb.clouddn.com/img%2Ficon%2Ffavicon.jpg
+http://7xrioc.com1.z0.glb.clouddn.com/img%2Fillustration%2F2016.jpg
 （自动将外链转码）
 
 如果升级为标准用户后，这个一大长串的字符，可以解析为你的域名。下面说下，怎么在本地（ubuntu系统）利用qrsync工具批量上传文件到七牛云存储。
@@ -175,8 +174,10 @@ http://7xrioc.com1.z0.glb.clouddn.com/img%2Ficon%2Ffavicon.jpg
     "debug_level": 1
 }
 ```
-具体参数啥意思，自行百度。提供参考链接[如何使用七牛云做为图床？](http://www.jianshu.com/p/6dce6094bf61)
- [qrsync 命令行同步工具](http://docs.qiniu.com/tools/v6/qrsync.html)
+具体参数啥意思，自行百度。提供参考链接[如何使用七牛云做为图床？](http://www.jianshu.com/p/6dce6094bf61) [qrsync 命令行同步工具](http://docs.qiniu.com/tools/v6/qrsync.html)
+
+另外需要注意的时，有可能你的qrsync执行不了，可能时.qrsync文件夹缓存的问题，删除该文件夹下的文件就行。
+ 
 
 - [x] 分页功能。
 

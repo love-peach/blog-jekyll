@@ -127,6 +127,19 @@
     height: 40rem;
     display: block;
   }
+
+  .slider-welcome {
+
+    a {
+      background-image: url('http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FindexBannerBg1.jpg');
+      background-size: cover;
+      img {
+        background:url('http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FindexBannerWelcome.png') no-repeat center center;
+        background-size: 60% auto
+      }
+    }
+
+  }
 }
 
 .section2 {
@@ -173,8 +186,22 @@
   top: 0;
   height:32rem;
   width: 100%;
-  background: url('/blog-jekyll/assets/image/index/plane2.png') no-repeat 24%;
+  background-repeat: no-repeat;
+  background-position: 10% ;
   background-size: auto 120%;
+}
+
+.section3 {
+  background-image: url('http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FindexHobbyBg.png');
+  background-size: cover;
+  .img-wrap {
+    padding: 2rem 0 1rem;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
 }
 
 .section4 {

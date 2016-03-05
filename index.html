@@ -5,10 +5,10 @@ whichPage: home
 <div class="section section1 blue-bg">
     <div id="banner_tabs" class="flexslider">
         <ul class="slides">
-            <li>
-                <a title="" target="_blank" href="#">
+            <li class="slider-welcome">
+                <a  title="" target="_blank" href="#">
                     <div class="container">
-                        d
+                        <img src="{{ site.cloudSrc}}/img/common/alpha.png"  style="" alt="欢迎光临">
                     </div>
                 </a>
             </li>
@@ -42,7 +42,7 @@ whichPage: home
 </div>
 <div class="section section2 silver-bg ">
 
-    <div class="experience-bg"></div>
+    <div class="experience-bg" style="background-image: url( {{site.cloudSrc}}/img/picture/plane2.png)"></div>
 
     <h3><span>&nbsp;</span>我的经历</h3>
 
@@ -87,7 +87,9 @@ whichPage: home
 <div class="section section3 blue-bg">
     <div class="container">
         <h3><span>&nbsp;</span>我的爱好</h3>
-
+        <div class="text-center img-wrap">
+            <img src="{{site.cloudSrc}}/img/picture/indexHobby.png" alt="gulp">
+        </div>
     </div>
 </div>
 <div class="section section4 silver-bg">
@@ -160,22 +162,22 @@ whichPage: home
         <ul class="row my-case clearfix">
             <li>
                 <a href="http://www.juluobo.com" target="_blank">
-                    <img src="{{ site.baseurl}}/assets/image/index/case-juluobo.png" alt="gulp">
+                    <img src="{{ site.cloudSrc}}/img/picture/case-juluobo.png" alt="gulp">
                 </a>
             </li>
             <li>
                 <a href="http://bingoip.com" target="_blank">
-                    <img src="{{ site.baseurl}}/assets/image/index/case-bingo.png" alt="gulp">
+                    <img src="{{ site.cloudSrc}}/img/picture/case-bingo.png" alt="gulp">
                 </a>
             </li>
             <li>
                 <a href="http://eking99.com" target="_blank">
-                    <img src="{{ site.baseurl}}/assets/image/index/case-eking.png" alt="gulp">
+                    <img src="{{ site.cloudSrc}}/img/picture/case-eking.png" alt="gulp">
                 </a>
             </li>
             <li>
-                <a href="http://love-peach.github.io/xiaoyage-dishes/" target="_blank">
-                    <img src="{{ site.baseurl}}/assets/image/index/case-xiaoyage.png" alt="gulp">
+                <a href="http://www.xiaoyage.com" target="_blank">
+                    <img src="{{ site.cloudSrc}}/img/picture/case-xiaoyage.png" alt="gulp">
                 </a>
             </li>
 
