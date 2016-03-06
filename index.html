@@ -6,24 +6,24 @@ whichPage: home
     <div id="banner_tabs" class="flexslider">
         <ul class="slides">
             <li class="slider-welcome">
-                <a  title="" target="_blank" href="#">
+                <a title=""href="javascript:;">
                     <div class="container">
-                        <img src="{{ site.cloudSrc}}/img/common/alpha.png"  style="" alt="欢迎光临">
+                        <img src="{{ site.cloudSrc}}/img/common/alpha.png" style="" alt="欢迎光临">
                     </div>
                 </a>
             </li>
             <li>
-                <a title="" target="_blank" href="#">
+                <a title="" href="javascript:;">
                     <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner1.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
                 </a>
             </li>
             <li>
-                <a title="" href="#">
+                <a title="" href="javascript:;">
                     <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner2.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
                 </a>
             </li>
             <li>
-                <a title="" href="#">
+                <a title="" href="javascript:;">
                     <img alt="" style="background: url('{{ site.baseurl}}/assets/image/banner3.jpg') no-repeat center;" src="{{ site.baseurl}}/assets/image/alpha.png">
                 </a>
             </li>
@@ -87,15 +87,54 @@ whichPage: home
 <div class="section section3 blue-bg">
     <div class="container">
         <h3><span>&nbsp;</span>我的爱好</h3>
+
         <div class="text-center img-wrap">
             <img src="{{site.cloudSrc}}/img/picture/indexHobby.png" alt="gulp">
         </div>
     </div>
 </div>
 <div class="section section4 silver-bg">
-    <div class="container">
+    <div class="container clearfix">
         <h3><span>&nbsp;</span>我的技能</h3>
-        <ul class="skill-wrap clearfix">
+        <ul class="skill-graphs">
+            <li class="skill-ps">
+                <span class="skill-icon">Ps</span>
+                <div class="skill-bar">
+                    <div class="skill-schedule" title="75%"></div>
+                </div>
+                <span class="skill-brief">做过美工</span>
+            </li>
+            <li class="skill-ps">
+                <span class="skill-icon">Html</span>
+                <div class="skill-bar">
+                    <div class="skill-schedule" title="65%"></div>
+                </div>
+                <span class="skill-brief">会写标签</span>
+            </li>
+            <li class="skill-ps">
+                <span class="skill-icon">Css</span>
+                <div class="skill-bar">
+                    <div class="skill-schedule" title="50%"></div>
+                </div>
+                <span class="skill-brief">能调样式</span>
+            </li>
+            <li class="skill-ps">
+                <span class="skill-icon">Js</span>
+                <div class="skill-bar">
+                    <div class="skill-schedule" title="30%"></div>
+                </div>
+                <span class="skill-brief">辣鸡水平</span>
+            </li>
+
+
+        </ul>
+        <div class="skill-intraduce">
+            介绍
+        </div>
+    </div>
+    <div class="container" style="display: none;">
+        <h3><span>&nbsp;</span>我的技能</h3>
+        <ul class="skill-ul skill-wrap clearfix">
             <li>
                 <div class="circle-wrap">
                     <div class="wrapper left">
@@ -195,9 +234,8 @@ whichPage: home
             <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
             <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
         </div>
-        <p class="my-wishes">愿我成为这样的人：不忘本，不炫耀，不急躁，做一个博学的人；
-            <br/>懂点小幽默，至少会哄老婆开心；知道孝敬父母，照顾兄长；
-            <br/>闲来无事还能有点小钱陪家人旅旅游。</p>
+        <p class="my-wishes"><span>愿我成为这样的人：不忘本，不炫耀，不急躁，做一个博学的人；</span><span>懂点小幽默，至少会哄老婆开心；知道孝敬父母，照顾兄长</span><span>闲来无事还能有点小钱陪家人旅旅游。</span></p>
+
     </div>
 </div>
 

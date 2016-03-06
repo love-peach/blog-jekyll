@@ -131,9 +131,13 @@ p {
       }
     }
   }
+  .menu-icon {
+    display: none;
+  }
 
   @include media-query(600px) {
     .menu-icon {
+      display: block;
       float: right;
       padding: 1.1rem 0 1.1rem .6rem;
       svg {
@@ -261,7 +265,6 @@ p {
   p {
     position: relative;
     margin-bottom: 2rem;
-    text-align: justify;
     //    text-indent: 3rem;
     a {
       color: $base-blue;

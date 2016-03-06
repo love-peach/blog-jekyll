@@ -33,7 +33,6 @@
 }
 
 .section1 {
-  height: 40rem;
   padding: 0;
   a {
     display: block;
@@ -128,8 +127,17 @@
     display: block;
   }
 
-  .slider-welcome {
+  @include media-query(600px) {
+    .flexslider {
+      height: 24rem;
+    }
+    .flexslider .slides a img {
+      height: 24rem;
+    }
+  }
 
+
+  .slider-welcome {
     a {
       background-image: url('http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FindexBannerBg1.jpg');
       background-size: cover;
@@ -138,7 +146,6 @@
         background-size: 60% auto
       }
     }
-
   }
 }
 
@@ -206,7 +213,68 @@
 
 .section4 {
 
-  ul {
+  .skill-graphs {
+    float: left;
+    width: 60%;
+    @include media-query(600px) {
+      width: 100%;
+    }
+    li {
+      position: relative;
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .skill-icon {
+      display: inline-block;
+      float: left;
+      width: 3.5rem;
+      height: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      border-radius: .3rem;
+      background-color: $base-red;
+    }
+    .skill-brief {
+      display: inline-block;
+      float: right;
+      width: 6rem;
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 1.4rem;
+      color: $base-black-dark;
+    }
+
+    .skill-bar {
+      position: absolute;
+      left: 4.5rem;
+      right: 7rem;
+      height: 1.6rem;
+      margin-top: .7rem;
+      border-radius: .3rem;
+      background-color: $base-black-light;
+      .skill-schedule {
+        width: 0%;
+        height: 100%;
+        border-top-left-radius: .3rem;
+        border-bottom-left-radius: .3rem;
+        background-color: $base-black;
+        transition: width .5s ease;
+      }
+    }
+  }
+  .skill-intraduce {
+    float: left;
+    width: 40%;
+    border: 1px solid red;
+    @include media-query(600px) {
+      display: none;
+    }
+  }
+  .skill-ul {
     width: 100%;
     li {
       position: relative;
@@ -285,6 +353,9 @@
     li {
       float: left;
       width: 33.33%;
+      @include media-query(600px) {
+        width: 50%;
+      }
       a {
         display: block;
         margin: 1.2rem;
@@ -292,8 +363,8 @@
         box-shadow: 0 0 5px $base-black;
         img {
           width: 100%;
-          height: 160px;
-          min-height: 150px;
+
+
           translate: scale(12);
 
           transition: all .3s ease;
@@ -329,5 +400,14 @@
     text-align: center;
     font-size: 1rem;
     color: $base-black;
+    span {
+      display: block;
+    }
+    @include media-query(600px) {
+     width: 100%;
+      span {
+        display: inline;
+      }
+    }
   }
 }

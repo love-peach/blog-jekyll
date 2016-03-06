@@ -9,10 +9,10 @@ comments: true
 
 ![七牛图片][tupian3]
 
-这时简介 {{site.cloudSrc}}
+这时简介
 
 {% assign imgSrc = "https://raw.githubusercontent.com/love-peach/images/master" %}
 {% assign imgQiSrc = "http://7xrioc.com1.z0.glb.clouddn.com" %}
 
 
-[tupian3]: {{imgQiSrc}}/img/background/bg1.jpg
+[tupian3]: {{imgQiSrc}}/img/illustration/imaginativeChildren.jpg

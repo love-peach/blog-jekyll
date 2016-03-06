@@ -39,58 +39,40 @@
 //window.onmousewheel = document.onmousewheel;
 //document.onmousewheel = scrollFunc;
 
-$(document).ready(function () {
 
-});
-
-$(function () {
-
-});
 
 window.onload = function () {
 
-    //首页圆环动画事件
+    //首页技能进度条事件
 
+    $(window).scroll(function(){
+        var scrollHeight=$(window).scrollTop();
+        var $skillSchedule = $('.skill-schedule');
 
-    var $skillCard = $('.skill-wrap li');
-    var skillPercent = $skillCard.find('.skill-percent');
-    var data = [];
-
-
-
-
-    for (var i = 0;i<skillPercent.length;i++) {
-        var number = parseInt(skillPercent.eq(i).html());
-        data.push(number);
+        if (scrollHeight>900) {
+            progressAnimate($skillSchedule);
+        }
+    });
+    function progressAnimate (schedule) {
+        var numberData = [];
+        for (var i = 0;i<schedule.length;i++) {
+            var number = schedule.eq(i).attr('title');
+            numberData.push(number);
+            schedule.eq(i).css({width: number});
+        }
     }
-
-    console.log(data);
-
-
-//    $skillCard.each(function (k, v) {
-//        var data = skillPercent[k];
-//        console.log(data);
-//    });
-
-
-
-
-    var $circleWrap = $('.circle-wrap');
-    var leftCircle = $circleWrap.find('.left-circle');
-    var rightCircle = $circleWrap.find('.right-circle');
 
 
     //为超链接加上target='_blank'属性
-    $('p a[href^="http"]').each(function () {
-        $(this).attr('target', '_blank');
-    });
+    //$('p a[href^="http"]').each(function () {
+    //    $(this).attr('target', '_blank');
+    //});
 
 
     //瀑布流布局
     var $parent = $('.photo-content-list');
     var $liBox = $parent.find('li');
     autoWaterFall($parent, $liBox);
-
 
     function autoWaterFall(parent, liBox) {
         var hArr = [];//存放每一列高度的数组
