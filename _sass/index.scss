@@ -224,7 +224,9 @@
       clear: both;
       overflow: hidden;
       margin-bottom: 1rem;
+      cursor: pointer;
     }
+
     .skill-icon {
       display: inline-block;
       float: left;
@@ -273,79 +275,18 @@
     @include media-query(600px) {
       display: none;
     }
+    p {
+      display: none;
+      height: 15rem;
+      overflow-y: auto;
+      border: 1px solid red;
+
+    }
+    p.intraduce-ps {
+      display: block;
+    }
+
   }
-  .skill-ul {
-    width: 100%;
-    li {
-      position: relative;
-      float: left;
-      width: 25%;
-      padding: 1rem;
-      box-sizing: border-box;
-
-      @include media-query($base-phone-width) {
-        width: 100%
-      }
-    }
-  }
-
-  //卡片样式
-
-  .skill-percent {
-    position: absolute;
-    top: 5.5rem;
-    left: 50%;
-    margin-left: -23px;
-    font-size: 2.5rem;
-    color: green;
-  }
-  .skill-name {
-    font-size: 2.5rem;
-    color: green;
-  }
-
-  //圆环样式
-  .circle-wrap {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1rem;
-    position: relative;
-    .wrapper {
-      width: 60px;
-      height: 120px;
-      position: absolute;
-      top: 0;
-      overflow: hidden;
-    }
-    .right {
-      right: 0;
-    }
-    .left {
-      left: 0;
-    }
-    .half-circle {
-      width: 120px;
-      height: 120px;
-      border: 7px solid transparent;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      -webkit-transform: rotate(45deg);
-    }
-    .right-circle {
-      border-top: 7px solid green;
-      border-right: 7px solid green;
-      right: 0;
-      //      -webkit-transform: rotate(-135deg);
-    }
-    .left-circle {
-      border-bottom: 7px solid green;
-      border-left: 7px solid green;
-      left: 0;
-
-    }
-  }
-
 }
 
 .section5 {
