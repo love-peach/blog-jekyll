@@ -14,6 +14,41 @@ bannerImg: /img/illustration/2016.jpg
 
 
 
+## &lt;title&gt;标签
+
 &lt;title&gt; 定义文档的标题，它是 head 部分中唯一必需的元素。
 
-这里是正文
+{% highlight  html  %}
+
+<head>
+    <title>文档标题</title>
+</head>
+
+{% endhighlight %}
+
+## &lt;link&gt;标签  
+
+&lt;link&gt; 标签定义文档与外部资源的关系。最常见的用途是链接样式表。
+
+
+{% highlight html linenos %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+</head>
+
+{% endhighlight %}
+
+
+## &lt;base&gt;标签
+
+&lt;base&gt; 标签为页面上的所有链接规定默认地址或默认目标。
+
+通常情况下，浏览器会从当前文档的 URL 中提取相应的元素来填写相对 URL 中的空白。使用 &lt;base&gt; 标签可以改变这一点。
+浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。这其中包括 &lt;a&gt;、&lt;img&gt;、&lt;link&gt;、&lt;form&gt; 标签中的 URL。
+&lt;base&gt;中的target，将指定页面中所有链接的打开方式。
+
+
+
+
+

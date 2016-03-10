@@ -9,6 +9,24 @@ body, html {
 h1, h2, h3, h4, p {
   margin: 0 0 10px;
 }
+h1 {
+  font-size: $base-h1;
+}
+h2 {
+  font-size: $base-h1*0.7;
+}
+h3 {
+  font-size: $base-h1*0.7*0.7;
+}
+h4 {
+  font-size: $base-h1*0.7*0.7*0.7;
+}
+h5 {
+  font-size: $base-h1*0.7*0.7*0.7*0.7;
+}
+h6 {
+  font-size: $base-h1*0.7*0.7*0.7*0.7*0.7;
+}
 p {
   line-height: 1.5;
   font-size: 1.6rem;

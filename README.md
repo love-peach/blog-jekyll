@@ -1,5 +1,6 @@
 http://www.w3cplus.com/solution/index/index.html
-有意思的博客：  
+有意思的博客： 
+-  http://www.itxuye.com/
 - [hongkiat](http://www.hongkiat.com/blog/)
 - [guolingfa](http://www.guolingfa.cn/)
 - [make tech easier](https://www.maketecheasier.com/)
