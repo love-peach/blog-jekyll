@@ -298,6 +298,31 @@ p {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
+
+  //表格样式
+
+  table{
+    margin: 0 auto 2rem;
+    border-collapse: collapse;
+    border: solid $base-border;
+    border-width:1px 0px 0px 1px;
+    th {
+      padding: 1rem;
+      color: #fff;
+      font-size: 1.6rem;
+      background-color: $base-blue-dark;
+      + th {
+        border-left: 1px solid $base-border;
+      }
+    }
+    td{
+      padding:1rem;
+      border:solid $base-border;
+      border-width:0px 1px 1px 0px;
+      color: $base-black-dark;
+
+    }
+  }
 }
 
 //列表简介样式

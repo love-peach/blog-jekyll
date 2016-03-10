@@ -18,7 +18,7 @@ bannerImg: /img/illustration/2016.jpg
 
 &lt;title&gt; 定义文档的标题，它是 head 部分中唯一必需的元素。
 
-{% highlight  html  %}
+{% highlight html %}
 
 <head>
     <title>文档标题</title>
@@ -31,7 +31,7 @@ bannerImg: /img/illustration/2016.jpg
 &lt;link&gt; 标签定义文档与外部资源的关系。最常见的用途是链接样式表。
 
 
-{% highlight html linenos %}
+{% highlight html %}
 
 <head>
     <link rel="stylesheet" type="text/css" href="demo.css" />
@@ -48,7 +48,109 @@ bannerImg: /img/illustration/2016.jpg
 浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。这其中包括 &lt;a&gt;、&lt;img&gt;、&lt;link&gt;、&lt;form&gt; 标签中的 URL。
 &lt;base&gt;中的target，将指定页面中所有链接的打开方式。
 
+{% highlight html %}
+<head>
+    <base href="http://www.w3school.com.cn/i/" />
+    <base target="_blank" />
+</head>
+<body>
+    <img src="eg_smile.gif" />
+    <a href="http://www.w3school.com.cn">W3School</a>
+</body>
+{% endhighlight%}
+
+## &lt;meta&gt;标签
+
+&lt;meta&gt; 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+
+&lt;meta&gt; 标签位于文档的头部，不包含任何内容。&lt;meta&gt; 标签的属性定义了与文档相关联的名称/值对。
+
+<table>
+    <tbody>
+        <tr>
+            <th>属性</th>
+            <th>值</th>
+            <th>描述</th>
+            <th>DTD</th>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_http-equiv">http-equiv</a></td>
+            <td><ul><li>content-type</li><li>expires</li><li>refresh</li><li>set-cookie </li></ul></td>
+            <td>把 content 属性关联到 HTTP 头部。</td>
+            <td>STF</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_name">name</a></td>
+            <td><ul><li>author</li><li>description</li><li>keywords</li><li>generator</li><li>revised</li><li>others </li></ul></td>
+            <td>把 content 属性关联到一个名称。</td>
+            <td>STF</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_scheme">scheme</a></td>
+            <td>some_text</td>
+            <td>定义用于翻译 content 属性值的格式。</td>
+            <td>STF</td>
+        </tr>
+    </tbody>
+</table>
+
+{% highlight html %}
+
+<!--- the site is designed bywebjx.com 06/2006 ---> <!--- 公司版权注释　--->
+
+<meta http-equiv="content-type" content="text/html; charset=gb2312" /> <!--- 网页显示字符集，简体中文　--->
+<meta http-equiv="content-type" content="text/html; charset=big5"> <!--- 网页显示字符集，繁体中文　--->
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!--- 网页显示字符集，英 语　--->
+
+<meta http-equiv="expires" content="31 Dec 2008"> <!--- 设定网页的到期时间。　--->
+<meta http-equiv="refresh" content="5;url=http://love-peach.github.io/blog-jekyll/"> <!--- 重定向，自动跳转，时间停留5秒　--->
+<meta http-equiv="pragma" content="no-cache"> <!--- 禁止浏览器从本地机的缓存中调阅页面内容　--->
+<meta http-equiv="window-target" content="_top"> <!--- 在浏览器最顶层打开，禁止浏览器从本地机的缓存中调阅页面内容　--->
+
+<meta name="author"  content="张晋佩"> <!--- 网页制作者信息　--->
+<meta name="description"  content="张晋佩的个人博客，记录前端学习之路的一些知识点和问题"> <!--- 网站简介,描述　--->
+<meta name="keywords"  content="HTML, DHTML, CSS, XML, XHTML, JavaScript">　<!--- 搜索关键字　--->
+<meta name="revised"  content="2.17">　<!--- 描述网页的版本　--->
+<meta name="generator"  content="Sublime">　<!--- 描述网页是通过那种软件产生　--->
+<meta name="robots" content="none">　<!--- 网页搜索机器人向导.用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引　--->
 
 
+<!-- 移动端 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/> <!--- 能优化移动浏览器的显示 --->
+<!--- 1. width：宽度（数值 / device-width）（范围从200 到10,000，默认为980 像素）
+      2. height：高度（数值 / device-height）（范围从223 到10,000）
+      3. initial-scale：初始的缩放比例 （范围从>0 到10）
+      4. minimum-scale：允许用户缩放到的最小比例
+      5. maximum-scale：允许用户缩放到的最大比例
+      6. user-scalable：用户是否可以手动缩 (no,yes)　--->
 
+<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 启用 WebApp 全屏模式　伪装app，离线应用 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />　<!--　只有在开启WebApp全屏模式时才生效。content的值为default | black | black-translucent 。　-->
+<meta name="apple-mobile-web-app-title" content="标题">　<!--添加到主屏后的标题--->
+<meta content="telephone=no" name="format-detection" /> <!--忽略数字自动识别为电话号码--->
+<meta content="email=no" name="format-detection" />　<!--忽略识别邮箱--->
 
+<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+<meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
+<meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
+<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+<meta name="browsermode" content="application"><!-- UC应用模式 -->
+<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->
+
+<!-- 网页相关 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!-- 关于X-UA-Compatible -->
+<meta http-equiv="X-UA-Compatible" content="IE=6" ><!-- 使用IE6 -->
+<meta http-equiv="X-UA-Compatible" content="IE=7" ><!-- 使用IE7 -->
+<meta http-equiv="X-UA-Compatible" content="IE=8" ><!-- 使用IE8 -->
+
+<meta http-equiv="Cache-Control" content="no-siteapp" /><!-- 用百度打开网页可能会对其进行转码（比如贴广告），避免转码可添加如下meta -->
+
+{% endhighlight %}
+
+参考链接：[html中head标签中的内容](http://www.cnblogs.com/fslnet/archive/2009/11/17/1604444.html)，
+[首页html代码的<head>和</head>之间的内容](http://blog.csdn.net/pengyouchuan/article/details/7195929)，
+[常用meta整理](https://segmentfault.com/a/1190000002407912)

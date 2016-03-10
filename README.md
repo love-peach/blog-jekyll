@@ -134,7 +134,35 @@ https://ruby.taobao.org
 </ul>
 ```
 
-### 4. 图床选择
+
+### 4. 代码高亮
+
+jekyll 自身就带有代码高亮的功能。需要安装Pygments: `gem install pygments.rb` ,然后修改_config文件：
+`markdown: kramdown (注意换行) highlighter: pygments`,然后重启jekyll即可。
+
+目前，github-pages的最新版本推荐使用rouge，只需要修改`highlighter: rouge`，然后重启jekyll.
+
+默然的代码高亮主题，如果不太喜欢，可以修改。一种简便方法是，直接修改highlight默认主题样式css即可。
+可以上[这里](http://pygments.org/demo/3666780/)，右边选择你喜欢的主题，然后F12，找到pygments.css 下载即可。
+
+或者在某个文件夹下，打开终端`rougify style monokai.sublime > rouge.css`，这样在这个文件夹就有了一个rouge.css的文件，替换默认的主题样式即可。
+
+可能背景不是黑色的，你可以自己修改一下，打开　rouge.css　添加如下代码：
+```style
+.highlight {
+    margin: 0 -15px 2rem;
+    padding: 1px 1rem;
+    background-color: #202020;
+    overflow-x: auto;
+}
+```
+
+如需代码显示行号，这样：`{% highlight html linenos %}`
+
+参考链接：[Jekyll 代码高亮的几种选择](http://www.2cto.com/kf/201602/489968.html)
+我用的主题：　[monokai](http://pygments.org/demo/3666780/?style=monokai),[下载地址](http://pygments.org/_static/pygments.css)
+
+### 5. 图床选择
 
 在网站中，不可避免的需要使用图片，如果图片比较少，当然可以放在当前项目的对应目录中，但是当图片变得多了起来，
 我们就需要找个地方，将图片什么的静态资源放在一起，一方面方便管理，另一方面也能一定程度上做到CDN的效果。那么，
