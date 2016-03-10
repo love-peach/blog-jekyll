@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2016-03-07-css-css伪类:hover知多少"
+title: "css伪类:hover知多少"
 date: 2016-03-07
 categories: article css
 tags: [css样式,转载]

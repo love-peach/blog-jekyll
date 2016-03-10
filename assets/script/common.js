@@ -61,6 +61,10 @@ window.onload = function () {
             schedule.eq(i).css({width: number});
         }
     }
+    $('.skill-graphs li').click(function () {
+        var index = $(this).index();
+        $('.skill-intraduce p').eq(index).css({left: 0,opacity:1}).siblings().css({left: '100%',opacity: 0});
+    });
 
 
     //为超链接加上target='_blank'属性

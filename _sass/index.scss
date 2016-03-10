@@ -269,21 +269,27 @@
     }
   }
   .skill-intraduce {
-    float: left;
+    position: relative;
+    float: right;
     width: 40%;
-    border: 1px solid red;
     @include media-query(600px) {
       display: none;
     }
     p {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
       height: 15rem;
-      overflow-y: auto;
-      border: 1px solid red;
-
+      padding-top: 1rem;
+      padding-left: 1.5rem;
+      overflow:hidden;
+      border-left: 1px solid $base-border;
+      transition: left .3s ease;
     }
     p.intraduce-ps {
-      display: block;
+      left: 0;
+      opacity: 1;
     }
 
   }
