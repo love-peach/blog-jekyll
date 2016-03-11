@@ -228,6 +228,7 @@ p {
 .page-body {
   padding-top: 3rem;
   background-color: $base-blue;
+  //background-color: #F6ECE9;
 
   @include media-query($base-container-width) {
     padding-top: 0;
@@ -250,7 +251,7 @@ p {
   font-size: 3rem;
   color: #fff;
   text-shadow: 0 0 .4rem $base-blue-dark;
-  background-color: #37ACCB;
+  background-color: #93C2E9;
   .banner-title {
     vertical-align: middle;
     display: table-cell;
@@ -261,6 +262,7 @@ p {
   padding-top: 2rem;
   padding-bottom: 1rem;
   background-color: $base-silver;
+  background-color: #fafafa;
 
   p {
     position: relative;
