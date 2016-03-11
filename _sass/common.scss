@@ -301,7 +301,7 @@ p {
 
   //表格样式
 
-  table{
+  .table{
     margin: 0 auto 2rem;
     border-collapse: collapse;
     border: solid $base-border;
@@ -310,7 +310,7 @@ p {
       padding: 1rem;
       color: #fff;
       font-size: 1.6rem;
-      background-color: $base-blue-dark;
+      background-color: $base-blue;
       + th {
         border-left: 1px solid $base-border;
       }

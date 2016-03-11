@@ -2,14 +2,17 @@
 .highlight {
   margin: 0 -15px 2rem;
   padding: 1px 1rem;
+  color: #fff;
+  font-size: 14px;
   background-color: #202020;
   overflow-x: auto;
-  pre {
-    //margin: 0;
+  .lineno {
+    color: #999;
+    margin-right: 5px;
   }
 }
 
-.highlight table td { padding: 5px; }
+.highlight table td { padding: 5px;}
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
@@ -152,7 +155,8 @@
   color: #ffffff;
 }
 .highlight .nl {
-  color: #ffffff;
+  //color: #ffffff;
+  color: #66d9ef;
 }
 .highlight .ni {
   color: #ffffff;
@@ -172,9 +176,7 @@
 .highlight .w {
   color: #ffffff;
 }
-.highlight {
-  color: #ffffff;
-}
+
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
 }
