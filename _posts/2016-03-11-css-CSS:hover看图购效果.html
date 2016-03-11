@@ -1,0 +1,98 @@
+---
+layout: post
+title: "CSS:hover看图购效果"
+date: 2016-03-11 15:01
+categories: article css
+tags: [创意CSS技巧,转载]
+whichPage: css
+bannerImg: /img/illustration/2016.jpg
+---
+
+<p>
+看图购是一种精美的淘宝网购物导航站点,一个全新的图片网购模式。看图购以图片文集的形式展现淘宝网(目前好像停了)众多丰富的商品!让你快乐购物,享受购物!
+看图购目前针对女鞋、女装、内衣、包包、流行配饰、美容美发等类目的宝贝，未来会支持更多的类目。
+用户可以通过图片文集,点击购买链接按钮，即可链接到宝贝页面，选购到自己挑选满意的产品，增加购物体验,享受购物乐趣。
+其实，这样的需求，纯css就可以做，难怪原作者说要反省，有时候自己确实忽略了太多。
+</p>
+
+
+<style>
+    .ktg {position: relative; width: 950px;height:450px; margin:20px auto;}
+    .ktg ul {display: none; list-style-type: none;}
+    .ktg:hover ul {display: block;}
+    .ktg ul li {height: 84px; position: absolute; width: 84px;}
+    .ktg ul li div {background: url(http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FtextureBorders.png) repeat scroll 0 0 transparent; height: 84px; width: 84px;}
+    .ktg ul li a:hover div {background: url(http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FtextureTwoBorders.png) repeat scroll 0 0 transparent; height: 84px; width: 84px;}
+</style>
+
+<p>下面是实现的 html 和 css 代码。</p>
+
+{% highlight html linenos%}
+<div class="ktg">
+    <img src="http://static.jiawin.com/uploads/2015/01/1414104585244dd165fbc7b.jpg" height="450" width="960">
+    <ul>
+        <li style="left:8px;top:137px;">
+            <a target="_blank" title="太阳能热水袋" href="http://www.jiawin.com/">
+                <div></div>
+            </a>
+        </li>
+        <li style="left:408px;top:50px;"><a target="_blank" title="太阳能太阳伞" href="javascript:;"><div></div></a></li>
+        <li style="left:705px;top:160px;"><a target="_blank" title="太阳能帐篷" href="javascript:;"><div></div></a></li>
+        <li style="left:20px; bottom:8px;"><a target="_blank" title="太阳能手电筒" href="javascript:;"><div></div></a></li>
+        <li style="left:108px; bottom:29px;"><a target="_blank" title="太阳能灯" href="javascript:;"><div></div></a></li>
+        <li style="left:278px; bottom:48px;"><a target="_blank" title="太阳能背包" href="javascript:;"><div></div></a></li>
+        <li style="left:458px; bottom:23px;"><a target="_blank" title="太阳能驱蚊器" href="javascript:;"><div></div></a></li>
+        <li style="left:639px; bottom:37px;"><a target="_blank" title="太阳能七彩罐" href="javascript:;"><div></div></a></li>
+   </ul>
+</div>
+{% endhighlight %}
+
+{% highlight css linenos %}
+.ktg {
+    position: relative;
+    width: 960px;
+}
+.ktg img {
+    border:4px solid #fff;
+}
+.ktg ul {
+    display: none;
+    list-style-type: none;
+}
+.ktg:hover ul {
+    display: block;
+}
+.ktg ul li {
+    height: 84px;
+    position: absolute;
+    width: 84px;
+}
+.ktg ul li div {
+    background: url(http://static.jiawin.com/demos/200/images/borders.png) repeat scroll 0 0 transparent;
+    height: 84px;
+    width: 84px;
+}
+.ktg ul li a:hover div {
+    background: url(http://static.jiawin.com/demos/200/images/twoborders.png) repeat scroll 0 0 transparent;
+    height: 84px;
+    width: 84px;
+}
+{% endhighlight %}
+
+<p>效果：（鼠标放在图片上）</p>
+
+<div class="ktg">
+    <img src="http://7xrioc.com1.z0.glb.clouddn.com/img%2Fpicture%2FdemoViewShopping.jpg" height="445" width="950">
+    <ul>
+        <li style="left:8px;top:137px;"><a target="_blank" title="太阳能热水袋" href="javascript:;"><div></div></a></li>
+        <li style="left:408px;top:50px;"><a target="_blank" title="太阳能太阳伞" href="javascript:;"><div></div></a></li>
+        <li style="left:705px;top:160px;"><a target="_blank" title="太阳能帐篷" href="javascript:;"><div></div></a></li>
+        <li style="left:20px; bottom:8px;"><a target="_blank" title="太阳能手电筒" href="javascript:;"><div></div></a></li>
+        <li style="left:108px; bottom:29px;"><a target="_blank" title="太阳能灯" href="javascript:;"><div></div></a></li>
+        <li style="left:278px; bottom:48px;"><a target="_blank" title="太阳能背包" href="javascript:;"><div></div></a></li>
+        <li style="left:458px; bottom:23px;"><a target="_blank" title="太阳能驱蚊器" href="javascript:;"><div></div></a></li>
+        <li style="left:639px; bottom:37px;"><a target="_blank" title="太阳能七彩罐" href="javascript:;"><div></div></a></li>
+    </ul>
+</div>
+
+<p>原文地址：　<a href="http://www.jiawin.com/css-figure-purchase">创意CSS技巧：看图购</a></p>

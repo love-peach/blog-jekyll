@@ -1,0 +1,198 @@
+---
+layout: post
+title: "CSS:hover多重影分身之术"
+date: 2016-03-11 15:29
+categories: article css
+tags: [创意CSS技巧,转载]
+whichPage: css
+bannerImg: /img/illustration/2016.jpg
+---
+
+<p>
+    E:hover伪类选择符，是我们最熟悉不过的一个伪类了，而且运用也是非常的广泛，可以说在互联网中每个网站上面都会出现它的影子。
+    在前两篇《CSS:hover控制子元素和兄弟元素》和《CSS:hover看图购效果》，我们已经熟悉他的用法了，但你是否真正的将它的功能发挥到淋漓尽致呢？
+    嘿嘿……只要善于发现，我们就可以创造出非常有意思的东西来，大家是否还记得之前的分享给大家的一篇文章，
+    这篇文章就是一个很好的示范，建议在读完这篇文章后，可以去看看这篇文章的效果以及设计原理，多想一想，多做一做。
+    在这篇文章中就是巧妙的运用了hover的功能属性，出现了很多让人印象深刻的充满神奇的效果。
+    其主要的原理是不变的，只是我们更加巧妙的设置多个层hover的效果，那今天将为大家详细的解读hover伪类选择符的多重影分身之术！
+</p>
+
+
+<style>
+    .wrap {
+        margin:30px auto;
+        padding:0; width:630px;
+    }
+    .wrap > ul {
+        list-style: none;
+        float: left;
+        width: 200px;
+        padding: 0 10px 0 0;
+    }
+    .wrap > ul > li {
+        list-style: none;
+    }
+    .wrap a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        background: #900;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        margin: 0 0 5px 0;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+    }
+    .wrap:hover a {
+        opacity: 0.2;
+    }
+    .wrap:hover ul:hover a {
+        opacity: 0.5;
+    }
+    .wrap:hover ul:hover a:hover {
+        opacity: 1;
+    }
+</style>
+
+<h2>多重hover伪类选择符解析</h2>
+
+<p>我们将用例子来为大家做详细的介绍，先来看看这一组的伪类选择符：</p>
+
+{% highlight css linenos %}
+.main:hover {opacity: 0.5;}                  /*---- 组一 ----*/
+.main a:hover {opacity: 0.5;}                /*---- 组二 ----*/
+.main:hover a {opacity: 0.5;}                /*---- 组三 ----*/
+.main ul:hover a {opacity: 0.5;}             /*---- 组四 ----*/
+.main:hover ul:hover a:hover {opacity: 0.5;} /*---- 组五 ----*/
+.main a:not(:hover) {opacity: 0.5;}          /*---- 组六 ----*/
+{% endhighlight%}
+
+<p>这些选择符你都能一一的了解其中的含义吗？其实我们稍加细心分析就能马上判断这些都代表了什么。</p>
+
+<h2>伪类选择符说明∶</h2>
+
+<ul>
+    <li><strong>组一∶</strong>表示经过main选择器时所有包含在内的元素的透明度变为0.5</li>
+    <li><strong>组二∶</strong>表示在经过属于main选择器里面a标签的上方的时候，a标签的透明度改为0.5。</li>
+    <li><strong>组三∶</strong>按照上面的基本原理，我们也不难分析出代表的含义是在鼠标移到main上方的时候所对应的a标签的样式改为透明度为0.5。</li>
+    <li><strong>组四∶</strong>表示经过属于main选择器里面的ul元素的时候，ul元素里面的a标签的透明度为0.5。</li>
+    <li><strong>组五∶</strong>这里的含义我们需要分几段来分析，首先是经过main选择器、然后是经过main选择器里面的ul元素、最后是经过ul元素里面的a标签，把这些条件全部加起来就是这里所代表的含义了，也就是鼠标同时经过main选择器、main选择器里面的ul元素、ul元素里面的a标签时，所对应的a标签的属性为0.5。</li>
+    <li><strong>组六∶</strong>这里结合使用了否定伪类选择器:not(selector)，这里表示的是除了经过属于main选择器里面的a标签时的属性为透明度0.5，也就是说这里定义的是没有经过a标签时候的属性。</li>
+</ul>
+
+<h2>伪类选择符分析∶</h2>
+
+<ol>
+    <li>组二与组三的区别∶两者的对象不同，组二是鼠标作用在a元素上方时的效果，而组二是作用在main选择器上方时的效果；有时候两者的实际效果是一致的。</li>
+    <li>组二与组六的区别∶两者为相反关系，组二定义了鼠标经过时的属性，而组六则是定义了鼠标没有经过时的属性，相对来说，组六具有很强的灵活性，在有些场景可以实现特殊的效果。</li>
+    <li>总之，只要理清楚hover究竟是作用在哪个元素之上，如果结合上下级的关系就可轻易的掌握。</li>
+</ol>
+
+<h2>多重hover伪类选择符示例演示</h2>
+
+<p>我们理清楚了hover伪元素在不同地方以及出现多个hover时的基本原理，那我们就来看看一个实际的例子，在这个例子中简单的通过上面的分析总结，在多个地方巧妙的运用了hover伪元素，实现了具有很强交互性的三排列表效果。
+首先是我们的一个简单的HTML结构：</p>
+
+{% highlight html linenos%}
+<div class="wrap">
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+</div>
+{% endhighlight %}
+
+
+<p>然后我们最上面的结构进行hover的多重影分身处理，看css代码：</p>
+
+{% highlight css linenos%}
+.wrap {
+    margin:30px auto;
+    padding:0; width:630px;
+}
+.wrap > ul {
+    list-style: none;
+    float: left;
+    width: 200px;
+    padding: 0 10px 0 0;
+}
+.wrap a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background: #900;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 0 5px 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+.wrap:hover a {
+    opacity: 0.2;
+}
+.wrap:hover ul:hover a {
+    opacity: 0.5;
+}
+.wrap:hover ul:hover a:hover {
+    opacity: 1;
+}
+{% endhighlight %}
+
+<div class="wrap clearfix">
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+</div>
+
+<p>转载链接：　<a href="http://www.jiawin.com/hover-pseudo-class">hover伪类选择符的多重影分身之术</a></p>

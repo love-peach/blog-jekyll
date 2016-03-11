@@ -1,0 +1,123 @@
+---
+layout: post
+title: "CSS伪类 :hover控制子元素和兄弟元素"
+date: 2016-03-07
+categories: article css
+tags: [css样式,整理]
+whichPage: css
+bannerImg: /img/illustration/2016.jpg
+---
+
+<p>在文章开始之前，先来思考两道题目。<strong>第一题</strong>有三个盒子A，B，C。它们的关系是：A嵌套B,B嵌套C。如何实现鼠标悬停A盒子上时，B盒子变红色，C盒子变绿色。
+<strong>第二题</strong>还是三个盒子A，B，C。它们的关系是平级的，并排排在一起的。如何实现鼠标悬停A盒子上时，B盒子变红色，C盒子变绿色。</p>
+
+
+<style>
+    .grandpa,.father,.children {
+        padding: 20px;
+        border: 1px solid black;
+    }
+    .grandpa:hover .father {
+        background-color: red;
+    }
+    .grandpa:hover .children {
+        background-color: green;
+    }
+    .box {
+        padding :20px;
+        border: 1px solid black;
+    }
+    .box-a:hover + .box-b{
+        background-color: red;
+    }
+    .box-a:hover ~ .box-c{
+        background-color: green;
+    }
+</style>
+
+<p>解题之前，先来看看什么是伪类? :hover是干嘛用的? 伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。
+    由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，
+    但它是基于文档之外的抽象，所以叫伪类。常见的超链接a:hover就是其中的一种（:hover 选择器可用于所有元素，不只是链接。），用于选择鼠标指针浮动在其上的元素，并设置其样式。
+    语法：<q>selector:pseudo-class {property:value;}</q>。注意选择器和伪类冒号之间不能有空格，例如，不能这样写　a :hover {...}　，应该这样　a:hover {...}
+</p>
+
+<p>
+先做第一题，有如下 html 和 css :
+{% highlight html %}
+    <span class="grandpa">
+        DivA
+        <span class="father">
+            DivB
+            <span class="children">DivC</span>
+        </span>
+    </span>
+{% endhighlight %}
+
+{% highlight css linenos%}
+.grandpa,.father,.children {
+    padding: 20px;
+    border: 1px solid black;
+}
+.grandpa:hover .father {
+    background-color: red;
+}
+.grandpa:hover .children {
+    background-color: green;
+}
+{% endhighlight %}
+</p>
+
+<p>
+第一题效果：
+<span style="margin: 0 20px 20px 0" class="grandpa">
+    DivA
+    <span class="father">
+        DivB
+        <span class="children">DivC</span>
+    </span>
+</span>
+</p>
+
+<p>
+第二题，注意 + 号选择器，和　~　号选择器的使用，有如下 html 和 css
+{% highlight html %}
+    <span class="box box-a">BoxA</span>
+    <span class="box box-b">BoxB</span>
+    <span class="box box-c">BoxC</span>
+{% endhighlight %}
+
+{% highlight css linenos%}
+.box {
+    padding :20px;
+    border: 1px solid black;
+}
+
+/*
+注意下面注释部分，如果像第一题那样写css,无法控制到元素,需要修改，加个选择器
++ 相邻兄弟选择器，E＋F { sRules }，选择紧接在 E 元素后的元素 F
+~ 兄弟选择器，E~F { sRules }，选择 E 元素后面的所有兄弟元素 F
+
+.box-a:hover .box-b{
+    backgorund-color: red;
+}
+.box-a:hover .box-c{
+    backgorund-color: green;
+}
+*/
+
+.box-a:hover + .box-b{
+    background-color: red;
+}
+.box-a:hover ~ .box-c{
+    background-color: green;
+}
+{% endhighlight %}
+</p>
+<p>
+第二题效果：　
+<span class="box box-a">BoxA</span>
+<span class="box box-b">BoxB</span>
+<span class="box box-c">BoxC</span>
+</p>
+
+<p>参考链接：<a href="http://blog.csdn.net/sadfishsc/article/details/7047595">CSS 伪类与伪元素</a></p>

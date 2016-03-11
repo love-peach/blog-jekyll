@@ -3,7 +3,7 @@ layout: post
 title: "CSS设计网页小技巧:100%的高度"
 date: 2016-02-17
 categories: article css
-tags: [css布局, html,转载]
+tags: [css技巧,转载]
 whichPage: css
 bannerImg: /assets/image/2016.jpg
 ---
@@ -19,7 +19,7 @@ bannerImg: /assets/image/2016.jpg
 
 **比方说你有如下html代码文档**
 
-{% highlight html %}
+{% highlight html linenos%}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,7 +29,7 @@ bannerImg: /assets/image/2016.jpg
 </head>
 <body>
     <div id="content">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        这里有好多好多文字。。。
     </div>
 </body>
 </html>
@@ -37,7 +37,7 @@ bannerImg: /assets/image/2016.jpg
 
 **同时你有如下css样式文件**
 
-{% highlight css %}
+{% highlight css linenos%}
 body {
 	margin: 0;
 	padding: 0;
@@ -73,7 +73,7 @@ body {
 
 **如果我们修改我们的css文件，如下所示**
 
-{% highlight css %}
+{% highlight css linenos %}
 html {
 	min-height: 100%;
 	_height:100%;

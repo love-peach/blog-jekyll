@@ -256,12 +256,12 @@ p {
     display: table-cell;
   }
 }
-
 //文章内容样式
 .page-content {
   padding-top: 2rem;
   padding-bottom: 1rem;
   background-color: $base-silver;
+
   p {
     position: relative;
     margin-bottom: 1.4rem;
@@ -289,9 +289,9 @@ p {
       width: 100%;
     }
   }
-  //  .main-title {
-  //    color: $base-cyan;
-  //  }
+  .main-title {
+    color: $base-black-dark;
+  }
   .date {
     display: block;
     text-indent: 0;
@@ -300,7 +300,6 @@ p {
   }
 
   //表格样式
-
   .table{
     margin: 0 auto 2rem;
     border-collapse: collapse;
@@ -323,6 +322,36 @@ p {
 
     }
   }
+  //列表样式　
+  ul, ol{
+    color: $base-black-dark;
+    li {
+      margin: 1rem 15px;
+      font-size: 1.6rem;
+    }
+  }
+  ul li {
+    list-style: circle;
+  }
+  ol li {
+    list-style: decimal;
+  }
+  .css-content-list,
+  .html-content-list,
+  .js-content-list,
+  .teletext-content-list {
+    li {
+      list-style: none;
+      margin: 0 0 1rem 0;
+    }
+  }
+  .photo-content-list {
+    li {
+      list-style: none;
+      margin: 0;
+    }
+  }
+
 }
 
 //列表简介样式

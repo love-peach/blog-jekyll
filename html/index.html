@@ -9,7 +9,7 @@ bannerImg: /img/html/banner_html.jpg
 <ul class="html-content-list">
     {% for category in site.categories.[page.whichPage] %}
     <li  >
-        <a class="row list-link" href="{{category.url | prepend: site.baseurl }}" target="_blank">
+        <a class="row list-link" href="{{category.url | prepend: site.baseurl }}">
             <h1>{{category.title }}</h1>
         </a>
         <div class="date-and-tags">
