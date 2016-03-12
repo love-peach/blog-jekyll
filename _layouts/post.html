@@ -11,13 +11,25 @@
 
         <div class="page-banner text-center" style="background: #93C2E9 url('{{ site.cloudSrc}}{{page.bannerImg}}') center center no-repeat;background-size: cover">
             <div class="banner-title">
-                {{page.title}}
+                {% if page.bannerImg %}
+                    <!--让其为空-->
+                {% else %}
+                    <h1>{{page.title}}</h1>
+                    <span>{{ page.date | date: "%Y年 %-m月 %-d日" }}</span>
+                {% endif %}
             </div>
         </div>
 
         <div class="page-content container">
-            <h1 class='text-center main-title'>{{ page.title}}</h1>
-            <span class="text-center date">{{ page.date | date: "%Y年 %-m月 %-d日" }}</span>
+
+            {% if page.bannerImg %}
+                <h1 class='text-center main-title'>{{ page.title}}</h1>
+                <span class="text-center date">{{ page.date | date: "%Y年 %-m月 %-d日" }}</span>
+
+            {% else %}
+                <!--让其为空-->
+            {% endif %}
+
 
             {{ content }}
 

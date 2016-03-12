@@ -211,9 +211,22 @@ http://7xrioc.com1.z0.glb.clouddn.com/img%2Fillustration%2F2016.jpg
 ### 6.使用html格式发布文章
 
 跟使用markdown发布文章一样，添加好头部信息，指定好模板，就可以开始写文章了。不用写｀<html>｀,`<head>`,`<body>`等标签了。
+注意，如果使用html发布文章，文件名好像不能大写，在本地可以正常显示，线上好像就不行了。
 
 在markdown中新起一行，网页渲染出来时是有个p标签的，因此我们在写的时候注意带上相应的标签即可。比如｀[]()｀渲染出来是一个链接，那么就用一个a链接去写。
- 
+
+对于重复的头信息，可以在你的编辑软件中设置好模板，新建相应文件时就可以不用重复书写了，例如：
+```javascript
+---
+layout: post
+title: "${NAME}"
+date: ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+categories: article css
+tags: [css样式,转载]
+whichPage: css
+bannerImg: /img/illustration/2016.jpg
+---
+```
 
 - [x] 分页功能。
 

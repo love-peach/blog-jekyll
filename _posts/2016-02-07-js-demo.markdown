@@ -7,12 +7,8 @@ whichPage: js
 comments: true
 ---
 
-![七牛图片][tupian3]
+![图片说明][tupian1]
 
 这时简介
 
-{% assign imgSrc = "https://raw.githubusercontent.com/love-peach/images/master" %}
-{% assign imgQiSrc = "http://7xrioc.com1.z0.glb.clouddn.com" %}
-
-
-[tupian3]: {{imgQiSrc}}/img/illustration/imaginativeChildren.jpg
+[tupian1]: {{site.cloudSrc}}/img/illustration/imaginativeChildren.jpg

@@ -7,6 +7,11 @@ whichPage: photo
 place: 杭州西湖
 ---
 
-![图片]({{ site.baseurl}}/assets/image/2016.jpg)
+![图片说明][tupian1]
+
+
+这时简介
+
+[tupian1]: {{site.cloudSrc}}/img/illustration/sunPeach.jpg
 
 

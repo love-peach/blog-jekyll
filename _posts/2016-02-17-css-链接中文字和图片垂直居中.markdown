@@ -5,7 +5,7 @@ date: 2016-02-17
 categories: article css
 tags: [原创, css小技巧]
 whichPage: css
-bannerImg: /assets/image/
+bannerImg: /img/illustration/2016.jpg
 ---
 
 ![gulp]({{site.baseurl}}/assets/image/2016.jpg "新的一年，新的开始")

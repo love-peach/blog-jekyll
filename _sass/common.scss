@@ -248,9 +248,8 @@ p {
   display: table;
   width: 100%;
   height: 24rem;
-  font-size: 3rem;
   color: #fff;
-  text-shadow: 0 0 .4rem $base-blue-dark;
+  text-shadow: 0 0 0.3rem $base-blue-dark;
   background-color: #93C2E9;
   .banner-title {
     vertical-align: middle;
@@ -262,7 +261,7 @@ p {
   padding-top: 2rem;
   padding-bottom: 1rem;
   background-color: $base-silver;
-  background-color: #fafafa;
+  //background-color: #fafafa;
 
   p {
     position: relative;
@@ -294,11 +293,16 @@ p {
   .main-title {
     color: $base-black-dark;
   }
+  h2 {
+    color: $base-black-dark;
+  }
   .date {
     display: block;
     text-indent: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-top: 1.6rem;
     margin-bottom: 2rem;
+    color: $base-black-light;
   }
 
   //表格样式
@@ -326,7 +330,7 @@ p {
   }
   //列表样式　
   ul, ol{
-    color: $base-black-dark;
+    color: $base-black-md;
     li {
       margin: 1rem 15px;
       font-size: 1.6rem;
@@ -341,7 +345,8 @@ p {
   .css-content-list,
   .html-content-list,
   .js-content-list,
-  .teletext-content-list {
+  .teletext-content-list,
+  .tools-content-list{
     li {
       list-style: none;
       margin: 0 0 1rem 0;

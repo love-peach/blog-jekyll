@@ -1,0 +1,32 @@
+---
+layout: sub-page
+title: Tools
+permalink: /tools/
+whichPage: tools
+discribtion: 前端相关资源，技术，工具。
+bannerImg: /img/illustration/photographGirl.jpg
+---
+
+<ul class="tools-content-list">
+    {% for category in site.categories.[page.whichPage] %}
+   <li  >
+        <a class="row list-link" href="{{category.url | prepend: site.baseurl }}">
+            <h1>{{category.title }}</h1>
+        </a>
+        <div class="date-and-tags">
+            <span class="list-date">{{ category.date | date: "%Y年%-m月%-d日" }}</span>
+            <span class="list-tags">
+                <i class="icon iconfont icon-tag"></i>
+                {% for tag in category.tags%}
+
+                <a href="javascript:;">{{tag}}</a>
+                {% endfor %}
+            </span>
+        </div>
+
+        <div class="excerpt clearfix">
+            {{ category.excerpt }}
+        </div>
+    </li>
+    {% endfor %}
+</ul>

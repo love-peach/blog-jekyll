@@ -5,7 +5,7 @@ date: 2016-02-17
 categories: article css
 tags: [css技巧,转载]
 whichPage: css
-bannerImg: /assets/image/2016.jpg
+bannerImg: /img/illustration/2016.jpg
 ---
 
 在前端人员之间有一个普遍存在的问题，如何让一个div的高度自动延伸到浏览窗口100%的高度。
