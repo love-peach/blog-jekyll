@@ -7,6 +7,7 @@ tags: [emmit,转载]
 whichPage: tools
 bannerImg: /img/illustration/photographGirl.jpg
 ---
+
 Emmet插件以前被称作为Zen Coding，而现在的 Emmet 则是 Zen Coding 的升级版，它是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。
 只需敲下极少的代码摁下 **Ｔab** 键，即可生成完整的代码。
 
