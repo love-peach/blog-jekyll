@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "不负此生——香港中文大学校长沈祖尧"
-date: 2016-03-12 17:35
+date: 2016-03-12 17:35:00
 categories: article teletext
 tags: [演讲,励志,转载]
 whichPage: teletext

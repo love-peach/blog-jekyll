@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "emmet语法介绍"
-date: 2016-03-12 14:18
+date: 2016-03-12 14:18:00
 categories: article tools
 tags: [emmit,转载]
 whichPage: tools
