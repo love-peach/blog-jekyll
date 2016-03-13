@@ -7,6 +7,14 @@
   li {
     border-bottom: 1px solid $base-border;
     margin-bottom: 1rem;
+    .excerpt {
+      code {
+        padding: 0;
+        background-color: inherit;
+        font-size: inherit;
+        box-sizing: inherit;
+      }
+    }
   }
   li:last-child {
     border: 0;
