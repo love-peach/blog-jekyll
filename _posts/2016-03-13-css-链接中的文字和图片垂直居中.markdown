@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "链接中的文字和图片垂直居中"
-date: 2016-03-13 23:19:00
+date: 2016-03-13
 categories: article css
 tags: [css样式,转载]
 whichPage: css
