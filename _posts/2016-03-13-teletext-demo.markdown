@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "demo"
-date: 2016-03-13 15:49
+date: 2016-03-13 15:49:00
 categories: article tools
 tags: [demo,demo2]
 whichPage: tools
