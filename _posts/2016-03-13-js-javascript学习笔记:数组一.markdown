@@ -6,6 +6,7 @@ categories: article js
 tags: [javascript,转载]
 whichPage: js
 comments: true
+bannerImg: /img/illustration/2016.jpg
 ---
 
 ![图片说明][tupian1]
