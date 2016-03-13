@@ -6,7 +6,6 @@ categories: article html
 tags: [整理,转载]
 whichPage: html
 bannerImg: /img/illustration/2016.jpg
-
 ---
 
 &lt;head&gt; 标签用于定义文档的头部，它是所有头部元素的容器。&lt;head&gt; 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息、涉及到浏览器对网页的渲染，SEO 等等。
@@ -18,12 +17,10 @@ bannerImg: /img/illustration/2016.jpg
 
 &lt;title&gt; 定义文档的标题，它是 head 部分中唯一必需的元素。
 
-{% highlight html linenos%}
-
+{% highlight html %}
 <head>
     <title>文档标题</title>
 </head>
-
 {% endhighlight %}
 
 ## &lt;base&gt;标签
@@ -34,7 +31,7 @@ bannerImg: /img/illustration/2016.jpg
 浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。这其中包括 &lt;a&gt;、&lt;img&gt;、&lt;link&gt;、&lt;form&gt; 标签中的 URL。
 &lt;base&gt;中的target，将指定页面中所有链接的打开方式。
 
-{% highlight html linenos %}
+{% highlight html %}
 <head>
     <base href="http://www.w3school.com.cn/i/" />
     <base target="_blank" />
@@ -43,13 +40,13 @@ bannerImg: /img/illustration/2016.jpg
     <img src="eg_smile.gif" />
     <a href="http://www.w3school.com.cn">W3School</a>
 </body>
-{% endhighlight%}
+{% endhighlight %}
 
 ## &lt;style&gt;标签
 
 &lt;style&gt;标签用于为 HTML 文档定义样式信息。
 
-{% highlight html linenos%}
+{% highlight html %}
 <style>
 .demo {
     display: block;
@@ -67,20 +64,18 @@ bannerImg: /img/illustration/2016.jpg
 
 &lt;link&gt; 标签定义文档与外部资源的关系。最常见的用途是链接样式表，和添加网页图标。
 
-{% highlight html linenos%}
-
+{% highlight html %}
 <head>
     <link rel="stylesheet" type="text/css" href="demo.css" />
     <link rel = "shortcut icon" href="favicon.ico">
 </head>
-
 {% endhighlight %}
 
 ## &lt;script&gt;标签 
 
 &lt;script&gt; 标签最常见的用途是链接外部js，外部资源。也可以直接在标签内写js代码，不过，推荐将 &lt;script&gt;标签放在&lt;/body&lt;标签结束之前。
 
-{% highlight html linenos %}
+{% highlight html %}
 <head>
     <script type="text/javascript" src='somewhere/demo.min.js'></script>
     <script type="text/javascript">
@@ -88,9 +83,7 @@ bannerImg: /img/illustration/2016.jpg
     </script>
 </head>
 <body>
-        .
-        .
-        .
+    <!--其他内容-->
     <script type="text/javascript" src='somewhere/jquery.min.js'></script>
     <script type="text/javascript">
         function massage(text) {
@@ -100,9 +93,6 @@ bannerImg: /img/illustration/2016.jpg
     </script>
 </body>
 {% endhighlight %}
-
-
-
 
 ## &lt;meta&gt;标签
 
@@ -146,8 +136,6 @@ bannerImg: /img/illustration/2016.jpg
 <meta http-equiv="content-type" content="text/html; charset=gb2312" /> <!--- 网页显示字符集，简体中文　--->
 <meta http-equiv="content-type" content="text/html; charset=big5"> <!--- 网页显示字符集，繁体中文　--->
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> <!--- 网页显示字符集，英 语　--->
-
-
 
 <meta http-equiv="expires" content="31 Dec 2008"> <!--- 设定网页的到期时间。　--->
 <meta http-equiv="refresh" content="5;url=http://love-peach.github.io/blog-jekyll/"> <!--- 重定向，自动跳转，时间停留5秒　--->
