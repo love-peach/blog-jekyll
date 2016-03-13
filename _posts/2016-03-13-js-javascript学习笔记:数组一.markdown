@@ -3,7 +3,7 @@ layout: post
 title: "javascript学习笔记:数组(一)"
 date: 2016-03-13
 categories: article js
-tags: [css样式,转载]
+tags: [数组,转载]
 whichPage: js
 bannerImg: /img/illustration/2016.jpg
 ---
