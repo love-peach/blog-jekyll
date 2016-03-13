@@ -5,7 +5,6 @@ date:   2016-02-07 00:58:24
 categories: article js
 tags: [javascript,转载]
 whichPage: js
-comments: true
 bannerImg: /img/illustration/2016.jpg
 ---
 
