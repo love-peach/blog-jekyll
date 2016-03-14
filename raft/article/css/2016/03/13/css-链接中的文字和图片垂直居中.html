@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>链接中的文字和图片垂直居中</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/css/2016/03/13/css-%E9%93%BE%E6%8E%A5%E4%B8%AD%E7%9A%84%E6%96%87%E5%AD%97%E5%92%8C%E5%9B%BE%E7%89%87%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class=" active " id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>链接中的文字和图片垂直居中</h1>
+                <span class="text-center date">2016年 3月 13日</span>
+
+            
+
+
+            <p>假如有这样一个需求：在链接中有文字，有小图片，怎么将它们排放，做到垂直居中？方法有很多，这里给出一种方法。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">'my-link'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">'http://7xrioc.com1.z0.glb.clouddn.com/img/common/favicon.jpg'</span> <span class="na">alt=</span><span class="s">'图片'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>图片文字<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;a/&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span>
+<span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span><span class="c">/* 必需属性，让子元素撑开链接，获得最大点击区域*/</span>
+<span class="nl">font-size</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span><span class="c">/* 必需属性，去除链接默认值，大小 */</span>
+<span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span><span class="c">/* 非必需 */</span>
+<span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span><span class="c">/* 非必需 */</span>
+<span class="p">}</span>
+<span class="nt">a</span> <span class="nt">img</span><span class="o">,</span> <span class="nt">a</span> <span class="nt">span</span><span class="p">{</span>
+<span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span><span class="c">/* 必需属性，让文字图片垂直居中 */</span>
+<span class="nl">line-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span><span class="c">/* 必需属性，如不设置，当字体大于图片高度时，图片，文字不居中 */</span>
+<span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span> <span class="c">/* 必需属性，字体大小必须得设在这里 ，因为链接的字体大小是０，所以必需在这里设置*/</span>
+<span class="p">}</span>
+<span class="nt">a</span> <span class="nt">img</span> <span class="p">{</span>
+<span class="nl">width</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span><span class="c">/* 非必需，爱设不设 */</span>
+<span class="nl">height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span><span class="c">/* 非必需，爱设不设 */</span>
+<span class="p">}</span></code></pre></figure>
+
+<style>
+#my-link {
+display: inline-block;/* 必需属性，让子元素撑开链接，获得最大点击区域*/
+font-size: 0px;/* 必需属性，去除链接默认值，大小 */
+background: red;/* 非必需 */
+padding: 5px;/* 非必需 */
+cursor: pointer;
+}
+#my-link img, #my-link span{
+color: yellow;
+vertical-align: middle;/* 必需属性，让文字图片垂直居中 */
+line-height: 100%;/* 必需属性，如不设置，当字体大于图片高度时，图片，文字不居中 */
+font-size: 16px; /* 必需属性，字体大小必须得设在这里 ，因为链接的字体大小是０，所以必需在这里设置*/
+}
+#my-link img {
+display: inherit;
+margin: 0 5px 0 0 ;
+min-height: inherit;
+
+width: 30px;/* 非必需，爱设不设 */
+height: 30px;/* 非必需，爱设不设 */
+}
+</style>
+
+<p>效果：
+<a id="my-link">
+    <img src="http://7xrioc.com1.z0.glb.clouddn.com/img/common/favicon.jpg" alt="图片" />
+    <span>图片文字</span>
+<a></a></a></p>
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

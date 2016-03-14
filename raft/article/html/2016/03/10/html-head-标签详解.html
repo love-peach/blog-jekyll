@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>&lt;head&gt;标签详解</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/html/2016/03/10/html-head-%E6%A0%87%E7%AD%BE%E8%AF%A6%E8%A7%A3.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class=" active " id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class="" id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>&lt;head&gt;标签详解</h1>
+                <span class="text-center date">2016年 3月 10日</span>
+
+            
+
+
+            <p>&lt;head&gt; 标签用于定义文档的头部，它是所有头部元素的容器。&lt;head&gt; 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息、涉及到浏览器对网页的渲染，SEO 等等。
+文档的头部描述了文档的各种属性和信息，包括文档的标题、在 Web 中的位置以及和其他文档的关系等。&lt;head&gt;标签中可以放的标签主要有：　&lt;title&gt;、&lt;base&gt;、&lt;style&gt;、&lt;link&gt;、&lt;script&gt;、&lt;meta&gt;等</p>
+
+<h2 id="lttitlegt">&lt;title&gt;标签</h2>
+
+<p>&lt;title&gt; 定义文档的标题，它是 head 部分中唯一必需的元素。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>文档标题<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></figure>
+
+<h2 id="ltbasegt">&lt;base&gt;标签</h2>
+
+<p>&lt;base&gt; 标签为页面上的所有链接规定默认地址或默认目标。</p>
+
+<p>通常情况下，浏览器会从当前文档的 URL 中提取相应的元素来填写相对 URL 中的空白。使用 &lt;base&gt; 标签可以改变这一点。
+浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。这其中包括 &lt;a&gt;、&lt;img&gt;、&lt;link&gt;、&lt;form&gt; 标签中的 URL。
+&lt;base&gt;中的target，将指定页面中所有链接的打开方式。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;base</span> <span class="na">href=</span><span class="s">"http://www.w3school.com.cn/i/"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;base</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"eg_smile.gif"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.w3school.com.cn"</span><span class="nt">&gt;</span>W3School<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/body&gt;</span></code></pre></figure>
+
+<h2 id="ltstylegt">&lt;style&gt;标签</h2>
+
+<p>&lt;style&gt;标签用于为 HTML 文档定义样式信息。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
+<span class="nc">.demo</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span></code></pre></figure>
+
+<h2 id="ltlinkgt">&lt;link&gt;标签</h2>
+
+<p>&lt;link&gt; 标签定义文档与外部资源的关系。最常见的用途是链接样式表，和添加网页图标。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"demo.css"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel =</span><span class="err"> </span><span class="s">"shortcut icon"</span> <span class="na">href=</span><span class="s">"favicon.ico"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></figure>
+
+<h2 id="ltscriptgt">&lt;script&gt;标签</h2>
+
+<p>&lt;script&gt; 标签最常见的用途是链接外部js，外部资源。也可以直接在标签内写js代码，不过，推荐将 &lt;script&gt;标签放在&lt;/body&lt;标签结束之前。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">'somewhere/demo.min.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'hello world!'</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!--其他内容--&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">'somewhere/jquery.min.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="kd">function</span> <span class="nx">massage</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">massage</span><span class="p">(</span><span class="s1">'hello world!'</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span></code></pre></figure>
+
+<h2 id="ltmetagt">&lt;meta&gt;标签</h2>
+
+<p>&lt;meta&gt; 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。</p>
+
+<p>&lt;meta&gt; 标签位于文档的头部，不包含任何内容。&lt;meta&gt; 标签的属性定义了与文档相关联的名称/值对。</p>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>属性</th>
+            <th>值</th>
+            <th>描述</th>
+            <th>DTD</th>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_http-equiv">http-equiv</a></td>
+            <td><ul><li>content-type</li><li>expires</li><li>refresh</li><li>set-cookie </li></ul></td>
+            <td>把 content 属性关联到 HTTP 头部。</td>
+            <td>STF</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_name">name</a></td>
+            <td><ul><li>author</li><li>description</li><li>keywords</li><li>generator</li><li>revised</li><li>others </li></ul></td>
+            <td>把 content 属性关联到一个名称。</td>
+            <td>STF</td>
+        </tr>
+        <tr>
+            <td><a target="_blank" href="http://www.w3school.com.cn/tags/tag_meta.asp#meta_prop_scheme">scheme</a></td>
+            <td>some_text</td>
+            <td>定义用于翻译 content 属性值的格式。</td>
+            <td>STF</td>
+        </tr>
+    </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></td><td class="code"><pre><span class="c">&lt;!--- the site is designed http://love-peach.github.io/blog-jekyll/ 03/2016 ---&gt;</span> <span class="c">&lt;!--- 公司版权注释　---&gt;</span>
+
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"content-type"</span> <span class="na">content=</span><span class="s">"text/html; charset=gb2312"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!--- 网页显示字符集，简体中文　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"content-type"</span> <span class="na">content=</span><span class="s">"text/html; charset=big5"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 网页显示字符集，繁体中文　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"content-type"</span> <span class="na">content=</span><span class="s">"text/html; charset=iso-8859-1"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 网页显示字符集，英 语　---&gt;</span>
+
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"expires"</span> <span class="na">content=</span><span class="s">"31 Dec 2008"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 设定网页的到期时间。　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"refresh"</span> <span class="na">content=</span><span class="s">"5;url=http://love-peach.github.io/blog-jekyll/"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 重定向，自动跳转，时间停留5秒　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"pragma"</span> <span class="na">content=</span><span class="s">"no-cache"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 禁止浏览器从本地机的缓存中调阅页面内容　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"window-target"</span> <span class="na">content=</span><span class="s">"_top"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 在浏览器最顶层打开，禁止浏览器从本地机的缓存中调阅页面内容　---&gt;</span>
+
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span>  <span class="na">content=</span><span class="s">"张晋佩"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 网页制作者信息　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span>  <span class="na">content=</span><span class="s">"张晋佩的个人博客，记录前端学习之路的一些知识点和问题"</span><span class="nt">&gt;</span> <span class="c">&lt;!--- 网站简介,描述　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span>  <span class="na">content=</span><span class="s">"HTML, DHTML, CSS, XML, XHTML, JavaScript"</span><span class="nt">&gt;</span>　<span class="c">&lt;!--- 搜索关键字　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"revised"</span>  <span class="na">content=</span><span class="s">"2.17"</span><span class="nt">&gt;</span>　<span class="c">&lt;!--- 描述网页的版本　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"generator"</span>  <span class="na">content=</span><span class="s">"Sublime"</span><span class="nt">&gt;</span>　<span class="c">&lt;!--- 描述网页是通过那种软件产生　---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"robots"</span> <span class="na">content=</span><span class="s">"none"</span><span class="nt">&gt;</span>　<span class="c">&lt;!--- 网页搜索机器人向导.用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引　---&gt;</span>
+
+
+<span class="c">&lt;!-- 移动端 --&gt;</span>
+<span class="c">&lt;!--- 能优化移动浏览器的显示 ---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"</span><span class="nt">/&gt;</span> 
+<span class="c">&lt;!--- 1. width：宽度（数值 / device-width）（范围从200 到10,000，默认为980 像素）
+      2. height：高度（数值 / device-height）（范围从223 到10,000）
+      3. initial-scale：初始的缩放比例 （范围从&gt;0 到10）
+      4. minimum-scale：允许用户缩放到的最小比例
+      5. maximum-scale：允许用户缩放到的最大比例
+      6. user-scalable：用户是否可以手动缩 (no,yes)　---&gt;</span>
+
+<span class="c">&lt;!--　隐藏状态栏/设置状态栏颜色只有在开启WebApp全屏模式时才生效。content的值为default | black | black-translucent 。　--&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"apple-mobile-web-app-status-bar-style"</span> <span class="na">content=</span><span class="s">"black-translucent"</span> <span class="nt">/&gt;</span>　
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"apple-mobile-web-app-capable"</span> <span class="na">content=</span><span class="s">"yes"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- 启用 WebApp 全屏模式　伪装app，离线应用 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"apple-mobile-web-app-title"</span> <span class="na">content=</span><span class="s">"标题"</span><span class="nt">&gt;</span>　<span class="c">&lt;!--添加到主屏后的标题---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">"telephone=no"</span> <span class="na">name=</span><span class="s">"format-detection"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!--忽略数字自动识别为电话号码---&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">"email=no"</span> <span class="na">name=</span><span class="s">"format-detection"</span> <span class="nt">/&gt;</span>　<span class="c">&lt;!--忽略识别邮箱---&gt;</span>
+
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"HandheldFriendly"</span> <span class="na">content=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="c">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"MobileOptimized"</span> <span class="na">content=</span><span class="s">"320"</span><span class="nt">&gt;</span><span class="c">&lt;!-- 微软的老式浏览器 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"screen-orientation"</span> <span class="na">content=</span><span class="s">"portrait"</span><span class="nt">&gt;</span><span class="c">&lt;!-- uc强制竖屏 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"x5-orientation"</span> <span class="na">content=</span><span class="s">"portrait"</span><span class="nt">&gt;</span><span class="c">&lt;!-- QQ强制竖屏 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"full-screen"</span> <span class="na">content=</span><span class="s">"yes"</span><span class="nt">&gt;</span><span class="c">&lt;!-- UC强制全屏 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"x5-fullscreen"</span> <span class="na">content=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="c">&lt;!-- QQ强制全屏 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"browsermode"</span> <span class="na">content=</span><span class="s">"application"</span><span class="nt">&gt;</span><span class="c">&lt;!-- UC应用模式 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"x5-page-mode"</span> <span class="na">content=</span><span class="s">"app"</span><span class="nt">&gt;</span><span class="c">&lt;!-- QQ应用模式 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"msapplication-tap-highlight"</span> <span class="na">content=</span><span class="s">"no"</span><span class="nt">&gt;</span><span class="c">&lt;!-- windows phone 点击无高光 --&gt;</span>
+
+<span class="c">&lt;!-- 网页相关 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge,chrome=1"</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- 关于X-UA-Compatible --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=6"</span> <span class="nt">&gt;</span><span class="c">&lt;!-- 使用IE6 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=7"</span> <span class="nt">&gt;</span><span class="c">&lt;!-- 使用IE7 --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=8"</span> <span class="nt">&gt;</span><span class="c">&lt;!-- 使用IE8 --&gt;</span>
+
+<span class="c">&lt;!-- 用百度打开网页可能会对其进行转码（比如贴广告），避免转码可添加如下meta --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Cache-Control"</span> <span class="na">content=</span><span class="s">"no-siteapp"</span> <span class="nt">/&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>参考链接：<a href="http://www.cnblogs.com/fslnet/archive/2009/11/17/1604444.html">html中head标签中的内容</a>，
+<a href="http://blog.csdn.net/pengyouchuan/article/details/7195929">首页html代码的&lt;head&gt;和&lt;/head&gt;之间的内容</a>，
+<a href="https://segmentfault.com/a/1190000002407912">常用meta整理</a></p>
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

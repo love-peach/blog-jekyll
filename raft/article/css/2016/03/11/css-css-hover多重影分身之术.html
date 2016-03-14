@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS:hover多重影分身之术</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/css/2016/03/11/css-css-hover%E5%A4%9A%E9%87%8D%E5%BD%B1%E5%88%86%E8%BA%AB%E4%B9%8B%E6%9C%AF.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class=" active " id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>CSS:hover多重影分身之术</h1>
+                <span class="text-center date">2016年 3月 11日</span>
+
+            
+
+
+            <p>
+    E:hover伪类选择符，是我们最熟悉不过的一个伪类了，而且运用也是非常的广泛，可以说在互联网中每个网站上面都会出现它的影子。
+    在前两篇《CSS:hover控制子元素和兄弟元素》和《CSS:hover看图购效果》，我们已经熟悉他的用法了，但你是否真正的将它的功能发挥到淋漓尽致呢？
+    嘿嘿……只要善于发现，我们就可以创造出非常有意思的东西来，大家是否还记得之前的分享给大家的一篇文章，
+    这篇文章就是一个很好的示范，建议在读完这篇文章后，可以去看看这篇文章的效果以及设计原理，多想一想，多做一做。
+    在这篇文章中就是巧妙的运用了hover的功能属性，出现了很多让人印象深刻的充满神奇的效果。
+    其主要的原理是不变的，只是我们更加巧妙的设置多个层hover的效果，那今天将为大家详细的解读hover伪类选择符的多重影分身之术！
+</p>
+
+
+<style>
+    .wrap {
+        margin:30px auto;
+        padding:0; width:630px;
+    }
+    .wrap > ul {
+        list-style: none;
+        float: left;
+        width: 200px;
+        padding: 0 10px 0 0;
+    }
+    .wrap > ul > li {
+        list-style: none;
+    }
+    .wrap a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        background: #900;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        margin: 0 0 5px 0;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+    }
+    .wrap:hover a {
+        opacity: 0.2;
+    }
+    .wrap:hover ul:hover a {
+        opacity: 0.5;
+    }
+    .wrap:hover ul:hover a:hover {
+        opacity: 1;
+    }
+</style>
+
+<h2>多重hover伪类选择符解析</h2>
+
+<p>我们将用例子来为大家做详细的介绍，先来看看这一组的伪类选择符：</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="nc">.main</span><span class="nd">:hover</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span>                  <span class="c">/*---- 组一 ----*/</span>
+<span class="nc">.main</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span>                <span class="c">/*---- 组二 ----*/</span>
+<span class="nc">.main</span><span class="nd">:hover</span> <span class="nt">a</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span>                <span class="c">/*---- 组三 ----*/</span>
+<span class="nc">.main</span> <span class="nt">ul</span><span class="nd">:hover</span> <span class="nt">a</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span>             <span class="c">/*---- 组四 ----*/</span>
+<span class="nc">.main</span><span class="nd">:hover</span> <span class="nt">ul</span><span class="nd">:hover</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span> <span class="c">/*---- 组五 ----*/</span>
+<span class="nc">.main</span> <span class="nt">a</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:hover</span><span class="o">)</span> <span class="p">{</span><span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;}</span>          <span class="c">/*---- 组六 ----*/</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这些选择符你都能一一的了解其中的含义吗？其实我们稍加细心分析就能马上判断这些都代表了什么。</p>
+
+<h2>伪类选择符说明∶</h2>
+
+<ul>
+    <li><strong>组一∶</strong>表示经过main选择器时所有包含在内的元素的透明度变为0.5</li>
+    <li><strong>组二∶</strong>表示在经过属于main选择器里面a标签的上方的时候，a标签的透明度改为0.5。</li>
+    <li><strong>组三∶</strong>按照上面的基本原理，我们也不难分析出代表的含义是在鼠标移到main上方的时候所对应的a标签的样式改为透明度为0.5。</li>
+    <li><strong>组四∶</strong>表示经过属于main选择器里面的ul元素的时候，ul元素里面的a标签的透明度为0.5。</li>
+    <li><strong>组五∶</strong>这里的含义我们需要分几段来分析，首先是经过main选择器、然后是经过main选择器里面的ul元素、最后是经过ul元素里面的a标签，把这些条件全部加起来就是这里所代表的含义了，也就是鼠标同时经过main选择器、main选择器里面的ul元素、ul元素里面的a标签时，所对应的a标签的属性为0.5。</li>
+    <li><strong>组六∶</strong>这里结合使用了否定伪类选择器:not(selector)，这里表示的是除了经过属于main选择器里面的a标签时的属性为透明度0.5，也就是说这里定义的是没有经过a标签时候的属性。</li>
+</ul>
+
+<h2>伪类选择符分析∶</h2>
+
+<ol>
+    <li>组二与组三的区别∶两者的对象不同，组二是鼠标作用在a元素上方时的效果，而组二是作用在main选择器上方时的效果；有时候两者的实际效果是一致的。</li>
+    <li>组二与组六的区别∶两者为相反关系，组二定义了鼠标经过时的属性，而组六则是定义了鼠标没有经过时的属性，相对来说，组六具有很强的灵活性，在有些场景可以实现特殊的效果。</li>
+    <li>总之，只要理清楚hover究竟是作用在哪个元素之上，如果结合上下级的关系就可轻易的掌握。</li>
+</ol>
+
+<h2>多重hover伪类选择符示例演示</h2>
+
+<p>我们理清楚了hover伪元素在不同地方以及出现多个hover时的基本原理，那我们就来看看一个实际的例子，在这个例子中简单的通过上面的分析总结，在多个地方巧妙的运用了hover伪元素，实现了具有很强交互性的三排列表效果。
+首先是我们的一个简单的HTML结构：</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrap"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"javascript:;"</span><span class="nt">&gt;</span>---<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+
+<p>然后我们最上面的结构进行hover的多重影分身处理，看css代码：</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></td><td class="code"><pre><span class="nc">.wrap</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span><span class="m">30px</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">0</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span><span class="m">630px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrap</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">10px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrap</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#900</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="nl">-o-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">ease</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrap</span><span class="nd">:hover</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrap</span><span class="nd">:hover</span> <span class="nt">ul</span><span class="nd">:hover</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.wrap</span><span class="nd">:hover</span> <span class="nt">ul</span><span class="nd">:hover</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<div class="wrap clearfix">
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+  <ul>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+    <li><a href="javascript:;">---</a></li>
+  </ul>
+</div>
+
+<p>转载链接：　<a href="http://www.jiawin.com/hover-pseudo-class">hover伪类选择符的多重影分身之术</a></p>
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

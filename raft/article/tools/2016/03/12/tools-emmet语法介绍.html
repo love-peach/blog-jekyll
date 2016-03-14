@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>emmet语法介绍</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/tools/2016/03/12/tools-emmet%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class="" id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class=" active " id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/photographGirl.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>emmet语法介绍</h1>
+                <span class="text-center date">2016年 3月 12日</span>
+
+            
+
+
+            <p>Emmet插件以前被称作为Zen Coding，而现在的 Emmet 则是 Zen Coding 的升级版，它是一个文本编辑器的插件，它可以帮助您快速编写HTML和CSS代码，从而加速Web前端开发。
+只需敲下极少的代码摁下 <strong>Ｔab</strong> 键，即可生成完整的代码。</p>
+
+<h2 id="doctype">doctype补全</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">html:5 或者　!
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+html:xt 生成 HTML4 过渡型
+<span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1999/xhtml"</span> <span class="na">xml:lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html;charset=UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+html:4s 生成 HTML4 严格型
+<span class="cp">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html;charset=UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Document<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h2 id="element">element标签名</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div
+
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span></code></pre></figure>
+
+<h2 id="id">ID选择符</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div#some-id 或者 #some-id
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"some-id"</span><span class="nt">&gt;&lt;div&gt;</span></code></pre></figure>
+
+<h2 id="class">CLASS类选择符</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div.some-class 或者 .some-class
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"some-class"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
+
+<h2 id="section">&gt; 嵌套，直接子节点</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div&gt;ul&gt;li
+
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<h2 id="section-1">+ 兄弟节点</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div+p+bq
+
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;blockquote&gt;&lt;/blockquote&gt;</span></code></pre></figure>
+
+<h2 id="section-2">^ 切换上下文，返回上一级</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div+div&gt;p&gt;span+em^bq
+
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;blockquote&gt;&lt;/blockquote&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!--可以多个一起使用，每一个返回一级--&gt;</span>
+div+div&gt;p&gt;span+em^^^bq
+
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;blockquote&gt;&lt;/blockquote&gt;</span></code></pre></figure>
+
+<h2 id="section-3">* 重复多个</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">ul&gt;li*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<h2 id="section-4">( ) 分组，用来分组子集，不推荐过多使用</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div&gt;(header&gt;ul&gt;li*2&gt;a)+footer&gt;p
+
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;header&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;footer&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- ()可以嵌套使用 --&gt;</span>
+(div&gt;dl&gt;(dt+dd)*3)+footer&gt;p
+
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;dl&gt;</span>
+        <span class="nt">&lt;dt&gt;&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd&gt;&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd&gt;&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd&gt;&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/footer&gt;</span></code></pre></figure>
+
+<h2 id="section-5">[ ] 用户自定义属性</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">div[title="Hello world!"]
+
+<span class="nt">&lt;div</span> <span class="na">title=</span><span class="s">"Hello world!"</span> <span class="na">data-name=</span><span class="s">"haha"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="c">&lt;!--
+1.方括号内可以一次性写多个属性，以空格隔开，比如：[title=’H W’ data-name=haha]
+2.属性可以不写属性值，比如：[title data-name]
+3.属性值可以使用单引号或者双引号
+4.属性值如果没有空格，可以省略引号
+--&gt;</span></code></pre></figure>
+
+<h2 id="section-6">$ 数字</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">ul&gt;li.item$*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item1"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item2"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item3"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item4"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item5"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<h2 id="section-7">$ 可以使用多个$，不足会使用0占位</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">ul&gt;li.item$$$*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item001"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item002"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item003"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item004"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item005"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<h2 id="section-8">@控制数字开始值和顺序</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">@- 倒序
+ul&gt;li.item$@-*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item5"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item4"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item3"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item2"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item1"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+@n 改变数字开始位置
+ul&gt;li.item$@3*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item3"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item4"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item5"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item6"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item7"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+@-n 降序并改变开始位置
+ul&gt;li.item$@-3*5
+
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item7"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item6"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item5"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item4"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item3"</span><span class="nt">&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<h2 id="section-9">{}文本节点</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">a{Click me}
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+
+注意如下的区别（受&gt;影响）
+a{click}+b{here}
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>click<span class="nt">&lt;/a&gt;&lt;b&gt;</span>here<span class="nt">&lt;/b&gt;</span>
+
+a&gt;{click}+b{here}
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>click<span class="nt">&lt;b&gt;</span>here<span class="nt">&lt;/b&gt;&lt;/a&gt;</span></code></pre></figure>
+
+<h2 id="lorem-html">lorem 生成一段虚拟文字，一般用来快速填充html，查看效果</h2>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">lorem
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias et nemo repudiandae. Esse ex molestias numquam, possimus quaerat quas sint tempora? Asperiores dicta ducimus facilis impedit neque ratione ut vel!
+
+lorem10 //生成10个单词
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, totam.
+
+p*4&gt;lorem
+
+<span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?<span class="nt">&lt;/p&gt;</span>
+
+ul.generic-list&gt;lorem10.item*4  //10是只每行10个单词
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"generic-list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Laboriosam quaerat sapiente minima nam minus similique illum architecto et!<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Incidunt vitae quae facere ducimus nostrum aliquid dolorum veritatis dicta!<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"item"</span><span class="nt">&gt;</span>Tenetur laborum quod cum excepturi recusandae porro sint quas soluta!<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p>参考链接(有演示动画哦)：　<a href="http://devework.com/emmet-html.html">Web 前端利器Emmet 的HTML用法总结</a></p>
+
+<p>转载链接：<a href="http://www.zkboys.com/2016/03/11/emmet%E8%AF%AD%E6%B3%95/">emmet语法</a></p>
+
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

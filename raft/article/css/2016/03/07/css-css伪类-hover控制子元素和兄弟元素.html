@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS伪类 :hover控制子元素和兄弟元素</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/css/2016/03/07/css-css%E4%BC%AA%E7%B1%BB-hover%E6%8E%A7%E5%88%B6%E5%AD%90%E5%85%83%E7%B4%A0%E5%92%8C%E5%85%84%E5%BC%9F%E5%85%83%E7%B4%A0.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class=" active " id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>CSS伪类 :hover控制子元素和兄弟元素</h1>
+                <span class="text-center date">2016年 3月 7日</span>
+
+            
+
+
+            <p>在文章开始之前，先来思考两道题目。<strong>第一题</strong>有三个盒子A，B，C。它们的关系是：A嵌套B,B嵌套C。如何实现鼠标悬停A盒子上时，B盒子变红色，C盒子变绿色。
+<strong>第二题</strong>还是三个盒子A，B，C。它们的关系是平级的，并排排在一起的。如何实现鼠标悬停A盒子上时，B盒子变红色，C盒子变绿色。</p>
+
+
+<style>
+    .grandpa,.father,.children {
+        padding: 20px;
+        border: 1px solid black;
+    }
+    .grandpa:hover .father {
+        background-color: red;
+    }
+    .grandpa:hover .children {
+        background-color: green;
+    }
+    .box {
+        padding :20px;
+        border: 1px solid black;
+    }
+    .box-a:hover + .box-b{
+        background-color: red;
+    }
+    .box-a:hover ~ .box-c{
+        background-color: green;
+    }
+</style>
+
+<p>解题之前，先来看看什么是伪类? :hover是干嘛用的? 伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。
+    由于状态是动态变化的，所以一个元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，
+    但它是基于文档之外的抽象，所以叫伪类。常见的超链接a:hover就是其中的一种（:hover 选择器可用于所有元素，不只是链接。），用于选择鼠标指针浮动在其上的元素，并设置其样式。
+    语法：<q>selector:pseudo-class {property:value;}</q>。注意选择器和伪类冒号之间不能有空格，例如，不能这样写　a :hover {...}　，应该这样　a:hover {...}
+</p>
+
+<p>
+先做第一题，有如下 html 和 css :
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"grandpa"</span><span class="nt">&gt;</span>
+        DivA
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"father"</span><span class="nt">&gt;</span>
+            DivB
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"children"</span><span class="nt">&gt;</span>DivC<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/span&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td><td class="code"><pre><span class="nc">.grandpa</span><span class="o">,</span><span class="nc">.father</span><span class="o">,</span><span class="nc">.children</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grandpa</span><span class="nd">:hover</span> <span class="nc">.father</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.grandpa</span><span class="nd">:hover</span> <span class="nc">.children</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+</p>
+
+<p>
+第一题效果：
+<span style="margin: 0 20px 20px 0" class="grandpa">
+    DivA
+    <span class="father">
+        DivB
+        <span class="children">DivC</span>
+    </span>
+</span>
+</p>
+
+<p>
+第二题，注意 + 号选择器，和　~　号选择器的使用，有如下 html 和 css
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"box box-a"</span><span class="nt">&gt;</span>BoxA<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"box box-b"</span><span class="nt">&gt;</span>BoxB<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"box box-c"</span><span class="nt">&gt;</span>BoxC<span class="nt">&lt;/span&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">padding</span> <span class="p">:</span><span class="m">20px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/*
+注意下面注释部分，如果像第一题那样写css,无法控制到元素,需要修改，加个选择器
++ 相邻兄弟选择器，E＋F { sRules }，选择紧接在 E 元素后的元素 F
+~ 兄弟选择器，E~F { sRules }，选择 E 元素后面的所有兄弟元素 F
+
+.box-a:hover .box-b{
+    backgorund-color: red;
+}
+.box-a:hover .box-c{
+    backgorund-color: green;
+}
+*/</span>
+
+<span class="nc">.box-a</span><span class="nd">:hover</span> <span class="o">+</span> <span class="nc">.box-b</span><span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box-a</span><span class="nd">:hover</span> <span class="o">~</span> <span class="nc">.box-c</span><span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+</p>
+<p>
+第二题效果：　
+<span class="box box-a">BoxA</span>
+<span class="box box-b">BoxB</span>
+<span class="box box-c">BoxC</span>
+</p>
+
+<p>参考链接：<a href="http://blog.csdn.net/sadfishsc/article/details/7047595">CSS 伪类与伪元素</a></p>
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>javascript学习笔记:数组(一)</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/js/2016/03/13/js-javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84%E4%B8%80.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class="" id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class=" active " id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>javascript学习笔记:数组(一)</h1>
+                <span class="text-center date">2016年 3月 13日</span>
+
+            
+
+
+            <p>数组(Array)是JavaScript最常用类型之一。初学者也最容易将数组(Array)和对象(Object)混淆，而且和其它语言中的数组又有着相当大的区别。作为一位初学者，为了能理清楚数组，把自己学习过程中做了一些笔记。</p>
+
+<h2 id="section">什么是数组？</h2>
+
+<p>数组(Array)简单的理解就是按次序排列的一组值。每个值的位置都有自己的编号，而且这个编号是从0开始。先来看一个简单的数组示例，看其长成啥样：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">'china'</span><span class="p">,</span><span class="mi">2</span><span class="p">];</span>
+<span class="c1">//上面的 1 , china 和 2 就构成了一个数组。</span></code></pre></figure>
+
+<p>JavaScript的数组的每一项可以保存任何类型的数据。也就是说，在数组的第一个位置可以保存字符串，第二个位置可以保存数值，第三个位置保存对象，依此类推。比如：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="s2">"大漠"</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="kd">function</span><span class="p">(){},</span> <span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+<span class="c1">//上面这个数组中依次存放了数值、字符串、对象、函数、undefined(空值)和null。</span></code></pre></figure>
+
+<h2 id="section-1">创建数组</h2>
+
+<p>在实际生产中，创建数组的方式基本有两种。</p>
+
+<p><strong>第一种　使用Array构造函数</strong></p>
+
+<p>可以使用Array构造函数来创建数组，如下所示：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span> <span class="c1">// output: []</span>
+<span class="c1">//上面的代码就是创建了一个空的数组[]。可以通过数组的length属性验证。</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">//output: 0</span>
+
+
+<span class="c1">//如果预先知道要创建的数组的项目数量，可以在构造函数中传递该数量：</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// output: [undefined × 5];</span>
+<span class="c1">//这个时候，该数量会自动变成数组的length值：</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">//output: 5</span>
+
+
+<span class="c1">//也可以向构造函数Array直接传入需要创建的数组中应该包含的数组项：</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">);</span> <span class="c1">// output: ["a", "b", "c"]</span></code></pre></figure>
+
+<p>从上面几个简单的示例，我们可以得知，通过Array构造函数创建数组，我们可以：</p>
+
+<ul>
+  <li>创建一个空数组： new Array()</li>
+  <li>创建一定数量的数组： new Array(5)</li>
+  <li>创建指定数组项目的数组： new Array(‘a’,’b’,’c’)</li>
+</ul>
+
+<p>需要注意的是，当只给new Array()传递一个值创建数组时，问题会变得比较复杂。如果传递的是一个数值，则会按该数值创建包含给定项数的数组；如果传递的是其它类型的参数时，则会创建包含那个值的只有一项的数组。来看个简单的示例：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// 创建一个包含3项的数组</span>
+<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">'3'</span><span class="p">);</span> <span class="c1">// 创建一个包含1项的数组，该项的值为字符串"3"</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span> <span class="c1">//[undefined × 3]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">);</span> <span class="c1">// ["3"]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 3</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 1</span></code></pre></figure>
+
+<p>在实际生产中，使用Array构造函数创建数组时，还可以省略new操作符。如：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">'china'</span><span class="p">);</span>  <span class="c1">// "china" arr1.length=1</span>
+<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">'china'</span><span class="p">);</span> <span class="c1">// "china" arr2.length=1</span></code></pre></figure>
+
+<p><strong>第二种　使用[]创建数组</strong></p>
+
+<p>除了使用Array构造函数创建数组之外，还可以直接使用[]（数组字面量表示法）创建数组。采用这种方式创建数组时，数组的每个数组项之间以逗号(,)分隔开，如下所示：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">];</span> <span class="c1">//创建一个包含两个字符串的数组</span>
+<span class="kd">var</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">//创建一个空数组</span></code></pre></figure>
+
+<h2 id="section-2">数组元素的访问</h2>
+
+<p>前面也说过，数组每一项都有对应的索引号，而且其索引号从0开始，到数组的length值结束。在实际生产中，总是需要访问数组的数组项，我们就可以通过数组的索引号来访问数组元素。如：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span><span class="s1">'red'</span><span class="p">,</span><span class="s1">'green'</span><span class="p">];</span> <span class="c1">//创建了一个字符串数组</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// output: "blue"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// output: "red"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// output: "green"</span></code></pre></figure>
+
+<p>colors[0]方括号[]中的索引表示要访问的数组元素。</p>
+
+<p>在数组中除了可以通过索引访问数组的数组项之外，还可以通过其来修改数组中的数组项。如：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">];</span> <span class="c1">//创建了一个字符串数组</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span> <span class="c1">//访问组数中的第一个数组项</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span> <span class="c1">//给数组添加一个新的数组项</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span> <span class="c1">//将数组的第二个数组项`b`修改为`abc`</span></code></pre></figure>
+
+<h2 id="length">数组的length属性</h2>
+
+<p>数组的length属性主要用来保存数组的项目数（也就是数组的成员数量）。这个属性始终会返回0或更大的值，如下面的示列：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[].</span><span class="nx">length</span><span class="p">;</span> <span class="c1">//0</span>
+<span class="p">[</span><span class="s2">"red"</span><span class="p">,</span><span class="s2">"blue"</span><span class="p">,</span><span class="s2">"green"</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="c1">//3</span></code></pre></figure>
+
+<p>JavaScript使用一个32位整数，保存数组的元素个数。简单点说，数组的length属性的最大值是4294967295。</p>
+
+<p>另外，数组的length属性是一个动态的值，等于键名中的最大整数加上1。</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 2</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'d'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 10</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'e'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 1001</span></code></pre></figure>
+
+<p>上面代码表示，数组的数字键不需要连续，length属性的值总是比最大的那个整数键大1。另外，这也表明数组是一种动态的数据结构，可以随时增减数组的成员。</p>
+
+<p>length属性是可写的，如果人为设置一个小于当前成员个数的值，该数值的成员会自动减少到length设置的值。</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// undefined</span>
+<span class="nx">arr</span> <span class="c1">// ['a','b']</span></code></pre></figure>
+
+<p>上面的代码表示，当数组的length值为2时（即最大的整数键只能是1（也就是length-1））。那么arr[2]的值c就已经不在该数组中了，也就是说被自动删除了。我们再访问arr[2]时就会显示为undefined。</p>
+
+<p>反之，如查将数组length属性值设置为大于数组项数的值，则新增的每一项都会取得undefined的值。如下面这样的示例：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">];</span> <span class="c1">//定义了一个包含三个项目的数组</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">//设置数组arr的length值为4</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span> <span class="c1">//undefined </span></code></pre></figure>
+
+<p>在此，虽然arr数组包含3个数组项，但把它的length属性值设置为4。这个数组不存在位置3，所以访问这个位置的值就得到了特殊值undefined。</p>
+
+<p>这样一来，我们就可以方便的利用length属性给数组末尾添加新的数组项。如下所示：</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">,</span><span class="s1">'c'</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3</span>
+<span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'d'</span><span class="p">;</span> <span class="c1">// 在位置3添加`d`</span>
+<span class="nx">arr</span><span class="p">;</span> <span class="c1">// ["a", "b", "c", "d"]</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 4</span></code></pre></figure>
+
+<p>由于数组最后一项的索引始终是length-1,因此下一个新项的位置就是length。每当在数组末尾添加一项后，其length属性就会自动更新。</p>
+
+<h2 id="section-3">总结</h2>
+
+<p>这篇文章简单的总结了JavaScript数组的创建方式以及如何访问数组的项目。并且介绍了数组的length的属性，以及如何通过length简单的实现在数组的末属添加和删除数组项。简单归纳为：</p>
+
+<ul>
+  <li>JavaScript数组是JavaScript数据类型之一</li>
+  <li>JavaScript数组就是一组有序排列的值，而且每个值都有自己对应的索引编号值</li>
+  <li>可以通过new Array()、Array()或[]创建数组</li>
+  <li>可以通过数组的索引值访问数组的数组项</li>
+  <li>数组的length属性主要用来保存数组的项目数</li>
+  <li>可以简单的通过length属性值来删除数组的最后一个值或给数组最后添加一个数组项目值</li>
+</ul>
+
+<p>转载链接：　<a href="http://www.w3cplus.com/javascript/array-part-1.html">JavaScript学习笔记：数组(一)</a></p>
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>

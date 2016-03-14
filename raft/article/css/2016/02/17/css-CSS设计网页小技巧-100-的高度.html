@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS设计网页小技巧:100%的高度</title>
+    <meta name="description" content="莫忘初衷，不负此生。">
+    <link rel="icon" href="/blog-jekyll/assets/image/favicon.jpg">
+
+    <link rel="stylesheet" href="/blog-jekyll/css/main.css">
+    <link rel="canonical" href="/blog-jekyll/blog-jekyll/article/css/2016/02/17/css-CSS%E8%AE%BE%E8%AE%A1%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7-100-%E7%9A%84%E9%AB%98%E5%BA%A6.html">
+
+</head>
+
+
+<body class="page-body">
+
+<div class="container">
+    <div class="row page-wrapper">
+        <header class="nav-bar" id="navbar">
+    <div class="container clearfix">
+        <a class="nav-brand" href="/blog-jekyll/" title="莫忘初衷，不负此生">莫忘初衷</a>
+
+
+        <a href="#" class="menu-icon">
+            <svg viewBox="0 0 18 15">
+                <path fill="#4e7fa7" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#4e7fa7" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#4e7fa7" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+
+
+        <ul class="nav-menu">
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/js/">JS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/css/">CSS</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/teletext/">Teletext</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/photo/">Photo</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/html/">HTML</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!--<li class=""><a class="page-link" href="/blog-jekyll/tools/">Tools</a></li>-->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <li class="" id="homePage"><a href="/blog-jekyll/">Home</a></li>
+            <li class="" id="htmlPage"><a href="/blog-jekyll/html/">HTML</a></li>
+            <li class=" active " id="cssPage"><a href="/blog-jekyll/css/">CSS</a></li>
+            <li class="" id="jsPage"><a href="/blog-jekyll/js/">JS</a></li>
+            <li class="" id="toolsPage"><a href="/blog-jekyll/tools/">Tools</a></li>
+            <li class="" id="photoPage"><a href="/blog-jekyll/photo/">Photo</a></li>
+            <li class="" id="teletextPage"><a href="/blog-jekyll/teletext/">Teletext</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+        <div class="page-banner text-center" style="background: #93C2E9 url('http://7xrioc.com1.z0.glb.clouddn.com/img/illustration/2016.jpg') center center no-repeat;background-size: cover">
+            <div class="banner-title">
+                
+                    <!--让其为空-->
+                
+            </div>
+        </div>
+
+        <div class="page-content container">
+
+            
+                <h1 class='text-center main-title'>CSS设计网页小技巧:100%的高度</h1>
+                <span class="text-center date">2016年 2月 17日</span>
+
+            
+
+
+            <p>在前端人员之间有一个普遍存在的问题，如何让一个div的高度自动延伸到浏览窗口100%的高度。
+有一些不同的方法可以实现，但是，我想出了一个我个人比较喜欢的方法。今天，我将于你分享一下。 <br />
+转载地址为：<a href="http://www.zhangjiaojiao.cn/divcss/598.html" title="转载地址">CSS设计网页小技巧:100%的高度</a>.
+转载地址为：<a href="http://www.zhangjiaojiao.cn/divcss/598.html" target="_blank" title="转载地址">CSS设计网页小技巧:100%的高度</a></p>
+
+<p>我对你是不了解的，但我试图弄明白如何让我的布局垂直拉伸到页面的100％高度，这样一个令我沮丧的问题。
+我想让div结构自动延伸，但是它就是不能自动延伸，现在，为什么他不能这样那？今天我将与你一起分享这个解决方法。</p>
+
+<p><strong>比方说你有如下html代码文档</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=ISO-8859-1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>CSS 100% Height<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"style.css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+        这里有好多好多文字。。。
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>同时你有如下css样式文件</strong></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td><td class="code"><pre><span class="nt">body</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#content</span> <span class="p">{</span>
+	<span class="nl">background</span><span class="p">:</span> <span class="m">#EEE</span><span class="p">;</span>
+	<span class="nl">border-left</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="nl">border-right</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">20px</span> <span class="m">0</span> <span class="m">20px</span><span class="p">;</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+	<span class="nl">font</span><span class="p">:</span> <span class="m">1.5em</span> <span class="n">arial</span><span class="p">,</span> <span class="n">verdana</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
+	<span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>这就给了你这个示例文件。正如你所看到的，页面的content容器不能自动延伸到页面的整个高度。
+尽管我们给css样式文件添加了”height:100%”。为什么那？</p>
+
+<p>让我给你另外一种方式来思考HTML，几乎每一个HTML文件都有一组容器彼此包含的。因此，在我们的页面里面，
+首先我们有一个&lt;html&gt;容器，其次&lt;body&gt;容器包含在&lt;html&gt;里，最后才是&lt;div id=”content”&gt;&lt;/div&gt;容器包含在里面。
+当我们往任何一个容器里面放置内容的时候，这个容器和包含此容器的父容器盒子都会自动延伸的，从而能容下这些新添加的内容。
+也就是说，当我们往&lt;div id=”content”&gt;&lt;/div&gt;容器盒子添加文字内容的时候，这个div容器盒子是自动延伸的，
+包含这个div容器的父容器盒子（body与html）依次是自动延伸的。</p>
+
+<p>当我们给&lt;div id=”content”&gt;&lt;/div&gt;容器定义“height:100%”样式时，我们现在做的就是告诉它让其高度延伸到包含它的父容器的整个高度。
+在这个例子里，这个div容器被包含在&lt;body&gt;容器里面，所以&lt;div id=”content”&gt;&lt;/div&gt;就是body的整个高度。
+好了，body容器是如何延伸增长的那？它就像&lt;div id=”content”&gt;&lt;/div&gt;的高度一样，因为我们从来没有告诉它如何增高的。
+所以当我们给&lt;div id=”content”&gt;&lt;/div&gt;定义“height：100%”样式的时候，我们仅仅告诉了它自己。</p>
+
+<p>解决此问题，我需要告诉&lt;body&gt;容器变的大一些儿，同时&lt;html&gt;容器也会出现同样的问题，它应该与&lt;body&gt;一样大。
+所以为了解决这个问题（让&lt;div id=”content”&gt;&lt;/div&gt;容器自动延伸到整个页面的高度）我们需要告诉&lt;html&gt;和&lt;body&gt;;容器高度应为整个页面的高度。</p>
+
+<p><strong>如果我们修改我们的css文件，如下所示</strong></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="nt">html</span> <span class="p">{</span>
+	<span class="nl">min-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="py">_height</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="nl">min-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="py">_height</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#content</span> <span class="p">{</span>
+	<span class="nl">background</span><span class="p">:</span> <span class="m">#EEE</span><span class="p">;</span>
+	<span class="nl">border-left</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="nl">border-right</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">20px</span> <span class="m">0</span> <span class="m">20px</span><span class="p">;</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+	<span class="nl">font</span><span class="p">:</span> <span class="m">1.5em</span> <span class="n">arial</span><span class="p">,</span> <span class="n">verdana</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">960px</span><span class="p">;</span>
+	<span class="nl">min-height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="py">_height</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>就是这样，这里是我们现在的最终效果。这个content容器现在已经能自动延伸到整个页面的高度了。</p>
+
+
+
+            <!--添加评论功能-->
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//zhangjinpei.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <script id="dsq-count-scr" src="//zhangjinpei.disqus.com/count.js" async></script>
+
+
+        </div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <div class="footer-tel">TEL:18203610462</div>
+
+        <div class="footer-copyright">Copyright 2016 ALL Right Reseved</div>
+
+        <div class="footer-contact">
+            <a href="javascript:;"><i class="icon iconfont icon-github"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-qq"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-weixin"></i></a>
+            <a href="javascript:;"><i class="icon iconfont icon-xinlang"></i></a>
+        </div>
+
+
+    </div>
+</footer>
+
+    </div>
+</div>
+
+<script src="/blog-jekyll/assets/script/jquery.min.js"></script>
+<script src="/blog-jekyll/assets/script/common.js"></script>
+
+</body>
+
+</html>
