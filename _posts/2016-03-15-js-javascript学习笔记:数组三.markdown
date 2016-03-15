@@ -24,6 +24,8 @@ JavaScript的数组是一个拥有堆栈和队列自身优点的global对象。�
 
 先上张图：
 
+![堆栈的基本概念](http://cdn.w3cplus.com/cdn/farfuture/1b41GAmMcH4JyXG3kB1_8Hs98W07cQquqiLv0rGndIk/mtime:1456055242/sites/default/files/blogs/2016/1602/20150101235414.png)
+
 栈是一种LIFO（Last-In-First-Out，后进先出）的数据结构，也就是最新添加的项最早被移除。而栈中项的插入（叫做推入）和移除（叫做弹出），只发生在一个位置——栈的顶部。
 
 最开始栈中不含有任何数据，叫做空栈，此时栈顶就是栈底。然后数据从栈顶进入，栈顶栈底分离，整个栈的当前容量变大。数据出栈时从栈顶弹出，栈顶下移，整个栈的当前容量变小。
@@ -36,14 +38,14 @@ ECMAScript为数组专门提供了 `push()` 和 `pop()` 方法，以便实现类
 
 栈数据结构的访问规则是LIFO(后进先出)，而队列数据结构的访问规则是FIFO(Fist-In-First-Out,先进先出)。队列在列表的末端添加项，从列表的前端移除项。如下图所示：
 
-[]()
+![队列的基本概念](http://cdn1.w3cplus.com/cdn/farfuture/FAUUjCsNmZNckVpKGyRm4kXiyd1puJdn0Xyz4STl9xI/mtime:1456055242/sites/default/files/blogs/2016/1602/20150101235139.png)
 
 
 比如说火车站排队买票，先到的先买，买好的先走。
 
 入队列操作其实就是在队尾追加一个元素，不需要任何移动，时间复杂度为O(1)。出队列则不同，因为我们已经架设下标为0的位置是队列的队头，因此每次出队列操作所有元素都要向前移动。如下图所示：
 
-[]()
+![入队出队](http://cdn.w3cplus.com/cdn/farfuture/zi5ytLrCFEjexpDZvoyDUVESM2uhwfFV2TXgbM0-XxQ/mtime:1456056511/sites/default/files/blogs/2016/1602/js-duilie.png)
 
 ECMAScript为数组专门提供了 `shift()` 和 `unshift()` 方法，以便实现类似队列的行为。由于 `push()` 是向数组末端添加数组项的方法，因此要模拟队列只需一个从数组前端取得数组项的方法。实现这一操作的数组方法就是 `shift()` ，它能够移除数组中的第一个项并返回该项，同时将数组长度减`1`。
 
@@ -264,7 +266,7 @@ console.log("调用unshift方法往数组中添加100000个元素耗时"+(endTim
 
 这段代码分别执行了100000次push()和unshift()操作，在chrome浏览器运行一次，得到的结果如下图所示：
 
-[]()
+![性能测试结果](http://cdn1.w3cplus.com/cdn/farfuture/J1McwjYcFiAfjQqDbfETpfyyizoE8nnMWhPDUXtWXcQ/mtime:1456062650/sites/default/files/blogs/2016/1602/20150101235610.png)
 
 可见，unshift()比push()要慢差不多100倍!因此，平时还是要慎用unshift()，特别是对大数组。那如果一定要达到unshift()的效果，可以借助于Array的reverse()方法，Array的reverse()的方法能够把一个数组反转。先把要放进数组的元素用push()添加，再执行一次reverse()，就达到了unshift()的效果。比如：
 
@@ -286,7 +288,8 @@ console.log(a);
 
 在chrome浏览器控制台输出的效果如下图所示：
 
-[]()
+![反转](http://cdn2.w3cplus.com/cdn/farfuture/yzi0Bp1Lxnl1dOpag7U2PpCzaKYXwRBjFCWH--ivRVA/mtime:1456062650/sites/default/files/blogs/2016/1602/20150101235638.png)
+
 
 从运行结果来看，数组元素的顺序已经反转过来了。
 
@@ -305,14 +308,16 @@ console.log("调用reverse方法将数组里面的100000元素的顺序反转耗
 
 在chrome浏览器控制台输出的效果如下图所示：
 
-[]()
+![反转耗时](http://cdn.w3cplus.com/cdn/farfuture/FknHzXaOoX_Y03JawgI3Z27QEIWH86sfszloAzRF1Qw/mtime:1456062650/sites/default/files/blogs/2016/1602/20150101235657.png)
 
 从运行效果中可以看到，reverse()方法的性能极高，可以放心使用。
 
 
 ## 总结
 
-[]()
+![总结图片][总结图片]
 
+转载地址：[JavaScript学习笔记：数组(三)](http://www.w3cplus.com/javascript/array-part-3.html)
 
+[总结图片]: {{site.cloudSrc}}/img/js/jss-shuzu.png
 
