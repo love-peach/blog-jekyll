@@ -1,0 +1,50 @@
+---
+layout: post
+title: "你可能不知道的&lt;q&gt;标签元素"
+date: 2016-03-18 00:05:00
+categories: article html
+tags: [转载]
+whichPage: html
+bannerImg: /img/illustration/2016.jpg
+---
+
+<p>
+大家肯定都知道在一些文章中会使用一个叫做“引用”的方式，然后把其他文章或者书本中的一些段落或者语句给引入到自己的文章中。那么对于一个网页来说，其实都一样，如果要语义化每个标签的话，那么在HTML中也存在着引用的含义的标签，它们是 &lt;q&gt;&lt;/q&gt;, &lt;blockquote &gt;&lt;/blockquote &gt;
+</p>
+
+
+<p>从第二标签元素 <code>blockquote</code> 中我们可以看到是一个块级的引用，然后另外的一个是 <code>q</code>标签，其实就是quote的第一个字母，挺好记的。</p>
+
+<p>首先我们来看下代码：</p>
+
+{% highlight html %}
+<q lang="">这是一个引用的内容部分</q>
+<q lang="zh">这是一个引用的内容部分</q>
+<q lang="zh-hant">这是一个引用的内容部分</q>
+<q lang="de">这是一个引用的内容部分</q>
+<q lang="fr">这是一个引用的内容部分</q>
+<q lang="ro">这是一个引用的内容部分</q>
+<q lang="en">这是一个引用的内容部分</q>
+{% endhighlight%}
+
+<p>这部分代码都是&lt;q&gt;这个标签所包含的内容，唯一不同的就是其中的lang属性值，而我们将会看到精彩的部分也就是这个，效果：</p>
+
+
+<p>
+    <q lang="">这是一个引用的内容部分</q><br>
+    <q lang="zh">这是一个引用的内容部分</q><br>
+    <q lang="zh-hant">这是一个引用的内容部分</q><br>
+    <q lang="de">这是一个引用的内容部分</q><br>
+    <q lang="fr">这是一个引用的内容部分</q><br>
+    <q lang="ro">这是一个引用的内容部分</q><br>
+    <q lang="en">这是一个引用的内容部分</q><br>
+
+</p>
+
+
+
+<p>可以看到所有的引号都不同。这里需要注意下的是，浏览器的这些解析规则标准还是挺人性的，但是有可能会被你的reset文件重置了，具体好不好，仁者见仁，智者见智。</p>
+
+<p>转载地址：转载自微信公众号的一篇文章，地址没法贴 公众号：闲谈CSS那些事儿</p>
+
+
