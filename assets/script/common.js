@@ -40,30 +40,46 @@
 //document.onmousewheel = scrollFunc;
 
 
-
 window.onload = function () {
+
+    //首页背景图切换
+    $(".backstretch").backstretch(
+        [
+            "http://itxuye.qiniudn.com/1.jpg",
+            "http://itxuye.qiniudn.com/2.jpg",
+            "http://itxuye.qiniudn.com/3.jpg",
+            "http://itxuye.qiniudn.com/5.jpg",
+            "http://itxuye.qiniudn.com/7.jpg",
+            "http://itxuye.qiniudn.com/8.jpg"
+        ],
+        {
+            duration: 4000,
+            fade: 1000
+        }
+    );
 
     //首页技能进度条事件
 
-    $(window).scroll(function(){
-        var scrollHeight=$(window).scrollTop();
+    $(window).scroll(function () {
+        var scrollHeight = $(window).scrollTop();
         var $skillSchedule = $('.skill-schedule');
 
-        if (scrollHeight>900) {
+        if (scrollHeight > 900) {
             progressAnimate($skillSchedule);
         }
     });
-    function progressAnimate (schedule) {
+    function progressAnimate(schedule) {
         var numberData = [];
-        for (var i = 0;i<schedule.length;i++) {
+        for (var i = 0; i < schedule.length; i++) {
             var number = schedule.eq(i).attr('title');
             numberData.push(number);
             schedule.eq(i).css({width: number});
         }
     }
+
     $('.skill-graphs li').click(function () {
         var index = $(this).index();
-        $('.skill-intraduce p').eq(index).css({left: 0,opacity:1}).siblings().css({left: '100%',opacity: 0});
+        $('.skill-intraduce p').eq(index).css({left: 0, opacity: 1}).siblings().css({left: '100%', opacity: 0});
     });
 
 

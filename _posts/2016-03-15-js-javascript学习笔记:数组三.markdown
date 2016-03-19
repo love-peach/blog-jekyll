@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "javascript学习笔记:数组三"
+title: "javascript学习笔记:数组(三)"
 date: 2016-03-15 00:05:00
 categories: article js
 tags: [数组,转载]
