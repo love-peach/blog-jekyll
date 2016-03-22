@@ -42,21 +42,25 @@
 
 window.onload = function () {
 
-    //首页背景图切换
-    $(".backstretch").backstretch(
-        [
-            "http://itxuye.qiniudn.com/1.jpg",
-            "http://itxuye.qiniudn.com/2.jpg",
-            "http://itxuye.qiniudn.com/3.jpg",
-            "http://itxuye.qiniudn.com/5.jpg",
-            "http://itxuye.qiniudn.com/7.jpg",
-            "http://itxuye.qiniudn.com/8.jpg"
-        ],
-        {
-            duration: 4000,
-            fade: 1000
-        }
-    );
+    //首页背景图切换;如果存在backstretch方法才执行
+    if (typeof(jQuery.backstretch) == 'function') {
+        $(".backstretch").backstretch(
+            [
+                "http://itxuye.qiniudn.com/1.jpg",
+                "http://itxuye.qiniudn.com/2.jpg",
+                "http://itxuye.qiniudn.com/3.jpg",
+                "http://itxuye.qiniudn.com/5.jpg",
+                "http://itxuye.qiniudn.com/7.jpg",
+                "http://itxuye.qiniudn.com/8.jpg"
+            ],
+            {
+                duration: 4000,
+                fade: 1000
+            }
+        );
+    }
+
+
 
     //首页技能进度条事件
 
