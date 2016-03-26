@@ -66,7 +66,10 @@ p {
 @font-face {
   font-family: "iconfont";
   src: url('../assets/fonts/iconfont.eot'); /* IE9*/
-  src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../assets/fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('../assets/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../assets/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -100,24 +103,29 @@ p {
 
 //导航栏样式
 .nav-bar {
-  position: relative;
-  background-color: $base-silver;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: rgba(3, 29, 42, 0.7);
+  transition: all .3s ease;
   .nav-brand {
     float: left;
     height: 4rem;
     line-height: 4rem;
     font-size: 1.8rem;
-    color: $base-blue;
+    color: $base-silver;
   }
   .nav-menu {
     float: right;
     li {
       float: left;
+      color: #fff;
       a {
         line-height: 3rem;
         height: 4rem;
         padding: .5rem 1rem;
-        color: $base-blue;
+        //color: #fff;
       }
       a:hover {
         color: $base-red;
@@ -135,7 +143,7 @@ p {
     display: none;
   }
 
-  @include media-query(600px) {
+  @include media-query($base-phone-width) {
     .menu-icon {
       display: block;
       float: right;
@@ -157,11 +165,8 @@ p {
       height: 0;
       margin-right: -15px;
       margin-left: -15px;
-
       clear: both; //清除menu-icon浮动的影响
-
       float: none;
-
       transition: height .3s ease;
       li {
         float: none;
@@ -177,6 +182,9 @@ p {
     }
   }
 
+}
+.nav-bar-hidden {
+  top: -70px!important;
 }
 
 //footer
@@ -238,6 +246,21 @@ p {
 .page-wrapper {
   border-radius: 1.3rem;
   overflow: hidden;
+  .nav-bar {
+    position: relative;
+    background-color: $base-silver;
+    a {
+      color: $base-blue;
+    }
+    @include media-query($base-container-width) {
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      background-color: rgba(3, 29, 42, 0.7);
+    }
+  }
+
 
   @include media-query($base-container-width) {
     border-radius: 0;
@@ -256,6 +279,7 @@ p {
     display: table-cell;
   }
 }
+
 //文章内容样式
 .page-content {
   padding-top: 2rem;
@@ -283,7 +307,7 @@ p {
       border: 1px solid $base-border;
       transition: all .5s ease;
       @include media-query($base-phone-width) {
-        width:22rem;
+        width: 22rem;
       }
     }
     img:hover {
@@ -313,11 +337,11 @@ p {
   }
 
   //表格样式
-  .table{
+  .table {
     margin: 0 auto 2rem;
     border-collapse: collapse;
     border: solid $base-border;
-    border-width:1px 0px 0px 1px;
+    border-width: 1px 0px 0px 1px;
     th {
       padding: 1rem;
       color: #fff;
@@ -327,16 +351,16 @@ p {
         border-left: 1px solid $base-border;
       }
     }
-    td{
-      padding:1rem;
-      border:solid $base-border;
-      border-width:0px 1px 1px 0px;
+    td {
+      padding: 1rem;
+      border: solid $base-border;
+      border-width: 0px 1px 1px 0px;
       color: $base-black-dark;
 
     }
   }
   //列表样式　
-  ul, ol{
+  ul, ol {
     color: $base-black-md;
     li {
       margin: 1rem 15px;
@@ -359,7 +383,7 @@ p {
   .html-content-list,
   .js-content-list,
   .teletext-content-list,
-  .tools-content-list{
+  .tools-content-list {
     li {
       list-style: none;
       margin: 0 0 1rem 0;
