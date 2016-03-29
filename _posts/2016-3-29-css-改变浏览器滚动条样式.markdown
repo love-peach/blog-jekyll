@@ -1,0 +1,39 @@
+---
+layout: post
+title: "改变谷歌浏览器滚动条样式"
+date: 2016-03-28 19:20:00
+categories: article css
+tags: [css样式]
+whichPage: css
+bannerImg: /img/illustration/2016.jpg
+---
+相信大家都知道浏览器的滚动条，当一张页面在宽度或者高度上，如果超出了一屏的范围，就会出现滚动条（当然，前提是你没有隐藏滚动条）。滚动条能很好的告诉浏览者，后面还有没有内容。但是，有时候，它的样式有点单调，或者说一成不变，有时候，甚至与设计相冲突，这时候，我们不得不做一些处理，比如隐藏，或者改变滚动条的样式，有时精致的滚动条或许让你的设计更加出色。那么今天就来讲讲，怎么改变浏览器滚动条的样式。
+
+
+谷歌浏览器： 代码如下
+
+{% highlight css %}
+/* 滑块 */
+::-webkit-scrollbar-thumb {
+    background-color: $base-cyan;
+    height: 50px;
+    -webkit-border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: $base-cyan;
+    height: 50px;
+    -webkit-border-radius: 4px;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 8px;  /*垂直滚动条宽度*/
+    height: 8px; /* 水平滚动条高度 */
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+    -webkit-border-radius: 2px;
+}
+{% endhighlight %}

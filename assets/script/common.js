@@ -3,15 +3,13 @@
  */
 
 //导航栏滑动一定距离收起
-    console.log(1);
-var scrollSpace = 10;
+var scrollSpace = 3;
 var $navbar = $('#navbar');
 var scrollFunc = function (e) {
     e = e || window.event;
     var currentScrollTop = $(window).scrollTop();
 
     if (currentScrollTop > 300) {
-        console.log(2);
         $navbar.addClass('nav-bar-hidden');
         if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
             if (e.wheelDelta > scrollSpace) { //当滑轮向上滚动时
@@ -21,11 +19,14 @@ var scrollFunc = function (e) {
                 $navbar.addClass('nav-bar-hidden');
             }
         } else if (e.detail) {  //Firefox滑轮事件
-            if (e.detail > scrollSpace) { //当滑轮向上滚动时
-                $navbar.removeClass('nav-bar-hidden');
+            if (e.detail >= scrollSpace) { //当滑轮向上滚动时
+                console.log(e.detail);
+                $navbar.addClass('nav-bar-hidden');
             }
             if (e.detail < scrollSpace) { //当滑轮向下滚动时
-                $navbar.addClass('nav-bar-hidden');
+
+                $navbar.removeClass('nav-bar-hidden');
+                console.log(123);
             }
         }
 
