@@ -4,42 +4,42 @@
 
 //导航栏滑动一定距离收起
 var $navbar = $('#navbar');
-var scrollFunc = function (e) {
-    e = e || window.event;
-    var currentScrollTop = $(window).scrollTop();
-
-    if (currentScrollTop > 300) {
-        console.log('滚动高度大于300',currentScrollTop);
-        $navbar.addClass('nav-bar-hidden');
-        if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
-            if (e.wheelDelta > 0) { //当滑轮向上滚动时
-                $navbar.removeClass('nav-bar-hidden');
+/*自定义的处理函数*/
+var handle = function (delta) {};
+window.onscroll = function(e){
+    var e =e || window.event;
+    var bodyScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    if (bodyScrollTop >300) {
+        handle = function (delta) {
+            navBar = document.getElementById('navbar');
+            if (delta <0) {
+                navBar.className = 'nav-bar nav-bar-hidden';
             }
-            if (e.wheelDelta < 0) { //当滑轮向下滚动时
-                $navbar.addClass('nav-bar-hidden');
+            else　{
+                navBar.className = 'nav-bar ';
             }
-        } else if (e.detail) {  //Firefox滑轮事件
-            if (e.detail >= 0) { //当滑轮向上滚动时
-                $navbar.addClass('nav-bar-hidden');
-            }
-            if (e.detail < 0) { //当滑轮向下滚动时
-                $navbar.removeClass('nav-bar-hidden')
-            }
-        }
-
-    }else {
-        console.log('滚动高度小于300',currentScrollTop);
+        };
+    } else {
+        handle = function (delta) {};
     }
-
 };
 
-//给页面绑定滑轮滚动事件
-if (document.addEventListener) {//firefox
-    document.addEventListener('DOMMouseScroll', scrollFunc, false);
+function wheel(event){
+    var delta = 0;
+    if (!event) { event = window.event;}  /* For IE. */
+    if (event.wheelDelta) {  /* IE/Opera. */
+        delta = event.wheelDelta/120;
+        if (window.opera) delta = -delta;
+    } else if (event.detail) {
+        delta = -event.detail/3;
+    }
+    if (delta) { handle(delta); }
 }
-//滚动滑轮触发scrollFunc方法  //ie 谷歌
-window.onmousewheel = document.onmousewheel;
-document.onmousewheel = scrollFunc;
+
+/** DOMMouseScroll is for mozilla. */
+if (window.addEventListener) { window.addEventListener('DOMMouseScroll', wheel, false);}
+/** IE/Opera. */
+window.onmousewheel = document.onmousewheel = wheel;
 
 
 window.onload = function () {
@@ -130,4 +130,4 @@ window.onload = function () {
             }
         }
     }
-}
+};

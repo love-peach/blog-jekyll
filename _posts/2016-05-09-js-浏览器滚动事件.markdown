@@ -1,0 +1,124 @@
+---
+layout: post
+title: "浏览器滚动事件"
+date: 2016-05-09 11:51
+categories: article js
+tags: [css样式,转载]
+whichPage: js
+bannerImg: /img/illustration/2016.jpg
+---
+作为一名前段er,总是和浏览器打交道，免不了碰到滚动事件，而不同的浏览器，监听滚动的方法又不一样，这里整理一下。这里说的浏览器滚动事件包括，
+１浏览器滚动条滚动高度事件，２浏览器鼠标滚轮滚动事件，向上滚动还是向下滚动。
+
+
+## 1.浏览器滚动条事件
+
+为窗口添加滚动条事件其实非常的简单， `window.onscroll=function(){};` 注意在获取滚动条距离的时候,谷歌不识别 `document.documentElement.scrollTop`，
+必须要加上 `document.body.scrollTop；` 即 `var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;` 这样才能兼容各个浏览器！
+
+{% highlight js %}
+window.onscroll = function(e){
+    var e =e || window.event;
+    var bodyScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    document.getElementById('box').innerHTML = bodyScrollTop;
+}
+
+{% endhighlight %}
+
+## 2.浏览器鼠标滚轮滚动事件
+
+Firefox使用 `DOMMouseScroll` ，其他的浏览器使用 `mousewheel` 。滚动事件触发时Firefox使用 `detail` 属性捕捉滚轮信息，其他的浏览器使用 `wheelDelta` 。
+Firefox可以使用 `addEventListener` 方法绑定 `DomMouseScroll` 事件。
+
+`elem.addEventListener('DOMMouseScroll', func, false);` IE和其他的主流浏览器可以使用传统的事件绑定模型。
+但不要使用IE专有的 `attachEvent` 方法，其他主流浏览器并不识别微软的这个方法。
+
+- Firefox 鼠标滚轮向上滚动是-3，向下滚动是3
+- IE 鼠标滚轮向上滚动是120，向下滚动是-120
+- Safari 鼠标滚轮向上滚动是360，向下滚动是-360
+- Opera 鼠标滚轮向上滚动是120，向下滚动是-120
+- Chrome 鼠标滚轮向上滚动是120，向下滚动是-120
+
+{% highlight js %}
+function wheel(event){
+    var delta = 0;
+    if (!event) { event = window.event;}  /* For IE. */ 
+    if (event.wheelDelta) {  /* IE/Opera. */ 
+        delta = event.wheelDelta/120; 
+        if (window.opera) delta = -delta;
+    } else if (event.detail) {
+        delta = -event.detail/3;
+    }
+    if (delta) { handle(delta); }
+    /* 下面代码，是阻止鼠标的滚动，但是仍然可以监听是向上滚还是向下滚．（感觉在全屏滚动中起作用）*/
+    if (event.preventDefault) { event.preventDefault(); }
+    event.returnValue = false;  
+}
+
+/** DOMMouseScroll is for mozilla. */  
+if (window.addEventListener) { window.addEventListener('DOMMouseScroll', wheel, false);}  
+/** IE/Opera. */  
+window.onmousewheel = document.onmousewheel = wheel;
+
+/*自定义的处理函数*/
+var handle = function handle(delta) {
+    var s = delta + ": ";
+    if (delta <0) {
+      s += "您在向下滚……";
+      document.documentElement.scrollTop= 500;
+      document.body.scrollTop= 500;
+    }
+    else　{
+      s += "您在向上滚……";
+      document.documentElement.scrollTop= 0;
+      document.body.scrollTop= 0;
+    }
+    document.getElementById('box').innerHTML = s;
+}
+{% endhighlight%}
+
+上面的代码如果在自定义处理函数中去掉　`document.documentElement.scrollTop= 500;document.body.scrollTop= 500;`　鼠标滚轮是滚动不了的，
+因为　`if (event.preventDefault) { event.preventDefault(); }　event.returnValue = false; `　,但是仍然可以监听鼠标的上下滚动事件，这
+在做全屏滚动动画时可以用到．这个时候如果，用方向键上下滚动仍然是管用的．
+
+## 3.结合浏览器滚动条事件和鼠标滚轮事件
+
+这算是个小例子吧．在实际项目中，有这样一个需求：当屏幕滚动到一定数值后，向下滚做一个处理，向上滚做另一个处理．首页导航栏就是这么做的．
+
+{% highlight js %}
+var handle = function (delta) {};/*声明自定义的处理函数*/
+window.onscroll = function(e){
+    var e =e || window.event;
+    var bodyScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    if (bodyScrollTop >300) {
+        handle = function (delta) {
+            navBar = document.getElementById('navbar');
+            if (delta <0) ｛ /*向下滚动*/
+                navBar.className = 'nav-bar nav-bar-hidden';
+            }
+            else　{
+                navBar.className = 'nav-bar ';
+            }
+        };
+    } else {
+        handle = function (delta) {};
+    }
+};
+
+function wheel(event){
+    var delta = 0;
+    if (!event) { event = window.event;}  /* For IE. */
+    if (event.wheelDelta) {  /* IE/Opera. */
+        delta = event.wheelDelta/120;
+        if (window.opera) delta = -delta;
+    } else if (event.detail) {
+        delta = -event.detail/3;
+    }
+    if (delta) { handle(delta); }
+}
+
+/** DOMMouseScroll is for mozilla. */
+if (window.addEventListener) { window.addEventListener('DOMMouseScroll', wheel, false);}
+/** IE/Opera. */
+window.onmousewheel = document.onmousewheel = wheel;
+{% endhighlight %}
