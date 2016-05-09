@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "浏览器滚动事件"
-date: 2016-05-09 11:51
+date: 2016-05-09
 categories: article js
-tags: [css样式,转载]
+tags: [滚动事件,整理]
 whichPage: js
 bannerImg: /img/illustration/2016.jpg
 ---
+
 作为一名前段er,总是和浏览器打交道，免不了碰到滚动事件，而不同的浏览器，监听滚动的方法又不一样，这里整理一下。这里说的浏览器滚动事件包括，
 １浏览器滚动条滚动高度事件，２浏览器鼠标滚轮滚动事件，向上滚动还是向下滚动。
 
@@ -122,3 +123,7 @@ if (window.addEventListener) { window.addEventListener('DOMMouseScroll', wheel, 
 /** IE/Opera. */
 window.onmousewheel = document.onmousewheel = wheel;
 {% endhighlight %}
+
+参考链接：[js的window.onscroll事件兼容各大浏览器！](http://www.zixuephp.com/html/javascript/2014_11/4040.html)，
+[js鼠标滑轮滚动事件绑定（兼容主流浏览器）](http://qiaolevip.iteye.com/blog/1673396)，
+[各浏览器中的鼠标滚轮事件处理](http://www.cnblogs.com/pigtail/p/3396505.html)
