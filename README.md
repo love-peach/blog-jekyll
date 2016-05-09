@@ -243,4 +243,6 @@ bannerImg: /img/illustration/2016.jpg
 
 - 第一次搭建jekyll环境时，分页插件并不会自动安装，编译时报错，需要手动安装`gem install jekyll-paginate`
 
+- 启动 `jekyll serve` 可能会报这样的错：　`Listen error: unable to monitor directories for changes.`,在命令窗口中输入 `sudo sysctl fs.inotify.max_user_watches=1000000` 然后在启动就好了。
+
 npm install --save-dev gulp gulp-less gulp-minify-css gulp-autoprefixer gulp-jshint gulp-uglify imagemin-pngquant gulp-changed gulp-clean gulp-notify browser-sync gulp-concat gulp-rename gulp-imagemin run-sequence

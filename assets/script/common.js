@@ -3,33 +3,32 @@
  */
 
 //导航栏滑动一定距离收起
-var scrollSpace = 3;
 var $navbar = $('#navbar');
 var scrollFunc = function (e) {
     e = e || window.event;
     var currentScrollTop = $(window).scrollTop();
 
     if (currentScrollTop > 300) {
+        console.log('滚动高度大于300',currentScrollTop);
         $navbar.addClass('nav-bar-hidden');
         if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
-            if (e.wheelDelta > scrollSpace) { //当滑轮向上滚动时
+            if (e.wheelDelta > 0) { //当滑轮向上滚动时
                 $navbar.removeClass('nav-bar-hidden');
             }
-            if (e.wheelDelta < scrollSpace) { //当滑轮向下滚动时
+            if (e.wheelDelta < 0) { //当滑轮向下滚动时
                 $navbar.addClass('nav-bar-hidden');
             }
         } else if (e.detail) {  //Firefox滑轮事件
-            if (e.detail >= scrollSpace) { //当滑轮向上滚动时
-                console.log(e.detail);
+            if (e.detail >= 0) { //当滑轮向上滚动时
                 $navbar.addClass('nav-bar-hidden');
             }
-            if (e.detail < scrollSpace) { //当滑轮向下滚动时
-
-                $navbar.removeClass('nav-bar-hidden');
-                console.log(123);
+            if (e.detail < 0) { //当滑轮向下滚动时
+                $navbar.removeClass('nav-bar-hidden')
             }
         }
 
+    }else {
+        console.log('滚动高度小于300',currentScrollTop);
     }
 
 };
@@ -62,7 +61,6 @@ window.onload = function () {
             }
         );
     }
-
 
 
     //首页技能进度条事件

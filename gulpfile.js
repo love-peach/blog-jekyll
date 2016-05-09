@@ -42,7 +42,6 @@
             fonts: distRoot + '/fonts/'
         },
         watch: {
-            jekyll: '*.+(html|markdown|md|json|txt|xml)',
             style: srcRoot + '/style/*.less',
             script: srcRoot + '/script/*.js',
             image: srcRoot + '/image/*',
@@ -97,8 +96,7 @@
     });
 
     //监听任务
-    gulp.task('watch', ['jekyll-first'], function () {
-        gulp.watch(paths.watch.jekyll, ['jekyll']);
+    gulp.task('watch', function () {
         gulp.watch(paths.watch.style, ['style']);
         gulp.watch(paths.watch.script, ['script']);
         gulp.watch(paths.watch.image, ['image']);
