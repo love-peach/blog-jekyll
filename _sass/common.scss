@@ -347,7 +347,13 @@ p {
     color: $base-black-dark;
   }
   h2 {
-    color: $base-black-dark;
+    padding-bottom: 1rem;
+    color: $base-cyan;
+    border-bottom: 1px solid $base-border;
+  }
+  h3 {
+    padding-bottom: .5rem;
+    color: $base-blue;
   }
   .date {
     display: block;
@@ -359,7 +365,7 @@ p {
   }
 
   //表格样式
-  .table {
+  table {
     margin: 0 auto 2rem;
     border-collapse: collapse;
     border: solid $base-border;
